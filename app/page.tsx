@@ -4,6 +4,17 @@ import { useState, useEffect, useRef } from 'react'
 import Navbar from './Navbar'
 import HeroParticles from './HeroParticles'
 
+// Heights set per-logo so all marks appear at similar visual weight.
+// Aspect ratios: elaniin 6.64:1 · arka 6.14:1 · vertikal 5.32:1 · cavalier 4.73:1 · smartpyme 5.94:1 · marucha 4.0:1
+const journeyLogos = [
+  { src: '/elaniin.svg',      alt: 'Elaniin',       height: 28, tag: 'Home ♥' },
+  { src: '/arka-software.svg', alt: 'Arka Software', height: 26 },
+  { src: '/vertikal.svg',     alt: 'Vertikal',      height: 22 },
+  { src: '/cavalier.svg',     alt: 'Cavalier',      height: 26 },
+  { src: '/smartpyme.svg',    alt: 'SmartPyme',     height: 22 },
+  { src: '/marucha.svg',      alt: 'Marucha',       height: 32, tag: 'The first brand of my career' },
+]
+
 const roles = [
   {
     id: 0,
@@ -167,18 +178,30 @@ export default function Home() {
       {/* TRUSTED BY */}
       <div className="trusted-section" data-animate>
         <div className="eyebrow trusted-eyebrow">Part of my journey</div>
-        <div className="trusted-logos">
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-            <img src="/elaniin.svg" alt="Elaniin" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
-            <span style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '.06em', textTransform: 'none', color: 'var(--muted)', opacity: 0.6 }}>Home ♥</span>
-          </div>
-          <img src="/arka-software.svg" alt="Arka Software" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
-          <img src="/vertikal.svg" alt="Vertikal" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
-          <img src="/cavalier.svg" alt="Cavalier" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
-          <img src="/smartpyme.svg" alt="SmartPyme" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-            <img src="/marucha.svg" alt="Marucha" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
-            <span style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '.06em', textTransform: 'none', color: 'var(--muted)', opacity: 0.6 }}>The first brand of my career</span>
+        <div className="trusted-logos-outer">
+          <div className="trusted-logos-track">
+            {/* Set 1 */}
+            {journeyLogos.map((logo) =>
+              logo.tag ? (
+                <div key={logo.alt} className="trusted-logo-item">
+                  <img src={logo.src} alt={logo.alt} className="trusted-logo" height={logo.height} />
+                  <span className="trusted-logo-tag">{logo.tag}</span>
+                </div>
+              ) : (
+                <img key={logo.alt} src={logo.src} alt={logo.alt} className="trusted-logo" height={logo.height} />
+              )
+            )}
+            {/* Set 2 — duplicate for seamless loop, hidden from assistive tech */}
+            {journeyLogos.map((logo) =>
+              logo.tag ? (
+                <div key={`${logo.alt}-dup`} className="trusted-logo-item" aria-hidden="true">
+                  <img src={logo.src} alt="" className="trusted-logo" height={logo.height} />
+                  <span className="trusted-logo-tag">{logo.tag}</span>
+                </div>
+              ) : (
+                <img key={`${logo.alt}-dup`} src={logo.src} alt="" className="trusted-logo" height={logo.height} aria-hidden="true" />
+              )
+            )}
           </div>
         </div>
       </div>
