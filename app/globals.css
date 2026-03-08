@@ -11,7 +11,7 @@
   --border: rgba(26, 25, 21, 0.12);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 
 body {
   background: var(--bg);
@@ -295,6 +295,7 @@ footer { background: var(--black); margin: 0; padding: 0; overflow: hidden; line
 }
 
 @media (max-width: 960px) {
+  html { scroll-padding-top: 72px; }
   nav { padding: 20px 24px; }
   .nav-links { gap: 16px; }
   .hero { grid-template-columns: 1fr; gap: 36px; padding: 64px 24px 48px; }
