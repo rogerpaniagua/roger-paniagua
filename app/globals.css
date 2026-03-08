@@ -327,6 +327,9 @@ footer { background: var(--black); margin: 0; padding: 0 0 24px; overflow: hidde
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .hero-h { font-size: 3.4rem; }
+  /* Disable all scroll-triggered animations on mobile — no fade, no transform, no transition */
+  [data-animate] { opacity: 1; transform: none; transition: none; }
+  [data-animate].visible { opacity: 1; transform: none; }
 }
 
 @media (max-width: 960px) {

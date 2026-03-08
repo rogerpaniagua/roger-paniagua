@@ -74,8 +74,9 @@ export default function Home() {
   const [statsStarted, setStatsStarted] = useState(false)
   const statsRef = useRef<HTMLDivElement>(null)
 
-  // Scroll animations
+  // Scroll animations — disabled on mobile for performance
   useEffect(() => {
+    if (window.matchMedia('(max-width: 767px)').matches) return
     const els = document.querySelectorAll('[data-animate]')
     const obs = new IntersectionObserver(
       (entries) => entries.forEach(e => {
@@ -391,7 +392,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer>
-        <img src="/ROGER.svg" alt="" aria-hidden="true" className="footer-watermark-img" data-animate />
+        <img src="/ROGER.svg" alt="" aria-hidden="true" className="footer-watermark-img" data-animate width="420" height="83" />
         <p className="footer-copy" data-animate>© 2026 Roger Paniagua. All rights reserved.</p>
       </footer>
     </>
