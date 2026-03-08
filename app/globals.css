@@ -234,7 +234,7 @@ nav {
 /* CREDENTIALS */
 .creds-section { border-bottom: 1px solid var(--border); background: var(--card); }
 .creds-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); }
-.cred { padding: 36px 40px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); text-decoration: none; display: block; transition: background .2s, color .2s; cursor: default; }
+.cred { padding: 36px 56px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); text-decoration: none; display: block; transition: background .2s, color .2s; cursor: default; }
 .cred:nth-child(3n) { border-right: none; }
 a.cred { cursor: pointer; }
 a.cred:hover { background: #2a2825; }
@@ -299,7 +299,7 @@ footer { background: var(--black); margin: 0; padding: 0; overflow: hidden; line
   .exp-list-item { padding: 20px 24px; }
   .exp-detail-col { padding: 40px 24px; }
   .creds-grid { grid-template-columns: 1fr; }
-  .cred { border-right: none; }
+  .cred { border-right: none; padding: 36px 24px; }
   .contact-wrap { grid-template-columns: 1fr; gap: 48px; padding: 64px 24px; }
   .cs-content { padding: 56px 24px; }
   .cs-footer-nav { padding: 56px 24px; }

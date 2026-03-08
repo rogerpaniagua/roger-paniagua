@@ -319,7 +319,7 @@ export default function Home() {
 
       {/* CREDENTIALS */}
       <div className="creds-section" data-animate>
-        <div className="sec-header" style={{ padding: '80px 40px 48px' }}>
+        <div className="sec-header">
           <div className="eyebrow">Education &amp; Credentials</div>
           <h2 className="heading">The frameworks<br />I operate with.</h2>
         </div>
