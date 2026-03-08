@@ -7,7 +7,7 @@ export default function ElaniinLA() {
       <Navbar logoHref="/" anchorPrefix="/" />
 
       {/* HERO IMAGE */}
-      <div style={{ backgroundImage: 'url(/elaniin-in-la.png)', backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '560px' }} />
+      <div className="cs-hero-img" style={{ backgroundImage: 'url(/elaniin-in-la.png)' }} />
 
       {/* CONTENT */}
       <article className="cs-content">

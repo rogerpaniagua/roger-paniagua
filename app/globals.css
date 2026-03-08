@@ -263,6 +263,15 @@ footer { background: var(--black); margin: 0; padding: 0; overflow: hidden; line
 .footer-light { background: var(--bg); }
 .footer-watermark-light { opacity: 0.35; }
 
+/* CASE STUDY HERO */
+.cs-hero-img {
+  width: 100%; height: 560px;
+  background-size: cover; background-position: center;
+}
+@media (max-width: 767px) {
+  .cs-hero-img { height: 38vh; }
+}
+
 /* CASE STUDY */
 .cs-content { max-width: 680px; margin: 0 auto; padding: 80px 24px; }
 .cs-category { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
