@@ -59,7 +59,7 @@ const roles = [
 
 export default function Home() {
   const [activeRole, setActiveRole] = useState(0)
-  const [statValues, setStatValues] = useState([0, 0, 0])
+  const [statValues, setStatValues] = useState([0, 0, 0, 0])
   const [statsStarted, setStatsStarted] = useState(false)
   const statsRef = useRef<HTMLDivElement>(null)
 
@@ -99,6 +99,7 @@ export default function Home() {
         Math.round(ease * 10),
         Math.round(ease * 85) / 10,
         Math.round(ease * 7),
+        Math.round(ease * 60),
       ])
       if (t < 1) requestAnimationFrame(tick)
     }
@@ -158,7 +159,7 @@ export default function Home() {
           <div className="stat-l">Google certifications</div>
         </div>
         <div className="stat">
-          <div className="stat-n">60+</div>
+          <div className="stat-n">{statValues[3]}+</div>
           <div className="stat-l">Brands brought to life</div>
         </div>
       </div>
@@ -345,13 +346,13 @@ export default function Home() {
       </div>
 
       {/* CONTACT */}
-      <div className="contact-wrap" id="contact" data-animate>
-        <h2 className="contact-h">
+      <div className="contact-wrap" id="contact">
+        <h2 className="contact-h" data-animate>
           &ldquo;Timeless design<br />
           is the kind that<br />
           <u>leaves a mark.</u>&rdquo;
         </h2>
-        <div>
+        <div data-animate>
           <p className="contact-attr">— Roger Paniagua</p>
           <p className="contact-sub">
             I&apos;m always interested in conversations with people who believe that great creative
@@ -367,8 +368,8 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer>
-        <img src="/ROGER.svg" alt="" aria-hidden="true" className="footer-watermark-img" />
-        <p className="footer-copy">© 2026 Roger Paniagua. All rights reserved.</p>
+        <img src="/ROGER.svg" alt="" aria-hidden="true" className="footer-watermark-img" data-animate />
+        <p className="footer-copy" data-animate>© 2026 Roger Paniagua. All rights reserved.</p>
       </footer>
     </>
   )
