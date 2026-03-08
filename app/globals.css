@@ -202,6 +202,7 @@ nav {
   display: grid; grid-template-columns: 44px 1fr; gap: 12px;
 }
 .p-card:first-child { border-top: 1px solid var(--border); }
+.p-card:last-child { border-bottom: none; }
 .p-num { font-size: 11px; font-weight: 600; color: var(--muted); padding-top: 2px; }
 .p-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
 .p-text { font-size: 13px; color: var(--muted); line-height: 1.65; }

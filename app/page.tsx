@@ -4,15 +4,55 @@ import { useState, useEffect, useRef } from 'react'
 import Navbar from './Navbar'
 import HeroParticles from './HeroParticles'
 
-// Heights set per-logo so all marks appear at similar visual weight.
-// Aspect ratios: elaniin 6.64:1 · arka 6.14:1 · vertikal 5.32:1 · cavalier 4.73:1 · smartpyme 5.94:1 · marucha 4.0:1
+// ─────────────────────────────────────────────────────────────
+// ASSET NAMING CONVENTION — /public/
+// All files must use kebab-case: lowercase, hyphens, no spaces,
+// no special characters, no uppercase.
+//
+// Pattern:  [brand]-[descriptor]-[variant]-[index].[ext]
+// Examples: elaniin-in-la-banner-01.png
+//           blue-engine-launch.mp4
+//           diesel-road.svg
+//
+// Rules:
+//   ✓  lowercase only
+//   ✓  hyphens as word separators
+//   ✓  numbers padded with leading zero (01, 02 …)
+//   ✗  no spaces          ("Blue Engine.png"   → "blue-engine.png")
+//   ✗  no camelCase       ("BlueEngine.mp4"    → "blue-engine.mp4")
+//   ✗  no underscores     ("blue_engine.svg"   → "blue-engine.svg")
+//   ✗  no special chars   ("elaniin (LA).png"  → "elaniin-la.png")
+//
+// ─────────────────────────────────────────────────────────────
+// NEW LOGO CHECKLIST:
+// 1. Name the file in kebab-case and place it in /public/
+// 2. Check the SVG viewBox to get the aspect ratio (w ÷ h)
+// 3. Pick a `height` so the rendered width lands in the ~115–185px
+//    range — squarer logos (ratio < 4:1) need more height than
+//    wide wordmarks to feel visually balanced in the marquee
+// 4. Add the entry to journeyLogos below (both sets are rendered
+//    automatically from this single array — no manual duplication)
+// 5. If the logo deserves a tag label (e.g. "Home ♥"), add `tag`
+// ─────────────────────────────────────────────────────────────
+
+// Aspect ratios & target rendered widths at current heights:
+//   elaniin       6.64:1  28px → ~186px
+//   arka-software 6.14:1  26px → ~160px
+//   vertikal      5.32:1  22px → ~117px
+//   cavalier      4.73:1  26px → ~123px
+//   smartpyme     5.94:1  22px → ~131px
+//   marucha       4.0:1   32px → ~128px
+//   diesel-road   2.96:1  40px → ~119px
+//   pluma-verde   3.42:1  36px → ~123px
 const journeyLogos = [
-  { src: '/elaniin.svg',      alt: 'Elaniin',       height: 28, tag: 'Home ♥' },
+  { src: '/elaniin.svg',       alt: 'Elaniin',       height: 28, tag: 'Home ♥' },
   { src: '/arka-software.svg', alt: 'Arka Software', height: 26 },
-  { src: '/vertikal.svg',     alt: 'Vertikal',      height: 22 },
-  { src: '/cavalier.svg',     alt: 'Cavalier',      height: 26 },
-  { src: '/smartpyme.svg',    alt: 'SmartPyme',     height: 22 },
-  { src: '/marucha.svg',      alt: 'Marucha',       height: 32, tag: 'The first brand of my career' },
+  { src: '/vertikal.svg',      alt: 'Vertikal',      height: 22 },
+  { src: '/cavalier.svg',      alt: 'Cavalier',      height: 26 },
+  { src: '/smartpyme.svg',     alt: 'SmartPyme',     height: 22 },
+  { src: '/marucha.svg',       alt: 'Marucha',       height: 32, tag: 'The first brand of my career' },
+  { src: '/diesel-road.svg',   alt: 'Diesel Road',   height: 40 },
+  { src: '/pluma-verde.svg',   alt: 'Pluma Verde',   height: 36 },
 ]
 
 const roles = [
@@ -392,7 +432,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer>
-        <img src="/ROGER.svg" alt="" aria-hidden="true" className="footer-watermark-img" data-animate width="420" height="83" />
+        <img src="/roger.svg" alt="" aria-hidden="true" className="footer-watermark-img" data-animate width="420" height="83" />
         <p className="footer-copy" data-animate>© 2026 Roger Paniagua. All rights reserved.</p>
       </footer>
     </>

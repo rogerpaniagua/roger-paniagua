@@ -29,7 +29,7 @@ export default function BlueEngine() {
 
         {/* VIDEO */}
         <video
-          src="/BlueEngineLaunch.mp4"
+          src="/blue-engine-launch.mp4"
           autoPlay
           muted
           loop
@@ -57,7 +57,7 @@ export default function BlueEngine() {
 
       {/* FOOTER */}
       <footer className="footer-light">
-        <img src="/ROGER.svg" alt="" aria-hidden="true" className="footer-watermark-img footer-watermark-light" />
+        <img src="/roger.svg" alt="" aria-hidden="true" className="footer-watermark-img footer-watermark-light" />
         <p className="footer-copy footer-copy--light">© 2026 Roger Paniagua. All rights reserved.</p>
       </footer>
     </>
