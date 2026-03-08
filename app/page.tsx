@@ -97,7 +97,7 @@ export default function Home() {
       setStatValues([
         Math.round(ease * 10),
         Math.round(ease * 85) / 10,
-        Math.round(ease * 6),
+        Math.round(ease * 7),
       ])
       if (t < 1) requestAnimationFrame(tick)
     }
@@ -153,7 +153,7 @@ export default function Home() {
         </div>
         <div className="stat">
           <div className="stat-n">{statValues[2]}</div>
-          <div className="stat-l">Google Project Management certifications</div>
+          <div className="stat-l">Google certifications</div>
         </div>
         <div className="stat">
           <div className="stat-n">60+</div>
@@ -239,6 +239,17 @@ export default function Home() {
               <span className="w-cta">View project →</span>
             </div>
           </a>
+          <a className="work-row wc-active" href="/work/blue-engine">
+            <div>
+              <div className="wc-cat">Campaign Design</div>
+              <div className="w-title">Blue Engine Launch Campaign</div>
+              <p className="w-sub">Launching Elaniin&apos;s execution framework through a campaign built on precision and craft.</p>
+            </div>
+            <div className="work-row-right">
+              <span className="w-year">2026</span>
+              <span className="w-cta">View project →</span>
+            </div>
+          </a>
           <div className="work-row wc-soon">
             <div>
               <div className="wc-cat">Brand Strategy</div>
@@ -255,17 +266,6 @@ export default function Home() {
               <div className="wc-cat">Leadership</div>
               <div className="w-title">Creative Team Scale-up</div>
               <p className="w-sub">Built and unlocked a cross-functional creative unit from the ground up.</p>
-            </div>
-            <div className="work-row-right">
-              <span className="w-year">2023</span>
-              <span className="w-cta">Coming soon</span>
-            </div>
-          </div>
-          <div className="work-row wc-soon">
-            <div>
-              <div className="wc-cat">Comm. Strategy</div>
-              <div className="w-title">Communication Framework</div>
-              <p className="w-sub">Multi-channel communication strategy for a high-growth tech brand.</p>
             </div>
             <div className="work-row-right">
               <span className="w-year">2023</span>

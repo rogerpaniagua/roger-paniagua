@@ -46,10 +46,10 @@ export default function ElaniinLA() {
       {/* NEXT PROJECT */}
       <div className="cs-footer-nav">
         <div className="cs-footer-nav-inner">
-          <div>
+          <a href="/work/blue-engine" style={{ textDecoration: 'none' }}>
             <div className="cs-footer-eyebrow">Next project</div>
-            <div className="cs-footer-title">Coming soon</div>
-          </div>
+            <div className="cs-footer-title">Blue Engine Launch Campaign</div>
+          </a>
           <a href="/#work" className="cs-footer-back">← Back to work</a>
         </div>
       </div>
