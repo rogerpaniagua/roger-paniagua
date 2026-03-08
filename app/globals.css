@@ -258,10 +258,16 @@ a.cred:hover .cred-skills { color: rgba(255,255,255,.5); }
 .contact-link:hover { color: rgba(255,255,255,.7); }
 
 /* FOOTER */
-footer { background: var(--black); margin: 0; padding: 0; overflow: hidden; line-height: 0; }
+footer { background: var(--black); margin: 0; padding: 0 0 24px; overflow: hidden; line-height: 0; }
 .footer-watermark-img { width: 100%; height: auto; display: block; margin: 0; padding: 0; opacity: 0.12; }
 .footer-light { background: var(--bg); }
 .footer-watermark-light { opacity: 0.35; }
+.footer-copy {
+  line-height: 1; font-size: 11px; color: rgba(255, 255, 255, 0.25);
+  text-align: center; margin-top: 20px; padding: 0 24px;
+  font-family: "Instrument Sans", sans-serif; font-weight: 400; letter-spacing: .02em;
+}
+.footer-copy--light { color: rgba(26, 25, 21, 0.3); }
 
 /* CASE STUDY HERO */
 .cs-hero-img {

@@ -163,9 +163,12 @@ export default function Home() {
 
       {/* TRUSTED BY */}
       <div className="trusted-section" data-animate>
-        <div className="eyebrow trusted-eyebrow">Brands &amp; Organizations</div>
+        <div className="eyebrow trusted-eyebrow">Part of my journey</div>
         <div className="trusted-logos">
-          <img src="/elaniin.svg" alt="Elaniin" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+            <img src="/elaniin.svg" alt="Elaniin" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
+            <span style={{ fontSize: '9px', fontWeight: 600, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--muted)', opacity: 0.6 }}>Home ♥</span>
+          </div>
           <img src="/arka-software.svg" alt="Arka Software" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
           <img src="/vertikal.svg" alt="Vertikal" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
           <img src="/cavalier.svg" alt="Cavalier" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
@@ -359,6 +362,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer>
         <img src="/ROGER.svg" alt="" aria-hidden="true" className="footer-watermark-img" />
+        <p className="footer-copy">© 2026 Roger Paniagua. All rights reserved.</p>
       </footer>
     </>
   )
