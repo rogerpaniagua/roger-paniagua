@@ -115,7 +115,7 @@ export default function Home() {
       <div className="hero">
         <div>
           <h1 className="hero-h">
-            Building the creative <span className="hero-typing">systems</span> that move brands forward.
+            Building the <span className="hero-typing">creative systems</span> that move brands forward.
           </h1>
           <div className="hero-tags" style={{ marginTop: '32px' }}>
             {['Creative Direction', 'Brand Strategy', 'Team Leadership', 'Visual Systems'].map(tag => (
@@ -156,8 +156,8 @@ export default function Home() {
           <div className="stat-l">Google Project Management certifications</div>
         </div>
         <div className="stat">
-          <div className="stat-n">∞</div>
-          <div className="stat-l">Teams built, unlocked &amp; elevated</div>
+          <div className="stat-n">60+</div>
+          <div className="stat-l">Brands brought to life</div>
         </div>
       </div>
 
@@ -167,12 +167,16 @@ export default function Home() {
         <div className="trusted-logos">
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
             <img src="/elaniin.svg" alt="Elaniin" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
-            <span style={{ fontSize: '9px', fontWeight: 600, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--muted)', opacity: 0.6 }}>Home ♥</span>
+            <span style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '.06em', textTransform: 'none', color: 'var(--muted)', opacity: 0.6 }}>Home ♥</span>
           </div>
           <img src="/arka-software.svg" alt="Arka Software" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
           <img src="/vertikal.svg" alt="Vertikal" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
           <img src="/cavalier.svg" alt="Cavalier" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
           <img src="/smartpyme.svg" alt="SmartPyme" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+            <img src="/marucha.svg" alt="Marucha" className="trusted-logo" width="120" height="32" style={{ objectFit: 'contain' }} />
+            <span style={{ fontSize: '9px', fontWeight: 500, letterSpacing: '.06em', textTransform: 'none', color: 'var(--muted)', opacity: 0.6 }}>The first brand of my career</span>
+          </div>
         </div>
       </div>
 
