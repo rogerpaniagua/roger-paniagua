@@ -113,8 +113,8 @@ nav {
 }
 
 /* HERO */
-.hero { padding: 96px 56px 80px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: start; }
-.hero-h { font-size: clamp(40px, 5.5vw, 78px); font-weight: 700; line-height: 1; letter-spacing: -.025em; color: var(--text); }
+.hero { padding: 120px 56px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: center; min-height: 90vh; position: relative; isolation: isolate; }
+.hero-h { font-size: clamp(50px, 6.8vw, 96px); font-weight: 700; line-height: 1; letter-spacing: -.025em; color: var(--text); }
 .location { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
 .sub { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
 .sub strong { color: var(--text); font-weight: 500; }
@@ -310,7 +310,7 @@ footer { background: var(--black); margin: 0; padding: 0 0 24px; overflow: hidde
   html { scroll-padding-top: 72px; }
   nav { padding: 20px 24px; }
   .nav-links { gap: 16px; }
-  .hero { grid-template-columns: 1fr; gap: 36px; padding: 64px 24px 48px; }
+  .hero { grid-template-columns: 1fr; gap: 36px; padding: 72px 24px 64px; min-height: auto; align-items: start; }
   .stats { grid-template-columns: 1fr 1fr; }
   .stat { padding: 28px 24px; border-bottom: 1px solid var(--border); }
   .split { grid-template-columns: 1fr; }

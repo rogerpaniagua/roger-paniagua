@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Navbar from './Navbar'
+import HeroParticles from './HeroParticles'
 
 const roles = [
   {
@@ -113,6 +114,7 @@ export default function Home() {
 
       {/* HERO */}
       <div className="hero">
+        <HeroParticles />
         <div>
           <h1 className="hero-h">
             Building the <span className="hero-typing">creative systems</span> that move brands forward.
