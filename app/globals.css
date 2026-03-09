@@ -217,7 +217,7 @@ nav {
   text-decoration: none; color: inherit;
   transition: background .15s, transform 0.2s ease, box-shadow 0.2s ease;
 }
-.work-row.wc-soon { opacity: 0.45; }
+.work-row.wc-soon { opacity: 0.45; padding-top: 16px; padding-bottom: 16px; }
 .work-row.wc-active:hover {
   background: #2a2825;
   transform: translateY(-4px);
@@ -325,6 +325,7 @@ footer { background: var(--black); margin: 0; padding: 0 0 24px; overflow: hidde
 
 /* RESPONSIVE */
 @media (max-width: 767px) {
+  .hero-particles { display: none; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .hero-h { font-size: 3.4rem; }

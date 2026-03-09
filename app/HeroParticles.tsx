@@ -19,14 +19,6 @@ const DESKTOP = {
   lineMaxOpacity: 0.2,
 }
 
-const MOBILE = {
-  count: 25,
-  connectDist: 115,
-  dotRadius: () => 1.8 + Math.random() * 0.6,
-  speed: () => 0.08 + Math.random() * 0.12,
-  dotOpacity: 0.6,
-  lineMaxOpacity: 0.32,
-}
 
 const MAX_SPEED = 0.75
 const DAMPING = 0.992
@@ -54,7 +46,9 @@ export default function HeroParticles() {
     if (typeof window === 'undefined') return
 
     const isMobile = window.matchMedia('(max-width: 767px)').matches
-    const cfg = isMobile ? MOBILE : DESKTOP
+    if (isMobile) return
+
+    const cfg = DESKTOP
 
     const canvas = canvasRef.current
     if (!canvas) return
@@ -84,8 +78,8 @@ export default function HeroParticles() {
 
       // Update positions
       for (const p of particles) {
-        // Mouse repulsion (desktop only — no mouse on touch)
-        if (!isMobile && mouse) {
+        // Mouse repulsion
+        if (mouse) {
           const dx = p.x - mouse.x
           const dy = p.y - mouse.y
           const distSq = dx * dx + dy * dy
@@ -162,28 +156,15 @@ export default function HeroParticles() {
       draw()
     })
 
-    // Mouse interaction — desktop only
-    if (!isMobile) {
-      const hero = canvas.parentElement
-      const onMouseMove = (e: MouseEvent) => {
-        const rect = canvas.getBoundingClientRect()
-        mouseRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top }
-      }
-      const onMouseLeave = () => { mouseRef.current = null }
-      hero?.addEventListener('mousemove', onMouseMove)
-      hero?.addEventListener('mouseleave', onMouseLeave)
-
-      const ro = new ResizeObserver(setSize)
-      ro.observe(canvas)
-
-      return () => {
-        cancelAnimationFrame(initId)
-        cancelAnimationFrame(animId)
-        ro.disconnect()
-        hero?.removeEventListener('mousemove', onMouseMove)
-        hero?.removeEventListener('mouseleave', onMouseLeave)
-      }
+    // Mouse interaction
+    const hero = canvas.parentElement
+    const onMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect()
+      mouseRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top }
     }
+    const onMouseLeave = () => { mouseRef.current = null }
+    hero?.addEventListener('mousemove', onMouseMove)
+    hero?.addEventListener('mouseleave', onMouseLeave)
 
     const ro = new ResizeObserver(setSize)
     ro.observe(canvas)
@@ -192,6 +173,8 @@ export default function HeroParticles() {
       cancelAnimationFrame(initId)
       cancelAnimationFrame(animId)
       ro.disconnect()
+      hero?.removeEventListener('mousemove', onMouseMove)
+      hero?.removeEventListener('mouseleave', onMouseLeave)
     }
   }, [])
 
@@ -207,6 +190,7 @@ export default function HeroParticles() {
         pointerEvents: 'none',
         zIndex: -1,
       }}
+      className="hero-particles"
     />
   )
 }
