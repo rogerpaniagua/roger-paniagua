@@ -4,14 +4,32 @@ import CustomCursor from './CustomCursor'
 
 export const metadata: Metadata = {
   title: 'Roger Paniagua — Creative & Communication Leader',
-  description: 'Creative & communication leader with 10+ years building and scaling high-performance teams. Based in El Salvador.',
+  description: 'Building the creative systems that move brands forward.',
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     title: 'Roger Paniagua — Creative & Communication Leader',
-    description: 'Creative & communication leader with 10+ years building and scaling high-performance teams.',
-    url: 'https://rogerpaniagua.com',
+    description: 'Building the creative systems that move brands forward.',
+    url: 'https://www.rogerpaniagua.com',
     siteName: 'Roger Paniagua',
+    images: [
+      {
+        url: 'https://www.rogerpaniagua.com/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Roger Paniagua — Creative & Communication Leader',
+      },
+    ],
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Roger Paniagua — Creative & Communication Leader',
+    description: 'Building the creative systems that move brands forward.',
+    images: ['https://www.rogerpaniagua.com/og.png'],
   },
 }
 
