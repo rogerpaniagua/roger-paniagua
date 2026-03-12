@@ -166,6 +166,7 @@ export default function Home() {
       <Navbar logoHref="#" />
 
       {/* HERO */}
+      <main>
       <div className="hero">
         <HeroParticles />
         <div>
@@ -429,6 +430,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      </main>
 
       {/* FOOTER */}
       <footer>

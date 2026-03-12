@@ -47,7 +47,7 @@ export default function Navbar({ logoHref = '#', anchorPrefix = '' }: NavbarProp
       </nav>
 
       {/* Mobile menu */}
-      <div className={`mobile-menu${open ? ' mobile-menu--open' : ''}`} aria-hidden={!open}>
+      <div className={`mobile-menu${open ? ' mobile-menu--open' : ''}`} aria-hidden={!open} inert={!open ? true : undefined}>
         <div className="mobile-menu-header">
           <a href={logoHref} className="logo" onClick={close}>
             <LogoSVG />
