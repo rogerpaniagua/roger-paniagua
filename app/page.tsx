@@ -151,7 +151,7 @@ export default function Home() {
         Math.round(ease * 10),
         Math.round(ease * 85) / 10,
         Math.round(ease * 7),
-        Math.round(ease * 60),
+        Math.round(ease * 70),
       ])
       if (t < 1) requestAnimationFrame(tick)
     }
@@ -207,7 +207,7 @@ export default function Home() {
         </div>
         <div className="stat">
           <div className="stat-n">{statValues[3]}+</div>
-          <div className="stat-l">Brands brought to life</div>
+          <div className="stat-l">brands shaped</div>
         </div>
       </div>
 
