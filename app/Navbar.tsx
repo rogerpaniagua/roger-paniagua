@@ -32,6 +32,7 @@ export default function Navbar({ logoHref = '#', anchorPrefix = '' }: NavbarProp
           <li><a href={`${anchorPrefix}#approach`}>About</a></li>
           <li><a href={`${anchorPrefix}#work`}>Case Studies</a></li>
           <li><a href={`${anchorPrefix}#experience`}>Experience</a></li>
+          <li><a href={`${anchorPrefix}#credentials`}>Credentials</a></li>
           <li><a href={`${anchorPrefix}#contact`} className="nav-cta">Say hello →</a></li>
         </ul>
         <button
@@ -62,6 +63,7 @@ export default function Navbar({ logoHref = '#', anchorPrefix = '' }: NavbarProp
           <li><a href={`${anchorPrefix}#approach`} onClick={close}>About</a></li>
           <li><a href={`${anchorPrefix}#work`} onClick={close}>Case Studies</a></li>
           <li><a href={`${anchorPrefix}#experience`} onClick={close}>Experience</a></li>
+          <li><a href={`${anchorPrefix}#credentials`} onClick={close}>Credentials</a></li>
         </ul>
         <div className="mobile-menu-cta">
           <a href={`${anchorPrefix}#contact`} className="nav-cta mobile-cta" onClick={close}>Say hello →</a>

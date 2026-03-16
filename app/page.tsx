@@ -386,7 +386,7 @@ export default function Home() {
       </div>
 
       {/* CREDENTIALS */}
-      <div className="creds-section" data-animate>
+      <div className="creds-section" id="credentials" data-animate>
         <div className="sec-header">
           <div className="eyebrow">Education &amp; Credentials</div>
           <h2 className="heading">The frameworks<br />I operate with.</h2>
