@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Navbar from './Navbar'
 import HeroParticles from './HeroParticles'
+import HeroTagsMarquee from './HeroTagsMarquee'
 
 // ─────────────────────────────────────────────────────────────
 // ASSET NAMING CONVENTION — /public/
@@ -173,15 +174,7 @@ export default function Home() {
           <h1 className="hero-h">
             Building the <span className="hero-typing">creative systems</span> that move brands forward.
           </h1>
-          <div className="hero-tags" style={{ marginTop: '32px' }}>
-            {['Creative Direction', 'Brand Strategy', 'Team Leadership', 'Visual Systems', 'Graphic Design'].map(tag => (
-              <span key={tag} className="hero-tag">{tag}</span>
-            ))}
-            <div style={{ width: '100%', height: 0 }} />
-            {['Communication Strategy', 'AI Direction', 'Pitch Design', 'UX / UI', 'Photography'].map(tag => (
-              <span key={tag} className="hero-tag">{tag}</span>
-            ))}
-          </div>
+          <HeroTagsMarquee />
         </div>
         <div>
             <div className="profile-card">

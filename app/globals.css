@@ -137,7 +137,10 @@ nav {
 .hero-h { overflow: visible; }
 
 /* HERO SKILL TAGS */
-.hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.hero-tags { display: block; margin-top: 24px; }
+.hero-tags-rows { display: flex; flex-wrap: wrap; gap: 8px; }
+.hero-tags-break { width: 100%; height: 0; }
+.hero-tags-marquee { display: none; }
 .hero-tag {
   display: inline-flex; align-items: center;
   font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
@@ -325,10 +328,27 @@ footer { background: var(--black); margin: 0; padding: 0 0 24px; overflow: hidde
 
 /* RESPONSIVE */
 @media (max-width: 767px) {
+  html { overflow-x: clip; }
   .hero-particles { display: none; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
-  .hero-h { font-size: 3.4rem; }
+  .hero-h { font-size: 3.4rem; overflow-wrap: break-word; }
+  /* Force grid children to respect their track — prevents min-content blowout */
+  .hero > div { min-width: 0; }
+  .hero { overflow-x: hidden; }
+  .hero-tags {
+    overflow: hidden; width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+  .hero-tags-rows { display: none; }
+  .hero-tags-marquee {
+    display: flex; flex-wrap: nowrap; gap: 8px;
+    width: 100%; overflow-x: auto; overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .hero-tags-marquee::-webkit-scrollbar { display: none; }
+  .hero-tags-marquee .hero-tag { flex-shrink: 0; }
   /* Disable all scroll-triggered animations on mobile — no fade, no transform, no transition */
   [data-animate] { opacity: 1; transform: none; transition: none; }
   [data-animate].visible { opacity: 1; transform: none; }
