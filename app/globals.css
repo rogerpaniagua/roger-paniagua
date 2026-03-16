@@ -356,3 +356,23 @@ footer { background: var(--black); margin: 0; padding: 0 0 24px; overflow: hidde
   .cs-content { padding: 56px 24px; }
   .cs-footer-nav { padding: 56px 24px; }
 }
+
+/* PROFILE CARD */
+.profile-card {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px;
+}
+.profile-img {
+  width: 48px; height: 48px; border-radius: 50%;
+  object-fit: cover; object-position: center top;
+  border: 1.5px solid var(--border);
+  flex-shrink: 0;
+}
+.profile-name {
+  font-size: 14px; font-weight: 700; color: var(--text);
+  letter-spacing: -.01em; line-height: 1.2;
+}
+.profile-role {
+  font-size: 11px; color: var(--muted);
+  font-weight: 500; margin-top: 2px;
+}

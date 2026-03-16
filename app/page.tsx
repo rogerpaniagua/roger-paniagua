@@ -184,7 +184,13 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <div className="location">El Salvador · Working globally</div>
+            <div className="profile-card">
+              <img src="/roger-profile.jpg" alt="Roger Paniagua" className="profile-img" />
+              <div className="profile-info">
+                <div className="profile-name">Roger Paniagua</div>
+                <div className="profile-role">Creative &amp; Communication Leader</div>
+              </div>
+            </div>
           <p className="sub">
             I&apos;m Roger — a creative leader with <strong>10+ years</strong> designing and directing high-impact solutions. I don&apos;t just make things look good. I build the systems, vision, and AI-powered workflows that make great design scale.
           </p>
