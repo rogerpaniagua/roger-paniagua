@@ -186,13 +186,7 @@ export default function Home() {
         <div>
           <div className="location">El Salvador · Working globally</div>
           <p className="sub">
-            I&apos;m Roger — a creative leader with <strong>10+ years</strong> building and scaling
-            high-performance teams at Elaniin. I don&apos;t just direct creative work. I architect
-            the systems, culture, and vision that allow it to thrive at scale.
-          </p>
-          <p className="sub">
-            My focus: communication strategy, unlocking teams, and leading organizations toward
-            their next level of creative and operational agility.
+            I&apos;m Roger — a creative leader with <strong>10+ years</strong> designing and directing high-impact solutions. I don&apos;t just make things look good. I build the systems, vision, and AI-powered workflows that make great design scale.
           </p>
         </div>
       </div>
