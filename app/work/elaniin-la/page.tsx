@@ -52,6 +52,11 @@ export default function ElaniinLA() {
         <p className="cs-body">
           We didn&apos;t want it to look like a corporate announcement. We wanted it to feel inevitable — like Elaniin was always meant to arrive there.
         </p>
+        <img
+          src="/elaniin-in-la-banner-04.png"
+          alt="ELANIIN — Engineering Impact from LA"
+          className="cs-banner-img"
+        />
       </article>
 
 
