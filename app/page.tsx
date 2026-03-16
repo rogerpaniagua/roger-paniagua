@@ -178,7 +178,7 @@ export default function Home() {
               <span key={tag} className="hero-tag">{tag}</span>
             ))}
             <div style={{ width: '100%', height: 0 }} />
-            {['Communication Strategy', 'AI Direction'].map(tag => (
+            {['Communication Strategy', 'AI Direction', 'Pitch Design'].map(tag => (
               <span key={tag} className="hero-tag">{tag}</span>
             ))}
           </div>
