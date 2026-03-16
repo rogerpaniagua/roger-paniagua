@@ -149,7 +149,7 @@ export default function Home() {
       const ease = 1 - Math.pow(1 - t, 3)
       setStatValues([
         Math.round(ease * 10),
-        10,
+        Math.round(ease * 10),
         Math.round(ease * 7),
         Math.round(ease * 70),
       ])
