@@ -149,7 +149,7 @@ export default function Home() {
       const ease = 1 - Math.pow(1 - t, 3)
       setStatValues([
         Math.round(ease * 10),
-        Math.round(ease * 85) / 10,
+        10,
         Math.round(ease * 7),
         Math.round(ease * 70),
       ])
@@ -174,11 +174,11 @@ export default function Home() {
             Building the <span className="hero-typing">creative systems</span> that move brands forward.
           </h1>
           <div className="hero-tags" style={{ marginTop: '32px' }}>
-            {['Creative Direction', 'Brand Strategy', 'Team Leadership', 'Visual Systems'].map(tag => (
+            {['Creative Direction', 'Brand Strategy', 'Team Leadership', 'Visual Systems', 'Graphic Design'].map(tag => (
               <span key={tag} className="hero-tag">{tag}</span>
             ))}
             <div style={{ width: '100%', height: 0 }} />
-            {['Communication Strategy', 'AI Direction', 'Pitch Design'].map(tag => (
+            {['Communication Strategy', 'AI Direction', 'Pitch Design', 'UX / UI', 'Photography'].map(tag => (
               <span key={tag} className="hero-tag">{tag}</span>
             ))}
           </div>
@@ -199,7 +199,7 @@ export default function Home() {
         </div>
         <div className="stat">
           <div className="stat-n">{statValues[1]}</div>
-          <div className="stat-l">Years at Elaniin</div>
+          <div className="stat-l">disciplines mastered</div>
         </div>
         <div className="stat">
           <div className="stat-n">{statValues[2]}</div>
