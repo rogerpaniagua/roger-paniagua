@@ -199,7 +199,7 @@ export default function Home() {
         </div>
         <div className="stat">
           <div className="stat-n">{statValues[1]}</div>
-          <div className="stat-l">disciplines mastered</div>
+          <div className="stat-l">Disciplines mastered</div>
         </div>
         <div className="stat">
           <div className="stat-n">{statValues[2]}</div>
@@ -207,7 +207,7 @@ export default function Home() {
         </div>
         <div className="stat">
           <div className="stat-n">{statValues[3]}+</div>
-          <div className="stat-l">brands shaped</div>
+          <div className="stat-l">Brands shaped</div>
         </div>
       </div>
 
