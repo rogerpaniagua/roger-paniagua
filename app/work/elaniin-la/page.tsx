@@ -20,6 +20,12 @@ export default function ElaniinLA() {
           ))}
         </div>
 
+        <img
+          src="/elaniin-in-la-banner-02.png"
+          alt="Elaniin CEO Manifesto 2026"
+          className="cs-banner-img"
+        />
+
         <p className="cs-body">
           Consolidating operations in Los Angeles isn&apos;t a change of address. It&apos;s a statement. And a statement of that magnitude demands a visual communication that matches it — not just aesthetically, but strategically. Something people feel before they read it.
         </p>
@@ -31,6 +37,12 @@ export default function ElaniinLA() {
         <img
           src="/elaniin-in-la-banner-01.png"
           alt="Elaniin in L.A. campaign banner"
+          className="cs-banner-img"
+        />
+
+        <img
+          src="/elaniin-in-la-banner-03.png"
+          alt="Hello Los Angeles — Elaniin expansion"
           className="cs-banner-img"
         />
 
