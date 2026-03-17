@@ -4,14 +4,14 @@ import CustomCursor from "./CustomCursor"
 
 export const metadata: Metadata = {
   title: "Roger Paniagua — Head of Creative",
-  description: "Building the creative systems that move brands forward.",
+  description: "Head of Creative based in El Salvador, working with brands across LATAM and the U.S. 10+ years building creative systems, teams, and campaigns that move organizations forward.",
   icons: {
     icon: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
     title: "Roger Paniagua — Head of Creative",
-    description: "Building the creative systems that move brands forward.",
+    description: "Head of Creative based in El Salvador, working with brands across LATAM and the U.S. 10+ years building creative systems, teams, and campaigns that move organizations forward.",
     url: "https://www.rogerpaniagua.com",
     siteName: "Roger Paniagua",
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Roger Paniagua — Head of Creative",
-    description: "Building the creative systems that move brands forward.",
+    description: "Head of Creative based in El Salvador, working with brands across LATAM and the U.S. 10+ years building creative systems, teams, and campaigns that move organizations forward.",
     images: ["https://www.rogerpaniagua.com/og.png"],
   },
   alternates: {
@@ -47,7 +47,12 @@ const jsonLd = {
     name: "Elaniin",
     url: "https://elaniin.com",
   },
-  description: "Building the creative systems that move brands forward.",
+  areaServed: [
+    { "@type": "Country", "name": "El Salvador" },
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Place", "name": "Latin America" },
+  ],
+  description: "Head of Creative based in El Salvador, working with brands across LATAM and the U.S. 10+ years building creative systems, teams, and campaigns that move organizations forward.",
   sameAs: [
     "https://www.linkedin.com/in/roger-paniagua/",
     "https://www.instagram.com/rogerpaniagua_/",
