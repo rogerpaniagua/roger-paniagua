@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     description: "Building the creative systems that move brands forward.",
     images: ["https://www.rogerpaniagua.com/og.png"],
   },
+  alternates: {
+    canonical: 'https://rogerpaniagua.com',
+  },
 }
 
 const jsonLd = {
