@@ -181,7 +181,7 @@ export default function Home() {
               <img src="/roger-profile.jpg" alt="Roger Paniagua" className="profile-img" />
               <div className="profile-info">
                 <div className="profile-name">Roger Paniagua</div>
-                <div className="profile-role">Creative &amp; Communication Leader</div>
+                <div className="profile-role">Head of Creative</div>
               </div>
             </div>
           <p className="sub">

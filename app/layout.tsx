@@ -3,14 +3,14 @@ import "./globals.css"
 import CustomCursor from "./CustomCursor"
 
 export const metadata: Metadata = {
-  title: "Roger Paniagua — Creative & Communication Leader",
+  title: "Roger Paniagua — Head of Creative",
   description: "Building the creative systems that move brands forward.",
   icons: {
     icon: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Roger Paniagua — Creative & Communication Leader",
+    title: "Roger Paniagua — Head of Creative",
     description: "Building the creative systems that move brands forward.",
     url: "https://www.rogerpaniagua.com",
     siteName: "Roger Paniagua",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         url: "https://www.rogerpaniagua.com/og.png",
         width: 1200,
         height: 630,
-        alt: "Roger Paniagua — Creative & Communication Leader",
+        alt: "Roger Paniagua — Head of Creative",
       },
     ],
     locale: "en_US",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Roger Paniagua — Creative & Communication Leader",
+    title: "Roger Paniagua — Head of Creative",
     description: "Building the creative systems that move brands forward.",
     images: ["https://www.rogerpaniagua.com/og.png"],
   },
@@ -41,7 +41,7 @@ const jsonLd = {
   "@type": "Person",
   name: "Roger Paniagua",
   url: "https://www.rogerpaniagua.com",
-  jobTitle: "Creative & Communication Leader",
+  jobTitle: "Head of Creative",
   worksFor: {
     "@type": "Organization",
     name: "Elaniin",
