@@ -356,9 +356,9 @@ footer { background: var(--black); margin: 0; padding: 0 0 24px; overflow: hidde
 
 @media (max-width: 960px) {
   html { scroll-padding-top: 72px; }
-  nav { padding: 20px 24px; }
+  nav { padding: 20px 24px; position: fixed; top: 0; left: 0; right: 0; }
   .nav-links { gap: 16px; }
-  .hero { grid-template-columns: 1fr; gap: 36px; padding: 72px 24px 64px; min-height: auto; align-items: start; }
+  .hero { grid-template-columns: 1fr; gap: 36px; padding: 72px 24px 64px; padding-top: 100px; min-height: auto; align-items: start; }
   .stats { grid-template-columns: 1fr 1fr; }
   .stat { padding: 28px 24px; border-bottom: 1px solid var(--border); }
   .split { grid-template-columns: 1fr; }
