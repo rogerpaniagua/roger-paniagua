@@ -185,7 +185,7 @@ export default function Home() {
               </div>
             </div>
           <p className="sub">
-            I&apos;m Roger — a creative leader with <strong>10+ years</strong> designing and directing high-impact solutions. I don&apos;t just make things look good. I build the systems, vision, and AI-powered workflows that make great design scale.
+            I&apos;m Roger — a creative leader with <strong>10+ years</strong> designing and directing high-impact solutions. I don&apos;t just make things look good. I build the systems, vision, and AI-powered workflows that make great design scale. Based in El Salvador, working with brands across LATAM and the U.S.
           </p>
         </div>
       </div>
@@ -250,7 +250,7 @@ export default function Home() {
             I started as a graphic designer — and I still am one at heart. Over time I realized that the most powerful thing I could do with that eye wasn&apos;t just design more. It was build the conditions for great creative work to emerge from an entire team.
           </p>
           <p className="body-text">
-            Today I operate at the intersection of craft and leadership. Design is my native language — strategy and people management are what I&apos;ve layered on top. At Elaniin I&apos;ve grown from making things to shaping how a whole creative function thinks, decides, and executes.
+            Today I operate at the intersection of craft and leadership. Design is my native language — strategy and people management are what I&apos;ve layered on top. At Elaniin — and with brands across LATAM and the U.S. — I&apos;ve grown from making things to shaping how a whole creative function thinks, decides, and executes.
           </p>
           <p className="body-text">
             That balance is intentional. The best creative leaders never stop seeing like designers — they just learn to lead at a larger scale.
