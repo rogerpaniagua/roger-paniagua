@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "Roger Paniagua",
     images: [
       {
-        url: "https://www.rogerpaniagua.com/og.png",
+        url: "https://www.rogerpaniagua.com/roger-og.png",
         width: 1200,
         height: 630,
         alt: "Roger Paniagua — Head of Creative",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Roger Paniagua — Head of Creative",
     description: "Head of Creative based in El Salvador, working with brands across LATAM and the U.S. 10+ years building creative systems, teams, and campaigns that move organizations forward.",
-    images: ["https://www.rogerpaniagua.com/og.png"],
+    images: ["https://www.rogerpaniagua.com/roger-og.png"],
   },
   alternates: {
     canonical: 'https://rogerpaniagua.com',
