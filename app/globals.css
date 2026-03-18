@@ -409,9 +409,9 @@ footer { background: var(--black); margin: 0; padding: 0 0 24px; overflow: hidde
   .contact-link { color: rgba(255,255,255,0.5); }
   .eyebrow { color: #3a3835; }
   .footer-copy { color: rgba(255,255,255,0.5); }
-  .wc-soon .wc-cat { color: #c8c6c2 !important; }
-  .wc-soon .w-title { color: #edeae3 !important; }
-  .wc-soon .w-sub { color: #c8c6c2 !important; }
-  .wc-soon .w-year { color: #c8c6c2 !important; }
-  .wc-soon .w-cta { color: #c8c6c2 !important; }
+  .work-row.wc-soon .wc-cat,
+  .work-row.wc-soon .w-sub,
+  .work-row.wc-soon .w-year,
+  .work-row.wc-soon .w-cta { color: #c8c6c2 !important; }
+  .work-row.wc-soon .w-title { color: #edeae3 !important; }
 }
