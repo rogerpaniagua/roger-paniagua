@@ -396,3 +396,10 @@ footer { background: var(--black); margin: 0; padding: 0 0 24px; overflow: hidde
   font-size: 11px; color: var(--muted);
   font-weight: 500; margin-top: 2px;
 }
+
+@media (max-width: 960px) {
+  .wc-cat, .w-sub, .w-year, .w-cta { color: #4a4845; }
+  .w-title { color: var(--black); }
+  .badge { color: #4a4845; }
+  .exp-skill { color: #4a4845; }
+}
