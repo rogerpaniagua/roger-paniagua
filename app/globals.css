@@ -335,7 +335,7 @@ footer { background: var(--black); margin: 0; padding: 0 0 24px; overflow: hidde
   .hero-h { font-size: 3.4rem; overflow-wrap: break-word; }
   /* Force grid children to respect their track — prevents min-content blowout */
   .hero > div { min-width: 0; }
-  .hero { overflow-x: hidden; }
+  .hero { overflow-x: clip; }
   .hero-tags {
     overflow: hidden; width: 100%;
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
