@@ -113,8 +113,8 @@ nav {
 }
 
 /* HERO */
-.hero { padding: 120px 56px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: center; min-height: 90vh; position: relative; isolation: isolate; overflow: visible; }
-.hero-h { font-size: clamp(50px, 6.8vw, 96px); font-weight: 700; line-height: 1; letter-spacing: -.025em; color: var(--text); }
+.hero { padding: 120px 56px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: center; min-height: 90vh; position: relative; isolation: isolate; overflow: hidden; }
+.hero-h { font-size: clamp(50px, 6.8vw, 96px); font-weight: 700; line-height: 1; letter-spacing: -.025em; color: var(--text); overflow-wrap: break-word; word-break: break-word; }
 .location { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
 .sub { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
 .sub strong { color: var(--text); font-weight: 500; }
