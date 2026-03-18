@@ -408,4 +408,10 @@ footer { background: var(--black); margin: 0; padding: 0 0 24px; overflow: hidde
   .contact-attr { color: rgba(255,255,255,0.5); }
   .contact-link { color: rgba(255,255,255,0.5); }
   .eyebrow { color: #3a3835; }
+  .footer-copy { color: rgba(255,255,255,0.5); }
+  .wc-soon .wc-cat { color: #a09e9b; }
+  .wc-soon .w-title { color: #d4d2ce; }
+  .wc-soon .w-sub { color: #a09e9b; }
+  .wc-soon .w-year { color: #a09e9b; }
+  .wc-soon .w-cta { color: #a09e9b; }
 }
