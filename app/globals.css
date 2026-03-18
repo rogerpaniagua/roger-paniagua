@@ -279,7 +279,7 @@ a.cred:hover .cred-skills { color: rgba(255,255,255,.5); }
 
 /* CONTACT */
 .contact-wrap { background: var(--black); padding: 96px 56px; display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: start; }
-.contact-h { font-family: "Source Serif 4", serif; font-size: clamp(36px, 5vw, 72px); font-style: italic; font-weight: 500; line-height: 1.1; color: #fff; letter-spacing: -.01em; }
+.contact-h { font-family: "Source Serif 4", serif; font-size: clamp(36px, 5vw, 72px); font-style: italic; font-weight: 500; line-height: 1.1; color: #EDEAE3; letter-spacing: -.01em; }
 .contact-h u { text-decoration: underline; text-underline-offset: 8px; text-decoration-thickness: 1px; text-decoration-color: rgba(255,255,255,.4); }
 .contact-attr { font-size: 11px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-top: 20px; margin-bottom: 48px; }
 .contact-sub { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.7; margin-bottom: 28px; }
