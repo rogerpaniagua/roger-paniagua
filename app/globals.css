@@ -127,6 +127,7 @@ nav {
 .hero-typing {
   display: inline;
   overflow: visible;
+  white-space: nowrap;
   background: linear-gradient(90deg, #1a1915, #7a7870, #1a1915);
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -134,7 +135,6 @@ nav {
   -webkit-text-fill-color: transparent;
   animation: shimmer 7s ease-in-out infinite;
 }
-.hero-h { overflow: visible; }
 
 /* HERO SKILL TAGS */
 .hero-tags { display: block; margin-top: 24px; }
