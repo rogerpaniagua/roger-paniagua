@@ -398,8 +398,14 @@ footer { background: var(--black); margin: 0; padding: 0 0 24px; overflow: hidde
 }
 
 @media (max-width: 960px) {
-  .wc-cat, .w-sub, .w-year, .w-cta { color: #4a4845; }
+  .wc-cat, .w-sub, .w-year, .w-cta { color: #3a3835; }
   .w-title { color: var(--black); }
-  .badge { color: #4a4845; }
-  .exp-skill { color: #4a4845; }
+  .badge { color: #3a3835; }
+  .exp-skill { color: #3a3835; }
+  .exp-list-co { color: #3a3835; }
+  .cred-by { color: #3a3835; }
+  .cred-skills { color: #3a3835; }
+  .contact-attr { color: rgba(255,255,255,0.5); }
+  .contact-link { color: rgba(255,255,255,0.5); }
+  .eyebrow { color: #3a3835; }
 }
