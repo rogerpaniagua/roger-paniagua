@@ -311,39 +311,7 @@ export default function Home() {
               <span className="w-cta">View project →</span>
             </div>
           </a>
-          <div className="work-row wc-soon">
-            <div>
-              <div className="wc-cat">Brand Strategy</div>
-              <div className="w-title">Elaniin Brand System</div>
-              <p className="w-sub">Full brand architecture, creative direction &amp; visual identity at scale.</p>
-            </div>
-            <div className="work-row-right">
-              <span className="w-year">2024</span>
-              <span className="w-cta">Coming soon</span>
-            </div>
-          </div>
-          <div className="work-row wc-soon">
-            <div>
-              <div className="wc-cat">Leadership</div>
-              <div className="w-title">Creative Team Scale-up</div>
-              <p className="w-sub">Built and unlocked a cross-functional creative unit from the ground up.</p>
-            </div>
-            <div className="work-row-right">
-              <span className="w-year">2023</span>
-              <span className="w-cta">Coming soon</span>
-            </div>
-          </div>
-          <div className="work-row wc-soon">
-            <div>
-              <div className="wc-cat">Art Direction</div>
-              <div className="w-title">Visual Identity Systems</div>
-              <p className="w-sub">Scalable design systems for digital-first brands across multiple verticals.</p>
-            </div>
-            <div className="work-row-right">
-              <span className="w-year">2022</span>
-              <span className="w-cta">Coming soon</span>
-            </div>
-          </div>
+
         </div>
       </div>
 
