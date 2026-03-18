@@ -313,35 +313,35 @@ export default function Home() {
           </a>
           <div className="work-row wc-soon">
             <div>
-              <div className="wc-cat" style={{ color: '#e0ddd8' }}>Brand Strategy</div>
-              <div className="w-title" style={{ color: '#ffffff' }}>Elaniin Brand System</div>
-              <p className="w-sub" style={{ color: '#e0ddd8' }}>Full brand architecture, creative direction &amp; visual identity at scale.</p>
+              <div className="wc-cat">Brand Strategy</div>
+              <div className="w-title">Elaniin Brand System</div>
+              <p className="w-sub">Full brand architecture, creative direction &amp; visual identity at scale.</p>
             </div>
             <div className="work-row-right">
-              <span className="w-year" style={{ color: '#e0ddd8' }}>2024</span>
-              <span className="w-cta" style={{ color: '#e0ddd8' }}>Coming soon</span>
+              <span className="w-year">2024</span>
+              <span className="w-cta">Coming soon</span>
             </div>
           </div>
           <div className="work-row wc-soon">
             <div>
-              <div className="wc-cat" style={{ color: '#e0ddd8' }}>Leadership</div>
-              <div className="w-title" style={{ color: '#ffffff' }}>Creative Team Scale-up</div>
-              <p className="w-sub" style={{ color: '#e0ddd8' }}>Built and unlocked a cross-functional creative unit from the ground up.</p>
+              <div className="wc-cat">Leadership</div>
+              <div className="w-title">Creative Team Scale-up</div>
+              <p className="w-sub">Built and unlocked a cross-functional creative unit from the ground up.</p>
             </div>
             <div className="work-row-right">
-              <span className="w-year" style={{ color: '#e0ddd8' }}>2023</span>
-              <span className="w-cta" style={{ color: '#e0ddd8' }}>Coming soon</span>
+              <span className="w-year">2023</span>
+              <span className="w-cta">Coming soon</span>
             </div>
           </div>
           <div className="work-row wc-soon">
             <div>
-              <div className="wc-cat" style={{ color: '#e0ddd8' }}>Art Direction</div>
-              <div className="w-title" style={{ color: '#ffffff' }}>Visual Identity Systems</div>
-              <p className="w-sub" style={{ color: '#e0ddd8' }}>Scalable design systems for digital-first brands across multiple verticals.</p>
+              <div className="wc-cat">Art Direction</div>
+              <div className="w-title">Visual Identity Systems</div>
+              <p className="w-sub">Scalable design systems for digital-first brands across multiple verticals.</p>
             </div>
             <div className="work-row-right">
-              <span className="w-year" style={{ color: '#e0ddd8' }}>2022</span>
-              <span className="w-cta" style={{ color: '#e0ddd8' }}>Coming soon</span>
+              <span className="w-year">2022</span>
+              <span className="w-cta">Coming soon</span>
             </div>
           </div>
         </div>
