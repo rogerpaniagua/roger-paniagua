@@ -32,21 +32,23 @@ export default function Work() {
           <p className="work-page-intro">A curated selection of projects where strategy and craft came together. Maybe something here sparks your next idea.</p>
         </div>
 
-        <div className="work-page-grid">
-          {cases.map((c) => (
-            <a key={c.slug} href={`/work/${c.slug}`} className="work-page-card" style={{ backgroundImage: `url(${c.image})` }}>
-              <div className="work-page-card-overlay" />
-              <div className="work-page-card-content">
-                <div className="work-page-card-meta">
-                  <span className="work-page-card-cat">{c.category}</span>
-                  <span className="work-page-card-year">{c.year}</span>
+        <div className="work-page-grid-wrap">
+          <div className="work-page-grid">
+            {cases.map((c) => (
+              <a key={c.slug} href={`/work/${c.slug}`} className="work-page-card">
+                <div className="work-page-card-image" style={{ backgroundImage: `url(${c.image})` }} />
+                <div className="work-page-card-content">
+                  <div className="work-page-card-meta">
+                    <span className="work-page-card-cat">{c.category}</span>
+                    <span className="work-page-card-year">{c.year}</span>
+                  </div>
+                  <h2 className="work-page-card-title">{c.title}</h2>
+                  <p className="work-page-card-sub">{c.sub}</p>
+                  <span className="work-page-card-cta">View case study →</span>
                 </div>
-                <h2 className="work-page-card-title">{c.title}</h2>
-                <p className="work-page-card-sub">{c.sub}</p>
-                <span className="work-page-card-cta">View case study →</span>
-              </div>
-            </a>
-          ))}
+              </a>
+            ))}
+          </div>
         </div>
 
         <div className="work-more">

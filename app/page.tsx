@@ -173,7 +173,7 @@ export default function Home() {
         {/* <HeroParticles /> */}
         <div>
           <h1 className="hero-h">
-            Building the <span className="hero-typing">creative systems</span> that move brands forward.
+            Building the <em className="hero-serif">creative systems</em> that move brands forward.
           </h1>
           <HeroTagsMarquee />
         </div>
@@ -290,9 +290,9 @@ export default function Home() {
           <h2 className="heading">Work that tells a <em>story.</em></h2>
         </div>
         <div className="work-featured-grid">
-          <a href="/work/elaniin-la" className="work-featured-card work-featured-card--main" style={{ backgroundImage: 'url(/elaniin-in-la-hero.png)' }}>
-            <div className="work-featured-overlay" />
-            <div className="work-featured-content">
+          <a href="/work/elaniin-la" className="work-featured-card work-featured-card--main">
+            <div className="work-featured-card-image" style={{ backgroundImage: 'url(/elaniin-in-la-hero.png)' }} />
+            <div className="work-featured-card-content">
               <div className="work-featured-meta">
                 <span className="work-featured-new">NEW</span>
                 <span className="work-featured-cat">Brand Communication</span>
