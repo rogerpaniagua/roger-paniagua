@@ -185,7 +185,7 @@ export default function Home() {
               </div>
             </div>
           <p className="sub">
-            I&apos;m Roger — a creative leader with <strong>10+ years</strong> designing and directing high-impact solutions. I don&apos;t just make things look good. I build the systems, vision, and AI-powered workflows that make great design scale. Based in El Salvador, working with brands across LATAM and the U.S.
+            I&apos;m Roger — a creative leader with <strong>10+ years</strong> designing and directing high-impact solutions. I build the systems, vision, and AI-powered workflows that make great design scale. Based in El Salvador, working with brands across LATAM and the U.S.
           </p>
         </div>
       </div>
@@ -286,32 +286,25 @@ export default function Home() {
       <div className="work-section" id="work" data-animate>
         <div className="sec-header">
           <div className="eyebrow">Case Studies</div>
-          <h2 className="heading">Work that<br />tells a story.</h2>
+          <h2 className="heading">Work that tells<br />a <em>story.</em></h2>
         </div>
-        <div className="work-list">
-          <a className="work-row wc-active" href="/work/elaniin-la">
-            <div>
-              <div className="wc-cat">Brand Communication</div>
-              <div className="w-title">Elaniin Lands in L.A.</div>
-              <p className="w-sub">Directing the visual ecosystem behind Elaniin&apos;s expansion into the U.S. market.</p>
-            </div>
-            <div className="work-row-right">
-              <span className="w-year">2026</span>
-              <span className="w-cta">View project →</span>
-            </div>
-          </a>
-          <a className="work-row wc-active" href="/work/blue-engine">
-            <div>
-              <div className="wc-cat">Campaign Design</div>
-              <div className="w-title">Blue Engine Launch Campaign</div>
-              <p className="w-sub">Launching Elaniin&apos;s execution framework through a campaign built on precision and craft.</p>
-            </div>
-            <div className="work-row-right">
-              <span className="w-year">2026</span>
-              <span className="w-cta">View project →</span>
+        <div className="work-featured">
+          <a href="/work/elaniin-la" className="work-featured-card" style={{ backgroundImage: 'url(/elaniin-in-la-hero.png)' }}>
+            <div className="work-featured-overlay" />
+            <div className="work-featured-content">
+              <div className="work-featured-meta">
+                <span className="work-featured-new">New</span>
+                <span className="work-featured-cat">Brand Communication</span>
+                <span className="work-featured-year">2026</span>
+              </div>
+              <h3 className="work-featured-title">Elaniin Lands in L.A.</h3>
+              <p className="work-featured-sub">Directing the visual ecosystem behind Elaniin&apos;s expansion into the U.S. market.</p>
+              <div className="work-featured-ctas">
+                <span className="work-featured-cta-primary">View case study →</span>
+                <a href="/work" className="work-featured-cta-secondary" onClick={e => e.stopPropagation()}>View all case studies →</a>
+              </div>
             </div>
           </a>
-
         </div>
       </div>
 
@@ -319,7 +312,7 @@ export default function Home() {
       <div className="exp-section" id="experience" data-animate>
         <div className="sec-header">
           <div className="eyebrow">Experience</div>
-          <h2 className="heading">A decade of<br />building things.</h2>
+          <h2 className="heading">A <em>decade</em> of<br />building things.</h2>
         </div>
         <div className="exp-interactive">
           {/* Left: role list */}
@@ -357,7 +350,7 @@ export default function Home() {
       <div className="creds-section" id="credentials" data-animate>
         <div className="sec-header">
           <div className="eyebrow">Education &amp; Credentials</div>
-          <h2 className="heading">The frameworks<br />I operate with.</h2>
+          <h2 className="heading">The <em>frameworks</em><br />I operate with.</h2>
         </div>
         <div className="creds-grid">
           <div className="cred"><div className="cred-by">Universidad Don Bosco · 2011–2016</div><div className="cred-name">Licenciatura en Diseño Gráfico</div><div className="cred-skills">Foundation of visual thinking, design theory, and creative craft</div></div>
