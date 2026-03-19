@@ -1,4 +1,5 @@
 import Navbar from '../../Navbar'
+import Footer from '../../Footer'
 
 export default function BlueEngine() {
   return (
@@ -48,17 +49,38 @@ export default function BlueEngine() {
       <div className="cs-footer-nav">
         <div className="cs-footer-nav-inner">
           <a href="/work/elaniin-la" style={{ textDecoration: 'none' }}>
-            <div className="cs-footer-eyebrow">Next project</div>
+            <div className="cs-footer-eyebrow">Next case</div>
             <div className="cs-footer-title">Elaniin Lands in L.A.</div>
           </a>
-          <a href="/#work" className="cs-footer-back">← Back to work</a>
+          <a href="/work" className="cs-footer-back">← Back to cases</a>
         </div>
       </div>
 
       {/* FOOTER */}
-      <footer className="footer-light">
-        <img src="/roger.svg" alt="" aria-hidden="true" className="footer-watermark-img footer-watermark-light" />
-        <p className="footer-copy footer-copy--light">© 2026 Roger Paniagua. All rights reserved.</p>
+      {/* CONTACT */}
+      <div className="contact-wrap" id="contact">
+        <h2 className="contact-h">
+          &ldquo;Timeless design<br />
+          is the kind that<br />
+          <u>leaves a mark.</u>&rdquo;
+        </h2>
+        <div>
+          <p className="contact-attr">— Roger Paniagua</p>
+          <p className="contact-sub">
+            I&apos;m always interested in conversations with people who believe that great creative
+            leadership transforms organizations.
+          </p>
+          <a href="mailto:rogerpaniagua.p@gmail.com" className="contact-btn">Start a conversation →</a>
+          <div className="contact-links">
+            <a href="https://www.linkedin.com/in/roger-paniagua/" target="_blank" rel="noopener noreferrer" className="contact-link">LinkedIn</a>
+            <a href="https://www.instagram.com/rogerpaniagua_/" target="_blank" rel="noopener noreferrer" className="contact-link">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <img src="/roger.svg" alt="" aria-hidden="true" className="footer-watermark-img" width="420" height="83" />
+        <p className="footer-copy">© 2026 Roger Paniagua. All rights reserved.</p>
       </footer>
     </>
   )

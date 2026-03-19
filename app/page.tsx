@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Navbar from './Navbar'
-import HeroParticles from './HeroParticles'
+import Footer from './Footer'
+// import HeroParticles from './HeroParticles'
 import HeroTagsMarquee from './HeroTagsMarquee'
 
 // ─────────────────────────────────────────────────────────────
@@ -169,7 +170,7 @@ export default function Home() {
       {/* HERO */}
       <main>
       <div className="hero">
-        <HeroParticles />
+        {/* <HeroParticles /> */}
         <div>
           <h1 className="hero-h">
             Building the <span className="hero-typing">creative systems</span> that move brands forward.
@@ -286,23 +287,28 @@ export default function Home() {
       <div className="work-section" id="work" data-animate>
         <div className="sec-header">
           <div className="eyebrow">Case Studies</div>
-          <h2 className="heading">Work that tells<br />a <em>story.</em></h2>
+          <h2 className="heading">Work that tells a <em>story.</em></h2>
         </div>
-        <div className="work-featured">
-          <a href="/work/elaniin-la" className="work-featured-card" style={{ backgroundImage: 'url(/elaniin-in-la-hero.png)' }}>
+        <div className="work-featured-grid">
+          <a href="/work/elaniin-la" className="work-featured-card work-featured-card--main" style={{ backgroundImage: 'url(/elaniin-in-la-hero.png)' }}>
             <div className="work-featured-overlay" />
             <div className="work-featured-content">
               <div className="work-featured-meta">
-                <span className="work-featured-new">New</span>
+                <span className="work-featured-new">NEW</span>
                 <span className="work-featured-cat">Brand Communication</span>
                 <span className="work-featured-year">2026</span>
               </div>
               <h3 className="work-featured-title">Elaniin Lands in L.A.</h3>
               <p className="work-featured-sub">Directing the visual ecosystem behind Elaniin&apos;s expansion into the U.S. market.</p>
-              <div className="work-featured-ctas">
-                <span className="work-featured-cta-primary">View case study →</span>
-                <a href="/work" className="work-featured-cta-secondary" onClick={e => e.stopPropagation()}>View all case studies →</a>
-              </div>
+              <span className="work-featured-cta-primary">View case study →</span>
+            </div>
+          </a>
+
+          <a href="/work" className="work-featured-card work-featured-card--all">
+            <div className="work-featured-all-inner">
+              <p className="work-featured-all-eyebrow">Case Studies</p>
+              <h3 className="work-featured-all-heading">See all<br /><em>the work.</em></h3>
+              <span className="work-featured-all-cta">View all cases →</span>
             </div>
           </a>
         </div>
@@ -312,7 +318,7 @@ export default function Home() {
       <div className="exp-section" id="experience" data-animate>
         <div className="sec-header">
           <div className="eyebrow">Experience</div>
-          <h2 className="heading">A <em>decade</em> of<br />building things.</h2>
+          <h2 className="heading">A <em>decade</em> of building things.</h2>
         </div>
         <div className="exp-interactive">
           {/* Left: role list */}
@@ -350,7 +356,7 @@ export default function Home() {
       <div className="creds-section" id="credentials" data-animate>
         <div className="sec-header">
           <div className="eyebrow">Education &amp; Credentials</div>
-          <h2 className="heading">The <em>frameworks</em><br />I operate with.</h2>
+          <h2 className="heading">The <em>frameworks</em> I operate with.</h2>
         </div>
         <div className="creds-grid">
           <div className="cred"><div className="cred-by">Universidad Don Bosco · 2011–2016</div><div className="cred-name">Licenciatura en Diseño Gráfico</div><div className="cred-skills">Foundation of visual thinking, design theory, and creative craft</div></div>
@@ -388,10 +394,7 @@ export default function Home() {
       </main>
 
       {/* FOOTER */}
-      <footer>
-        <img src="/roger.svg" alt="" aria-hidden="true" className="footer-watermark-img" data-animate width="420" height="83" />
-        <p className="footer-copy" data-animate>© 2026 Roger Paniagua. All rights reserved.</p>
-      </footer>
+      <Footer />
     </>
   )
 }

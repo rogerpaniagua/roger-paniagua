@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react'
 
 const TAGS = [
   'Creative Direction', 'Brand Strategy', 'Team Leadership', 'Visual Systems', 'Graphic Design',
-  'Communication Strategy', 'AI Direction', 'Pitch Design', 'UX / UI', 'Photography',
+  'Visual Strategy', 'AI Direction', 'Pitch Design', 'UX / UI', 'Photography',
 ]
 
 export default function HeroTagsMarquee() {
