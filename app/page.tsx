@@ -307,7 +307,7 @@ export default function Home() {
           <a href="/work" className="work-featured-card work-featured-card--all">
             <div className="work-featured-all-inner">
               <p className="work-featured-all-eyebrow">Case Studies</p>
-              <h3 className="work-featured-all-heading">See all<br /><em>the work.</em></h3>
+              <h3 className="work-featured-all-heading">See all <em>the work.</em></h3>
               <span className="work-featured-all-cta">View all cases →</span>
             </div>
           </a>

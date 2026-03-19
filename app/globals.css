@@ -325,9 +325,9 @@ nav {
 .work-featured-card--all {
   background: var(--black);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 56px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 80px 72px 36px 48px;
   text-decoration: none;
   border-radius: 8px;
   transition: background 0.2s ease;
@@ -341,6 +341,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
 }
 
 .work-featured-all-eyebrow {
@@ -393,7 +394,7 @@ nav {
 }
 @media (max-width: 767px) {
   .work-featured-card { min-height: 360px; }
-  .work-featured-content { padding: 24px; }
+  .work-featured-content { padding: 32px 24px 48px; }
   .work-featured-title { font-size: clamp(24px, 6vw, 36px); }
   .work-featured-grid {
     grid-template-columns: 1fr;
@@ -402,7 +403,17 @@ nav {
   .work-featured-card--all {
     border-left: none;
     border-top: 1px solid rgba(237,234,227,0.1);
-    min-height: 200px;
+    min-height: auto;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 32px 24px 32px;
+  }
+  .work-featured-card--main {
+    min-height: 320px;
+  }
+  .work-featured-all-inner {
+    align-items: flex-start;
+    text-align: left;
   }
 }
 
@@ -618,7 +629,7 @@ footer { display: block; background: var(--black); margin: 0; margin-top: -1px; 
   /* Force grid children to respect their track — prevents min-content blowout */
   .hero > div { min-width: 0; }
   .hero {
-    padding: 120px 24px 56px;
+    padding: 140px 24px 56px !important;
     overflow-x: hidden;
   }
   .hero-tags {
