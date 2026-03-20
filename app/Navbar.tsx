@@ -33,6 +33,12 @@ export default function Navbar({ logoHref = '#', anchorPrefix = '' }: NavbarProp
           <li><a href="/work">Case Studies</a></li>
           <li><a href={`${anchorPrefix}#experience`}>Experience</a></li>
           <li><a href={`${anchorPrefix}#credentials`}>Credentials</a></li>
+          <li style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <span style={{ width: '1px', height: '14px', background: 'rgba(237,234,227,0.1)', display: 'block' }} />
+            <a href="/brand" style={{ fontSize: '10px', fontWeight: 500, letterSpacing: '.14em', textTransform: 'uppercase', color: 'rgba(237,234,227,0.25)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+              ROGER® Brand Repository
+            </a>
+          </li>
           <li><a href={`${anchorPrefix}#contact`} className="nav-cta">Say hello →</a></li>
         </ul>
         <button
@@ -64,6 +70,11 @@ export default function Navbar({ logoHref = '#', anchorPrefix = '' }: NavbarProp
           <li><a href="/work" onClick={close}>Case Studies</a></li>
           <li><a href={`${anchorPrefix}#experience`} onClick={close}>Experience</a></li>
           <li><a href={`${anchorPrefix}#credentials`} onClick={close}>Credentials</a></li>
+          <li style={{ borderBottom: 'none', paddingTop: '8px' }}>
+            <a href="/brand" onClick={close} style={{ fontSize: '11px', fontWeight: 500, letterSpacing: '.12em', textTransform: 'uppercase', color: 'rgba(237,234,227,0.2)', padding: '12px 0', display: 'block', textDecoration: 'none' }}>
+              ROGER® Brand Repository
+            </a>
+          </li>
         </ul>
         <div className="mobile-menu-cta">
           <a href={`${anchorPrefix}#contact`} className="nav-cta mobile-cta" onClick={close}>Say hello →</a>
