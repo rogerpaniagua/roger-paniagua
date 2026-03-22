@@ -18,7 +18,7 @@ export default function Bitlab() {
         </div>
 
         <video
-          src="/bitlab/launch_bitlab_mp.mp4"
+          src="/bitlab/launch-bitlab.mp4"
           autoPlay
           muted
           loop
