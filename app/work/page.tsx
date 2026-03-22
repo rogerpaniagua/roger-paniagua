@@ -18,6 +18,14 @@ const cases = [
     year: '2026',
     image: '/blue-engine-banner-01.png',
   },
+  {
+    slug: 'bitlab',
+    category: 'Brand Strategy',
+    title: 'bit/ab — Redefining a Tech Academy',
+    sub: 'Full rebranding and visual system for one of El Salvador\'s most ambitious tech education platforms.',
+    year: '2023',
+    image: '/bitlab/01-bitlab.png',
+  },
 ]
 
 export default function Work() {
