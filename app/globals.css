@@ -1257,3 +1257,11 @@ footer { display: block; background: var(--black); margin: 0; margin-top: -1px; 
   flex: 1;
 }
 .brand-example-row:last-child { border-bottom: none; }
+
+.cs-banner-img:is(video)::-webkit-media-controls {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.cs-banner-img:is(video):hover::-webkit-media-controls {
+  opacity: 1;
+}
