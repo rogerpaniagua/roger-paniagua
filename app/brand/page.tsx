@@ -130,16 +130,6 @@ export default function Brand() {
                 </div>
               </div>
               <div className="brand-app-cell">
-                <div className="brand-app-label">Contact section</div>
-                <div className="brand-app-preview brand-app-preview--dark">
-                  <div className="bap-contact">
-                    <div className="bap-contact-quote">&ldquo;Timeless design is the kind that leaves a mark.&rdquo;</div>
-                    <div className="bap-contact-attr">— Roger Paniagua</div>
-                    <div className="bap-contact-btn">Start a conversation →</div>
-                  </div>
-                </div>
-              </div>
-              <div className="brand-app-cell">
                 <div className="brand-app-label">Work card hover</div>
                 <div className="brand-app-preview brand-app-preview--dark-mid">
                   <div className="bap-card-hover">
@@ -147,15 +137,6 @@ export default function Brand() {
                     <div className="bap-card-title">Elaniin Lands in L.A.</div>
                     <div className="bap-card-sub">Directing the visual ecosystem behind Elaniin&apos;s expansion.</div>
                     <div className="bap-card-cta">View case study →</div>
-                  </div>
-                </div>
-              </div>
-              <div className="brand-app-cell">
-                <div className="brand-app-label">Footer</div>
-                <div className="brand-app-preview brand-app-preview--dark">
-                  <div className="bap-footer">
-                    <img src="/roger.svg" alt="" style={{ width: '100%', opacity: 0.12, display: 'block' }} />
-                    <div className="bap-footer-copy">© 2026 Roger Paniagua. All rights reserved.</div>
                   </div>
                 </div>
               </div>
@@ -185,26 +166,6 @@ export default function Brand() {
             </div>
             <div className="brand-app-grid">
               <div className="brand-app-cell">
-                <div className="brand-app-label">Page layout</div>
-                <div className="brand-app-preview brand-app-preview--light">
-                  <div className="bap-page">
-                    <div className="bap-page-eyebrow">Case Studies</div>
-                    <div className="bap-page-h">Work that tells a <span className="bap-page-italic">story.</span></div>
-                    <div className="bap-page-cards">
-                      {['Elaniin L.A.', 'Blue Engine'].map((title) => (
-                        <div key={title} className="bap-page-card">
-                          <div className="bap-page-card-img" />
-                          <div className="bap-page-card-body">
-                            <div className="bap-page-card-cat">Brand Communication</div>
-                            <div className="bap-page-card-title">{title}</div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="brand-app-cell">
                 <div className="brand-app-label">CTA buttons on dark</div>
                 <div className="brand-app-preview brand-app-preview--dark">
                   <div className="bap-btns">
@@ -226,15 +187,6 @@ export default function Brand() {
                         <div className="bap-stat-l">{l}</div>
                       </div>
                     ))}
-                  </div>
-                </div>
-              </div>
-              <div className="brand-app-cell">
-                <div className="brand-app-label">Nav — inverted</div>
-                <div className="brand-app-preview brand-app-preview--dark">
-                  <div className="bap-nav-inv">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 82.91" height="14" fill="#EDEAE3"><path d={WORDMARK} /></svg>
-                    <span className="bap-nav-cta" style={{ background: '#EDEAE3', color: '#1a1915' }}>Say hello →</span>
                   </div>
                 </div>
               </div>
@@ -274,37 +226,11 @@ export default function Brand() {
                 </div>
               </div>
               <div className="brand-app-cell">
-                <div className="brand-app-label">Nav links</div>
-                <div className="brand-app-preview brand-app-preview--dark">
-                  <div className="bap-navlinks">
-                    {['About', 'Case Studies', 'Experience'].map(l => (
-                      <span key={l} className="bap-navlink">{l}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="brand-app-cell">
                 <div className="brand-app-label">Eyebrow labels</div>
                 <div className="brand-app-preview brand-app-preview--light">
                   <div className="bap-eyebrows">
                     {['Case Studies', 'Experience', 'About', 'Education & Credentials'].map(e => (
                       <div key={e} className="bap-eyebrow-item">{e}</div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="brand-app-cell">
-                <div className="brand-app-label">Work row metadata</div>
-                <div className="brand-app-preview brand-app-preview--light">
-                  <div className="bap-work-rows">
-                    {[{ cat: 'Brand Communication', title: 'Elaniin Lands in L.A.', year: '2026' }, { cat: 'Campaign Design', title: 'Blue Engine Launch', year: '2026' }].map(({ cat, title, year }) => (
-                      <div key={title} className="bap-work-row">
-                        <div>
-                          <div className="bap-work-cat">{cat}</div>
-                          <div className="bap-work-title">{title}</div>
-                        </div>
-                        <div className="bap-work-year">{year}</div>
-                      </div>
                     ))}
                   </div>
                 </div>
@@ -319,64 +245,67 @@ export default function Brand() {
           {/* Ash */}
           <div className="brand-block">
             <div className="brand-block-header">
-              <span className="brand-block-name">Ash <span className="brand-token">border</span></span>
+              <span className="brand-block-name">Ash <span className="brand-token">BORDER</span></span>
               <span className="brand-block-meta">Card borders · Section dividers · Grid lines</span>
             </div>
-            <div className="brand-ash-swatches">
-              <div className="brand-ash-bar brand-ash-bar--light">
-                <div className="brand-ash-bar-fill" style={{ background: 'linear-gradient(to right, rgba(26,25,21,0.04), rgba(26,25,21,0.20))' }} />
-                <div className="brand-ash-bar-labels">
-                  <span>6%</span><span>12%</span><span>20%</span>
+
+            <div className="brand-ash-preview">
+              <div className="brand-ash-preview--dark">
+                <div className="brand-ash-row brand-ash-row--strong">
+                  <span>Nav border</span><span className="brand-ash-hex">#EDEAE3 · 10% Opacity</span>
+                </div>
+                <div className="brand-ash-row brand-ash-row--mid">
+                  <span>Section divider</span><span className="brand-ash-hex">#EDEAE3 · 8% Opacity</span>
+                </div>
+                <div className="brand-ash-row brand-ash-row--subtle">
+                  <span>Subtle</span><span className="brand-ash-hex">#EDEAE3 · 6% Opacity</span>
                 </div>
               </div>
-              <div className="brand-ash-bar brand-ash-bar--dark">
-                <div className="brand-ash-bar-fill" style={{ background: 'linear-gradient(to right, rgba(237,234,227,0.04), rgba(237,234,227,0.20))' }} />
-                <div className="brand-ash-bar-labels brand-ash-bar-labels--dark">
-                  <span>4%</span><span>10%</span><span>20%</span>
+              <div className="brand-ash-preview--light">
+                <div className="brand-ash-row brand-ash-row--strong-light">
+                  <span>Card border</span><span className="brand-ash-hex brand-ash-hex--light">#1a1915 · 20% Opacity</span>
+                </div>
+                <div className="brand-ash-row brand-ash-row--mid-light">
+                  <span>Section divider</span><span className="brand-ash-hex brand-ash-hex--light">#1a1915 · 12% Opacity</span>
+                </div>
+                <div className="brand-ash-row brand-ash-row--subtle-light">
+                  <span>Subtle</span><span className="brand-ash-hex brand-ash-hex--light">#1a1915 · 6% Opacity</span>
                 </div>
               </div>
             </div>
+
             <div className="brand-apps-header">
               <span>Applications</span>
             </div>
+
             <div className="brand-app-grid">
               <div className="brand-app-cell">
-                <div className="brand-app-label">Card border — light</div>
-                <div className="brand-app-preview brand-app-preview--light">
-                  <div className="bap-borders">
-                    <div className="bap-border-row">
-                      <div className="bap-border-cat">Brand Communication · 2026</div>
-                      <div className="bap-border-title">Elaniin Lands in L.A.</div>
-                      <div className="bap-border-sub">Directing the visual ecosystem behind Elaniin&apos;s expansion.</div>
-                      <div className="bap-border-cta">View case study →</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="brand-app-cell">
-                <div className="brand-app-label">Dark UI border</div>
+                <div className="brand-app-label">Skill tags</div>
                 <div className="brand-app-preview brand-app-preview--dark">
-                  <div className="bap-dark-borders">
-                    <div className="bap-dark-border-row bap-dark-border-row--strong">Nav border — rgba 10%</div>
-                    <div className="bap-dark-border-row bap-dark-border-row--mid">Section divider — rgba 8%</div>
-                    <div className="bap-dark-border-row bap-dark-border-row--subtle">Subtle — rgba 6%</div>
-                  </div>
-                </div>
-              </div>
-              <div className="brand-app-cell brand-app-cell--full">
-                <div className="brand-app-label">Stats grid structure</div>
-                <div className="brand-app-preview brand-app-preview--light-card">
-                  <div className="bap-stats">
-                    {[{ n: '10+', l: 'Years leading' }, { n: '70+', l: 'Brands shaped' }, { n: '10', l: 'Disciplines' }, { n: '7', l: 'Certifications' }].map(({ n, l }, i) => (
-                      <div key={i} className="bap-stat">
-                        <div className="bap-stat-n">{n}</div>
-                        <div className="bap-stat-l">{l}</div>
-                      </div>
+                  <div className="bap-tags-preview">
+                    {['Creative Direction', 'Brand Strategy', 'Team Leadership', 'Visual Systems', 'AI Direction', 'Photography'].map(t => (
+                      <span key={t} className="bap-tag">{t}</span>
                     ))}
                   </div>
                 </div>
               </div>
+              <div className="brand-app-cell">
+                <div className="brand-app-label">Experience cards</div>
+                <div className="brand-app-preview brand-app-preview--light-card">
+                  <div className="bap-exp-cards">
+                    <div className="bap-exp-card">
+                      <div className="bap-exp-role">Lead Graphic Designer</div>
+                      <div className="bap-exp-co">Elaniin</div>
+                    </div>
+                    <div className="bap-exp-card">
+                      <div className="bap-exp-role">Senior Graphic Designer & Photographer</div>
+                      <div className="bap-exp-co">Elaniin</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
             <div className="brand-usage-note">
               <div className="brand-usage-dot" />
               <p>Transparent borders that create structure without weight. Used at 12% on light backgrounds, 10% on dark backgrounds.</p>
@@ -457,8 +386,6 @@ export default function Brand() {
                 {[
                   { label: 'Hero headline', text: '"Building the creative systems that move brands forward."' },
                   { label: 'About copy', text: '"Design is my native language — strategy and people management are what I\'ve layered on top."' },
-                  { label: 'Case study intro', text: '"Consolidating operations in Los Angeles isn\'t a change of address. It\'s a statement."' },
-                  { label: 'CTA', text: '"Start a conversation →"' },
                 ].map(({ label, text }) => (
                   <div key={label} className="brand-example-row">
                     <div className="brand-example-label">{label}</div>
@@ -471,8 +398,6 @@ export default function Brand() {
                 {[
                   { label: 'Hero headline', text: '"Passionate about creating innovative brand experiences that leverage cutting-edge design thinking."' },
                   { label: 'About copy', text: '"I\'m a creative professional with a unique blend of skills and a passion for delivering results-driven solutions."' },
-                  { label: 'Case study intro', text: '"In this exciting project, we had the amazing opportunity to bring the brand to life in a whole new way."' },
-                  { label: 'CTA', text: '"Click here to get in touch with me today!"' },
                 ].map(({ label, text }) => (
                   <div key={label} className="brand-example-row">
                     <div className="brand-example-label">{label}</div>
