@@ -1265,3 +1265,17 @@ footer { display: block; background: var(--black); margin: 0; margin-top: -1px; 
 .cs-banner-img:is(video):hover::-webkit-media-controls {
   opacity: 1;
 }
+
+.brand-repo-link {
+  font-size: 10px !important;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(237,234,227,0.25);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+.brand-repo-link:hover {
+  color: rgba(237,234,227,0.9);
+}

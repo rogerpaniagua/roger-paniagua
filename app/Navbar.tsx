@@ -35,7 +35,7 @@ export default function Navbar({ logoHref = '#', anchorPrefix = '' }: NavbarProp
           <li><a href={`${anchorPrefix}#credentials`}>Credentials</a></li>
           <li style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <span style={{ width: '1px', height: '14px', background: 'rgba(237,234,227,0.1)', display: 'block' }} />
-            <a href="/brand" style={{ fontSize: '10px', fontWeight: 500, letterSpacing: '.14em', textTransform: 'uppercase', color: 'rgba(237,234,227,0.25)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+            <a href="/brand" className="brand-repo-link">
               ROGER® Brand Repository
             </a>
           </li>
