@@ -630,7 +630,7 @@ a.cred:hover .cred-skills { color: rgba(255,255,255,.5); }
 
 @media (max-width: 767px) {
   .work-page-header {
-    padding: 112px 24px 40px;
+    padding: 140px 24px 40px;
   }
   .work-page-header .heading {
     font-size: clamp(34px, 9vw, 44px);
@@ -673,11 +673,23 @@ footer { display: block; background: var(--black); margin: 0; margin-top: -1px; 
 
 /* CASE STUDY HERO */
 .cs-hero-img {
-  width: 100%; height: 560px;
-  background-size: cover; background-position: center;
+  display: block;
+  width: 100%;
+  height: 560px;
+  background-size: cover;
+  background-position: center;
 }
 @media (max-width: 767px) {
-  .cs-hero-img { height: 38vh; }
+  .cs-hero-img {
+    height: calc(25vh + 81px);
+    background-position: center;
+    background-clip: border-box;
+    padding-top: 81px;
+    background-origin: content-box;
+  }
+  .work-page-card-image {
+    height: 180px;
+  }
 }
 
 /* CASE STUDY */
@@ -708,11 +720,13 @@ footer { display: block; background: var(--black); margin: 0; margin-top: -1px; 
 }
 
 /* RESPONSIVE */
+@media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+}
 @media (max-width: 767px) {
   html { overflow-x: clip; }
   .hero-particles { display: none; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
   .hero-h { font-size: 3.8rem; overflow-wrap: break-word; }
   /* Force grid children to respect their track — prevents min-content blowout */
   .hero > div { min-width: 0; }
@@ -1080,6 +1094,7 @@ footer { display: block; background: var(--black); margin: 0; margin-top: -1px; 
 .bap-dark-border-row--subtle { color: rgba(237,234,227,0.2); }
 
 @media (max-width: 960px) {
+  .brand-hero { padding-top: 72px; }
   .brand-hero { grid-template-columns: 1fr; gap: 48px; padding: 80px 24px 64px; }
   .brand-principles { grid-template-columns: 1fr; }
   .brand-principle { border-right: none; border-bottom: 1px solid rgba(237,234,227,0.1); padding: 40px 24px; }
@@ -1094,7 +1109,8 @@ footer { display: block; background: var(--black); margin: 0; margin-top: -1px; 
 }
 
 @media (max-width: 767px) {
-  .brand-hero { padding: 80px 24px 56px; }
+  .brand-hero { padding-top: 56px; }
+  .brand-hero { padding: 140px 24px 56px; }
   .brand-type-row { grid-template-columns: 120px 1fr; }
   .brand-type-body-row { grid-template-columns: 1fr; }
   .brand-avoid-grid { grid-template-columns: 1fr 1fr; }
