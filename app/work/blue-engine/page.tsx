@@ -48,9 +48,9 @@ export default function BlueEngine() {
       {/* NEXT PROJECT */}
       <div className="cs-footer-nav">
         <div className="cs-footer-nav-inner">
-          <a href="/work/elaniin-la" style={{ textDecoration: 'none' }}>
+          <a href="/work/bitlab" style={{ textDecoration: 'none' }}>
             <div className="cs-footer-eyebrow">Next case</div>
-            <div className="cs-footer-title">Elaniin Lands in L.A.</div>
+            <div className="cs-footer-title">bit/ab — Redefining a Tech Academy</div>
           </a>
           <a href="/work" className="cs-footer-back">← Back to cases</a>
         </div>

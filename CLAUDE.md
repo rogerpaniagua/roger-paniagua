@@ -39,11 +39,18 @@ app/work/blue-engine/page.tsx  — Case study
 2. Add to journeyLogos array in page.tsx: { src: '/file.svg', alt: 'Name', height: 26 }
 3. Both marquee sets render automatically
 
-## Adding a case study
+## Adding a case study — full checklist
 1. Create app/work/[slug]/page.tsx
-2. Add URL to app/sitemap.ts
-3. Update page.tsx work-list (wc-soon → wc-active)
-4. Add images to /public (kebab-case)
+2. Add images/video to /public/[slug]/ (kebab-case filenames)
+3. Add URL to app/sitemap.ts
+4. Add card to app/work/page.tsx cases array
+5. Decide if it goes as featured (wc-active) in app/page.tsx homepage work-list
+6. Update cs-footer-nav in ALL existing case studies to maintain correct cyclic order
+7. Footer rule: always end with cs-footer-nav → contact-wrap (dark) → dark footer. Never footer-light.
+8. Back to work link always points to /work, never /#work
+
+### Current cyclic order
+bitlab → Elaniin Lands in L.A. → Blue Engine → bitlab
 
 ## Pending
 - Mobile accessibility 96/100 (contrast in case study cards + experience badges)
