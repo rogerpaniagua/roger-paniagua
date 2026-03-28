@@ -52,7 +52,7 @@ export default function CustomCursor() {
     }
   }, [])
 
-  const color = inverted ? '#ffffff' : '#1a1915'
+  const color = inverted ? '#EDEAE3' : '#1a1915'
 
   return (
     <>
