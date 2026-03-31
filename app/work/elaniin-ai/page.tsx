@@ -104,7 +104,7 @@ export default function ElaniinAI() {
         />
 
         <video
-          src="/elaniin-ai/elaniin-ai-products-spot.mp4"
+          src="/elaniin-ai/elaniin-ai-spot.mp4"
           autoPlay
           muted
           loop
