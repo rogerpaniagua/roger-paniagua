@@ -220,27 +220,13 @@ export default function Home() {
         <div className="trusted-logos-outer">
           <div className="trusted-logos-track">
             {/* Set 1 */}
-            {journeyLogos.map((logo) =>
-              logo.tag ? (
-                <div key={logo.alt} className="trusted-logo-item" style={logo.tagOffset ? { marginTop: '-18px' } : {}}>
-                  <img src={logo.src} alt={logo.alt} className="trusted-logo" height={logo.height} />
-                  <span className="trusted-logo-tag">{logo.tag}</span>
-                </div>
-              ) : (
-                <img key={logo.alt} src={logo.src} alt={logo.alt} className="trusted-logo" height={logo.height} />
-              )
-            )}
+            {journeyLogos.map((logo) => (
+              <img key={logo.alt} src={logo.src} alt={logo.alt} className="trusted-logo" height={logo.height} />
+            ))}
             {/* Set 2 — duplicate for seamless loop, hidden from assistive tech */}
-            {journeyLogos.map((logo) =>
-              logo.tag ? (
-                <div key={`${logo.alt}-dup`} className="trusted-logo-item" aria-hidden="true" style={logo.tagOffset ? { marginTop: '-18px' } : {}}>
-                  <img src={logo.src} alt="" className="trusted-logo" height={logo.height} />
-                  <span className="trusted-logo-tag">{logo.tag}</span>
-                </div>
-              ) : (
-                <img key={`${logo.alt}-dup`} src={logo.src} alt="" className="trusted-logo" height={logo.height} aria-hidden="true" />
-              )
-            )}
+            {journeyLogos.map((logo) => (
+              <img key={`${logo.alt}-dup`} src={logo.src} alt="" className="trusted-logo" height={logo.height} aria-hidden="true" />
+            ))}
           </div>
         </div>
       </div>
