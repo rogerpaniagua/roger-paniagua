@@ -103,6 +103,17 @@ export default function ElaniinAI() {
           className="cs-banner-img"
         />
 
+        <video
+          src="/elaniin-ai/elaniin-ai-products-spot.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls
+          className="cs-banner-img"
+          style={{ borderRadius: '4px' }}
+        />
+
         <p className="cs-body">
           Elaniin AI launched as one of the first dedicated AI divisions announced publicly by a tech company in El Salvador. The brand didn&apos;t just support that launch — it made the ambition legible. Sometimes the most strategic thing a creative system can do is make people take something seriously before they fully understand it.
         </p>
