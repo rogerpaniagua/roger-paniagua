@@ -47,14 +47,17 @@ import HeroTagsMarquee from './HeroTagsMarquee'
 //   diesel-road   2.96:1  40px → ~119px
 //   pluma-verde   3.42:1  36px → ~123px
 const journeyLogos = [
-  { src: '/elaniin.svg',       alt: 'Elaniin',       height: 28, tag: 'Home ♥' },
-  { src: '/arka-software.svg', alt: 'Arka Software', height: 26 },
-  { src: '/vertikal.svg',      alt: 'Vertikal',      height: 22 },
-  { src: '/cavalier.svg',      alt: 'Cavalier',      height: 26 },
-  { src: '/smartpyme.svg',     alt: 'SmartPyme',     height: 22 },
-  { src: '/marucha.svg',       alt: 'Marucha',       height: 32, tag: 'The first brand of my career' },
-  { src: '/diesel-road.svg',   alt: 'Diesel Road',   height: 40 },
-  { src: '/pluma-verde.svg',   alt: 'Pluma Verde',   height: 36 },
+  { src: '/part-of-my-journey/elaniin.svg', alt: 'Elaniin', height: 26 },
+  { src: '/part-of-my-journey/elaniin-ai.svg', alt: 'Elaniin AI', height: 22 },
+  { src: '/part-of-my-journey/senseflow.svg', alt: 'SenseFlow', height: 18 },
+  { src: '/part-of-my-journey/datasphere.svg', alt: 'DataSphere', height: 24 },
+  { src: '/part-of-my-journey/arka-software.svg', alt: 'Arka Software', height: 26 },
+  { src: '/part-of-my-journey/vertikal.svg', alt: 'Vertikal', height: 22 },
+  { src: '/part-of-my-journey/cavalier.svg', alt: 'Cavalier', height: 26 },
+  { src: '/part-of-my-journey/smartpyme.svg', alt: 'SmartPyme', height: 22 },
+  { src: '/part-of-my-journey/marucha.svg', alt: 'Marucha', height: 26 },
+  { src: '/part-of-my-journey/diesel-road.svg', alt: 'Diesel Road', height: 40 },
+  { src: '/part-of-my-journey/pluma-verde.svg', alt: 'Pluma Verde', height: 36 },
 ]
 
 const roles = [
@@ -219,7 +222,7 @@ export default function Home() {
             {/* Set 1 */}
             {journeyLogos.map((logo) =>
               logo.tag ? (
-                <div key={logo.alt} className="trusted-logo-item">
+                <div key={logo.alt} className="trusted-logo-item" style={logo.tagOffset ? { marginTop: '-18px' } : {}}>
                   <img src={logo.src} alt={logo.alt} className="trusted-logo" height={logo.height} />
                   <span className="trusted-logo-tag">{logo.tag}</span>
                 </div>
@@ -230,7 +233,7 @@ export default function Home() {
             {/* Set 2 — duplicate for seamless loop, hidden from assistive tech */}
             {journeyLogos.map((logo) =>
               logo.tag ? (
-                <div key={`${logo.alt}-dup`} className="trusted-logo-item" aria-hidden="true">
+                <div key={`${logo.alt}-dup`} className="trusted-logo-item" aria-hidden="true" style={logo.tagOffset ? { marginTop: '-18px' } : {}}>
                   <img src={logo.src} alt="" className="trusted-logo" height={logo.height} />
                   <span className="trusted-logo-tag">{logo.tag}</span>
                 </div>

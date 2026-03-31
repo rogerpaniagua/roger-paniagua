@@ -19,6 +19,14 @@ const cases = [
     image: '/blue-engine-banner-01.png',
   },
   {
+    slug: 'elaniin-ai',
+    category: 'Brand Architecture',
+    title: 'Elaniin AI Brand System',
+    sub: 'Building the visual language of a new AI division — from identity to product ecosystem.',
+    year: '2024',
+    image: '/elaniin-ai/elaniin-ai-hero.png',
+  },
+  {
     slug: 'bitlab',
     category: 'Brand Strategy',
     title: 'bit/ab — Redefining a Tech Academy',

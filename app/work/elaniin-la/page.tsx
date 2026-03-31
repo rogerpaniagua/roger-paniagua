@@ -64,11 +64,14 @@ export default function ElaniinLA() {
       {/* NEXT PROJECT */}
       <div className="cs-footer-nav">
         <div className="cs-footer-nav-inner">
-          <a href="/work/blue-engine" style={{ textDecoration: 'none' }}>
-            <div className="cs-footer-eyebrow">Next case</div>
-            <div className="cs-footer-title">Blue Engine Launch Campaign</div>
+          <a href="/work/elaniin-ai" style={{ textDecoration: 'none' }}>
+            <div className="cs-footer-eyebrow">Next project</div>
+            <div className="cs-footer-title">Elaniin AI Brand System</div>
           </a>
-          <a href="/work" className="cs-footer-back">← Back to cases</a>
+          <a href="/work" className="cs-footer-back">
+            <div className="cs-footer-back-eyebrow-right">Case studies</div>
+            <div className="cs-footer-back-title">All projects →</div>
+          </a>
         </div>
       </div>
 
