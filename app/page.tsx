@@ -183,7 +183,7 @@ export default function Home() {
           </div>
           <h1 className="hero-h">
             <em className="hero-serif">Sharp ideas.</em>
-            <span className="hero-bold">Sharper<span className="hero-br"> </span>execution.</span>
+            <span className="hero-bold">Sharper<br className="hero-br" /> execution.</span>
           </h1>
           <p className="hero-sub">Leading teams, shaping brands, and building creative systems that scale.</p>
           <a href="#work" className="hero-cta">Read case studies →</a>
