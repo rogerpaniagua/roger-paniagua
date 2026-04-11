@@ -49,13 +49,13 @@ import SkillsGraph from './SkillsGraph'
 const journeyLogos = [
   { src: '/part-of-my-journey/elaniin.svg', alt: 'Elaniin', height: 28 },
   { src: '/part-of-my-journey/elaniin-ai.svg', alt: 'Elaniin AI', height: 26 },
-  { src: '/part-of-my-journey/senseflow.svg', alt: 'SenseFlow', height: 22 },
+  { src: '/part-of-my-journey/senseflow.svg', alt: 'SenseFlow', height: 16 },
   { src: '/part-of-my-journey/datasphere.svg', alt: 'DataSphere', height: 24 },
   { src: '/part-of-my-journey/arka-software.svg', alt: 'Arka Software', height: 26 },
   { src: '/part-of-my-journey/vertikal.svg', alt: 'Vertikal', height: 22 },
   { src: '/part-of-my-journey/cavalier.svg', alt: 'Cavalier', height: 26 },
   { src: '/part-of-my-journey/smartpyme.svg', alt: 'SmartPyme', height: 22 },
-  { src: '/part-of-my-journey/marucha.svg', alt: 'Marucha', height: 32 },
+  { src: '/part-of-my-journey/marucha.svg', alt: 'Marucha', height: 26 },
   { src: '/part-of-my-journey/diesel-road.svg', alt: 'Diesel Road', height: 40 },
   { src: '/part-of-my-journey/pluma-verde.svg', alt: 'Pluma Verde', height: 36 },
 ]
