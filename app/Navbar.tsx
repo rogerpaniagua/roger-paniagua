@@ -29,7 +29,7 @@ export default function Navbar({ logoHref = '#', anchorPrefix = '' }: NavbarProp
           <LogoSVG />
         </a>
         <ul className="nav-links">
-          <li><a href={`${anchorPrefix}#approach`}>About</a></li>
+          <li><a href={`${anchorPrefix}#disciplines`}>Disciplines</a></li>
           <li><a href="/work">Case Studies</a></li>
           <li><a href={`${anchorPrefix}#experience`}>Experience</a></li>
           <li><a href={`${anchorPrefix}#credentials`}>Credentials</a></li>
@@ -66,7 +66,7 @@ export default function Navbar({ logoHref = '#', anchorPrefix = '' }: NavbarProp
           </button>
         </div>
         <ul className="mobile-nav-links">
-          <li><a href={`${anchorPrefix}#approach`} onClick={close}>About</a></li>
+          <li><a href={`${anchorPrefix}#disciplines`} onClick={close}>Disciplines</a></li>
           <li><a href="/work" onClick={close}>Case Studies</a></li>
           <li><a href={`${anchorPrefix}#experience`} onClick={close}>Experience</a></li>
           <li><a href={`${anchorPrefix}#credentials`} onClick={close}>Credentials</a></li>

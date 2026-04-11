@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 // import HeroParticles from './HeroParticles'
-import HeroTagsMarquee from './HeroTagsMarquee'
+import SkillsGraph from './SkillsGraph'
 
 // ─────────────────────────────────────────────────────────────
 // ASSET NAMING CONVENTION — /public/
@@ -47,15 +47,15 @@ import HeroTagsMarquee from './HeroTagsMarquee'
 //   diesel-road   2.96:1  40px → ~119px
 //   pluma-verde   3.42:1  36px → ~123px
 const journeyLogos = [
-  { src: '/part-of-my-journey/elaniin.svg', alt: 'Elaniin', height: 26 },
-  { src: '/part-of-my-journey/elaniin-ai.svg', alt: 'Elaniin AI', height: 22 },
-  { src: '/part-of-my-journey/senseflow.svg', alt: 'SenseFlow', height: 18 },
+  { src: '/part-of-my-journey/elaniin.svg', alt: 'Elaniin', height: 28 },
+  { src: '/part-of-my-journey/elaniin-ai.svg', alt: 'Elaniin AI', height: 26 },
+  { src: '/part-of-my-journey/senseflow.svg', alt: 'SenseFlow', height: 22 },
   { src: '/part-of-my-journey/datasphere.svg', alt: 'DataSphere', height: 24 },
   { src: '/part-of-my-journey/arka-software.svg', alt: 'Arka Software', height: 26 },
   { src: '/part-of-my-journey/vertikal.svg', alt: 'Vertikal', height: 22 },
   { src: '/part-of-my-journey/cavalier.svg', alt: 'Cavalier', height: 26 },
   { src: '/part-of-my-journey/smartpyme.svg', alt: 'SmartPyme', height: 22 },
-  { src: '/part-of-my-journey/marucha.svg', alt: 'Marucha', height: 26 },
+  { src: '/part-of-my-journey/marucha.svg', alt: 'Marucha', height: 32 },
   { src: '/part-of-my-journey/diesel-road.svg', alt: 'Diesel Road', height: 40 },
   { src: '/part-of-my-journey/pluma-verde.svg', alt: 'Pluma Verde', height: 36 },
 ]
@@ -154,9 +154,9 @@ export default function Home() {
       const ease = 1 - Math.pow(1 - t, 3)
       setStatValues([
         Math.round(ease * 10),
-        Math.round(ease * 10),
-        Math.round(ease * 7),
         Math.round(ease * 70),
+        0,
+        0,
       ])
       if (t < 1) requestAnimationFrame(tick)
     }
@@ -173,104 +173,66 @@ export default function Home() {
       {/* HERO */}
       <main>
       <div className="hero">
-        {/* <HeroParticles /> */}
-        <div>
+        <div className="hero-centered">
+          <div className="hero-tag">
+            <img src="/roger-profile.jpg" alt="Roger Paniagua" className="profile-img" style={{ width: '36px', height: '36px' }} />
+            <span className="hero-tag-label">Roger Paniagua — Head of Creative</span>
+          </div>
           <h1 className="hero-h">
-            Building the <em className="hero-serif">creative systems</em> that move brands forward.
+            <em className="hero-serif">Sharp ideas.</em>
+            <span className="hero-bold">Sharper execution.</span>
           </h1>
-          <HeroTagsMarquee />
-        </div>
-        <div>
-            <div className="profile-card">
-              <img src="/roger-profile.jpg" alt="Roger Paniagua" className="profile-img" />
-              <div className="profile-info">
-                <div className="profile-name">Roger Paniagua</div>
-                <div className="profile-role">Head of Creative</div>
+          <p className="hero-sub">Leading teams, shaping brands, and building creative systems that scale.</p>
+          <a href="#work" className="hero-cta">Read case studies →</a>
+          <div className="hero-logos">
+            <div className="hero-logos-outer">
+              <div className="hero-logos-track trusted-logos-track">
+                {journeyLogos.map((logo) => (
+                  <img key={logo.alt} src={logo.src} alt={logo.alt} className="trusted-logo" height={logo.height} />
+                ))}
+                {journeyLogos.map((logo) => (
+                  <img key={`${logo.alt}-dup`} src={logo.src} alt="" className="trusted-logo" height={logo.height} aria-hidden="true" />
+                ))}
               </div>
             </div>
-          <p className="sub">
-            I&apos;m Roger — a creative leader with <strong>10+ years</strong> designing and directing high-impact solutions. I build the systems, vision, and AI-powered workflows that make great design scale. Based in El Salvador, working with brands across LATAM and the U.S.
-          </p>
+          </div>
         </div>
       </div>
+
 
       {/* STATS */}
-      <div className="stats" ref={statsRef} data-animate>
+      <div className="stats" ref={statsRef}>
+        <div className="stats-inner">
         <div className="stat">
+          <div className="stat-header">
+            <span className="stat-tag">Experience</span>
+            <span className="stat-index">01</span>
+          </div>
           <div className="stat-n">{statValues[0]}+</div>
-          <div className="stat-l">Years leading creative teams</div>
+          <div className="stat-l">Years leading creative teams across LATAM and the U.S.</div>
         </div>
         <div className="stat">
-          <div className="stat-n">{statValues[1]}</div>
-          <div className="stat-l">Disciplines mastered</div>
+          <div className="stat-header">
+            <span className="stat-tag">Impact</span>
+            <span className="stat-index">02</span>
+          </div>
+          <div className="stat-n">{statValues[1]}+</div>
+          <div className="stat-l">Brands shaped through strategy, design, and creative direction.</div>
         </div>
         <div className="stat">
-          <div className="stat-n">{statValues[2]}</div>
-          <div className="stat-l">Google certifications</div>
+          <div className="stat-header">
+            <span className="stat-tag">Reach</span>
+            <span className="stat-index">03</span>
+          </div>
+          <div className="stat-n">SV · US · ES · NL</div>
+          <div className="stat-l">Markets where my work has made an impact.</div>
         </div>
-        <div className="stat">
-          <div className="stat-n">{statValues[3]}+</div>
-          <div className="stat-l">Brands shaped</div>
         </div>
       </div>
 
-      {/* TRUSTED BY */}
-      <div className="trusted-section" data-animate>
-        <div className="eyebrow trusted-eyebrow">Part of my journey</div>
-        <div className="trusted-logos-outer">
-          <div className="trusted-logos-track">
-            {/* Set 1 */}
-            {journeyLogos.map((logo) => (
-              <img key={logo.alt} src={logo.src} alt={logo.alt} className="trusted-logo" height={logo.height} />
-            ))}
-            {/* Set 2 — duplicate for seamless loop, hidden from assistive tech */}
-            {journeyLogos.map((logo) => (
-              <img key={`${logo.alt}-dup`} src={logo.src} alt="" className="trusted-logo" height={logo.height} aria-hidden="true" />
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* SKILLS GRAPH */}
+      <SkillsGraph />
 
-      {/* SPLIT: ABOUT + PRINCIPLES */}
-      <div className="split" id="approach">
-        <div className="split-l">
-          <div className="eyebrow">About</div>
-          <h2 className="heading">Beyond the brief.<br />Beyond <em>the pixels.</em></h2>
-          <p className="body-text">
-            I started as a graphic designer — and I still am one at heart. Over time I realized that the most powerful thing I could do with that eye wasn&apos;t just design more. It was build the conditions for great creative work to emerge from an entire team.
-          </p>
-          <p className="body-text">
-            Today I operate at the intersection of craft and leadership. Design is my native language — strategy and people management are what I&apos;ve layered on top. At Elaniin — and with brands across LATAM and the U.S. — I&apos;ve grown from making things to shaping how a whole creative function thinks, decides, and executes.
-          </p>
-          <p className="body-text">
-            That balance is intentional. The best creative leaders never stop seeing like designers — they just learn to lead at a larger scale.
-          </p>
-        </div>
-        <div className="split-r">
-          <div className="eyebrow">How I lead</div>
-          <div className="p-card">
-            <span className="p-num">01</span>
-            <div>
-              <div className="p-title">Build the team first</div>
-              <p className="p-text">Great output is a byproduct of great architecture. I invest in people, process, and shared vision before touching any deliverable. When the foundation is right, excellence becomes repeatable.</p>
-            </div>
-          </div>
-          <div className="p-card">
-            <span className="p-num">02</span>
-            <div>
-              <div className="p-title">Strategy before execution</div>
-              <p className="p-text">Communication without strategy is just noise. Before touching a single deliverable, I make sure the brief is sharp, the objective is clear, and the team understands why. Good strategy makes creative work more agile, not just quicker.</p>
-            </div>
-          </div>
-          <div className="p-card">
-            <span className="p-num">03</span>
-            <div>
-              <div className="p-title">Unlock, don&apos;t dictate</div>
-              <p className="p-text">I set the vision and create conditions for autonomous, high-trust decision-making. My goal is to unlock every person&apos;s highest potential — the mark of a leader who truly builds.</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* WORK */}
       <div className="work-section" id="work" data-animate>
