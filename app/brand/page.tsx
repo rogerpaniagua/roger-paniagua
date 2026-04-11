@@ -1,4 +1,8 @@
+'use client'
+
 import Navbar from '../Navbar'
+
+const copyToClipboard = (text: string) => { navigator.clipboard.writeText(text) }
 
 const WORDMARK = 'M0,81.71V1.2h44.46c19.83,0,31.12,8.77,31.12,24.15,0,13.1-7.57,20.91-22.71,22.35v.96c7.21,1.92,9.97,5.77,12.98,11.42l11.66,21.63h-20.91l-11.06-20.91c-3.24-6.25-6.25-8.29-15.62-8.29h-11.9v29.2H0ZM18.02,38.93h26.32c8.53,0,12.38-2.4,12.38-10.81,0-7.93-3.85-10.69-12.38-10.69h-26.32v21.51Z M80.14,41.46C80.14,16.34,96.72,0,123.4,0s43.74,16.34,43.74,41.46-16.46,41.46-43.74,41.46-43.26-16.34-43.26-41.46ZM147.91,41.46c0-17.9-6.85-24.15-24.51-24.15s-24.15,6.25-24.15,24.15,6.49,24.15,24.15,24.15,24.51-6.25,24.51-24.15Z M171.94,41.46c0-25.11,17.06-41.46,44.7-41.46,25.23,0,41.22,11.78,41.22,31.12v.96h-20.07v-.96c0-9.37-6.13-13.82-21.63-13.82-18.26,0-25.11,6.25-25.11,24.15s6.61,24.15,24.27,24.15,24.15-2.88,24.63-13.1h-27.28v-13.34h45.3v42.54h-16.7v-17.3h-.96c-2.76,10.57-11.18,18.51-28.6,18.51-24.63,0-39.77-16.34-39.77-41.46Z M265.54,81.71V1.2h68.13v16.22h-50.11v15.74h48.31v16.1h-48.31v16.22h50.11v16.22h-68.13Z M340.64,81.71V1.2h44.46c19.83,0,31.12,8.77,31.12,24.15,0,13.1-7.57,20.91-22.71,22.35v.96c7.21,1.92,9.97,5.77,12.98,11.42l11.66,21.63h-20.91l-11.05-20.91c-3.24-6.25-6.25-8.29-15.62-8.29h-11.9v29.2h-18.02ZM358.66,38.93h26.32c8.53,0,12.38-2.4,12.38-10.81,0-7.93-3.85-10.69-12.38-10.69h-26.32v21.51Z'
 
@@ -70,11 +74,17 @@ export default function Brand() {
                 <span className="brand-block-meta">{meta}</span>
               </div>
               <div className="brand-logo-row">
-                <div className="brand-logo-cell brand-logo-cell--dark">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox={viewBox} height={height} fill="#EDEAE3"><path d={path} /></svg>
+                <div className="brand-logo-col">
+                  <div className="brand-logo-preview brand-logo-preview--dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox={viewBox} height={height} fill="#EDEAE3"><path d={path} /></svg>
+                  </div>
+                  <a href={`/logo-versions/${name === 'Wordmark' ? 'roger' : 'rg'}-parchment.svg`} download className="brand-download-btn">Download SVG</a>
                 </div>
-                <div className="brand-logo-cell brand-logo-cell--light">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox={viewBox} height={height} fill="#1a1915"><path d={path} /></svg>
+                <div className="brand-logo-col">
+                  <div className="brand-logo-preview brand-logo-preview--light">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox={viewBox} height={height} fill="#1a1915"><path d={path} /></svg>
+                  </div>
+                  <a href={`/logo-versions/${name === 'Wordmark' ? 'roger' : 'rg'}-obsidian.svg`} download className="brand-download-btn">Download SVG</a>
                 </div>
               </div>
               <div className="brand-usage-note">
@@ -103,7 +113,7 @@ export default function Brand() {
               {[{ hex: '#1a1915' }, { hex: '#2a2825' }, { hex: '#3a3835' }, { hex: '#4a4845' }].map((s, i) => (
                 <div key={i} className="brand-swatch-wrap">
                   <div className="brand-swatch" style={{ background: s.hex }} />
-                  <span className="brand-swatch-hex">{s.hex}</span>
+                  <button className="brand-hex-copy" onClick={() => copyToClipboard(s.hex)} title="Copy hex">{s.hex} ⧉</button>
                 </div>
               ))}
             </div>
@@ -157,7 +167,7 @@ export default function Brand() {
               {[{ hex: '#EDEAE3' }, { hex: '#F2EFE8' }, { hex: '#E3E0D8' }, { hex: '#D8D5CE' }].map((s, i) => (
                 <div key={i} className="brand-swatch-wrap">
                   <div className="brand-swatch" style={{ background: s.hex, border: '1px solid rgba(26,25,21,0.08)' }} />
-                  <span className="brand-swatch-hex">{s.hex}</span>
+                  <button className="brand-hex-copy" onClick={() => copyToClipboard(s.hex)} title="Copy hex">{s.hex} ⧉</button>
                 </div>
               ))}
             </div>
@@ -207,7 +217,7 @@ export default function Brand() {
               {[{ hex: '#6b6860' }, { hex: 'rgba(237,234,227,0.5)', label: '--bg 50%' }].map((s, i) => (
                 <div key={i} className="brand-swatch-wrap">
                   <div className="brand-swatch" style={{ background: s.hex }} />
-                  <span className="brand-swatch-hex">{s.label || s.hex}</span>
+                  <button className="brand-hex-copy" onClick={() => copyToClipboard(s.hex)} title="Copy hex">{s.label || s.hex} ⧉</button>
                 </div>
               ))}
             </div>
@@ -322,7 +332,7 @@ export default function Brand() {
           </div>
           <div className="brand-block">
             <div className="brand-block-header">
-              <span className="brand-block-name">Instrument Sans</span>
+              <span className="brand-block-name"><a href="https://fonts.google.com/specimen/Instrument+Sans" target="_blank" rel="noopener noreferrer" className="brand-font-link">Instrument Sans</a></span>
               <span className="brand-block-meta">Primary typeface · Google Fonts</span>
             </div>
             <div className="brand-type-body-row">
@@ -343,7 +353,7 @@ export default function Brand() {
           </div>
           <div className="brand-block">
             <div className="brand-block-header">
-              <span className="brand-block-name">Source Serif 4</span>
+              <span className="brand-block-name"><a href="https://fonts.google.com/specimen/Source+Serif+4" target="_blank" rel="noopener noreferrer" className="brand-font-link">Source Serif 4</a></span>
               <span className="brand-block-meta">Accent typeface · Google Fonts</span>
             </div>
             {[{ label: 'Light Italic', weight: 300 }, { label: 'Regular Italic', weight: 400 }, { label: 'Medium Italic', weight: 500 }].map(({ label, weight }) => (
@@ -418,9 +428,9 @@ export default function Brand() {
           </div>
           <div className="brand-merch-grid">
             {[
-              { name: 'T-Shirt', category: 'Apparel', spec: 'Black · Wordmark center chest · Parchment print', img: '/merch-tshirt.png' },
-              { name: 'Hoodie', category: 'Apparel', spec: 'Black · Wordmark chest left · Parchment print', img: '/merch-hoodie.png' },
-              { name: 'Cap', category: 'Accessories', spec: 'Black · Wordmark embroidered · Tonal finish', img: '/merch-cap.png' },
+              { name: 'T-Shirt', category: 'Apparel', spec: 'Black · Wordmark center chest · Parchment print', img: '/merch-tshirt.jpg' },
+              { name: 'Hoodie', category: 'Apparel', spec: 'Black · Wordmark chest left · Parchment print', img: '/merch-hoodie.jpg' },
+              { name: 'Cap', category: 'Accessories', spec: 'Black · Wordmark embroidered · Tonal finish', img: '/merch-cap.jpg' },
             ].map(({ name, category, spec, img }) => (
               <div key={name} className="brand-merch-item">
                 <div className="brand-merch-visual brand-merch-visual--photo" style={{ backgroundImage: `url(${img})` }} />

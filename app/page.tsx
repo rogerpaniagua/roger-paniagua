@@ -5,6 +5,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 // import HeroParticles from './HeroParticles'
 import SkillsGraph from './SkillsGraph'
+import CredentialsAccordion from './CredentialsAccordion'
 
 // ─────────────────────────────────────────────────────────────
 // ASSET NAMING CONVENTION — /public/
@@ -182,7 +183,7 @@ export default function Home() {
           </div>
           <h1 className="hero-h">
             <em className="hero-serif">Sharp ideas.</em>
-            <span className="hero-bold">Sharper execution.</span>
+            <span className="hero-bold">Sharper<span className="hero-br"> </span>execution.</span>
           </h1>
           <p className="hero-sub">Leading teams, shaping brands, and building creative systems that scale.</p>
           <a href="#work" className="hero-cta">Read case studies →</a>
@@ -312,7 +313,7 @@ export default function Home() {
           <h2 className="heading">The <em>frameworks</em> I operate with.</h2>
         </div>
         <div className="creds-grid">
-          <div className="cred"><div className="cred-by">Universidad Don Bosco · 2011–2016</div><div className="cred-name">Licenciatura en Diseño Gráfico</div><div className="cred-skills">Foundation of visual thinking, design theory, and creative craft</div></div>
+          <div className="cred cred-hover"><div className="cred-by">Universidad Don Bosco · 2011–2016</div><div className="cred-name">Licenciatura en Diseño Gráfico</div><div className="cred-skills">Foundation of visual thinking, design theory, and creative craft</div></div>
           <a className="cred" href="https://www.coursera.org/account/accomplishments/specialization/BSVBM6YR9V2L" target="_blank" rel="noopener noreferrer"><div className="cred-by">Google · Jan 2024</div><div className="cred-name">Google Project Management Certificate</div><div className="cred-skills">Full program + Capstone: Applying PM in the Real World</div></a>
           <a className="cred" href="https://www.coursera.org/account/accomplishments/verify/NRHJW7FSTL44" target="_blank" rel="noopener noreferrer"><div className="cred-by">Google · Dec 2023</div><div className="cred-name">Agile Project Management</div><div className="cred-skills">Scrum · Coaching · Agile Management · Influencing</div></a>
           <a className="cred" href="https://www.coursera.org/account/accomplishments/verify/VDHDW54BLMTM" target="_blank" rel="noopener noreferrer"><div className="cred-by">Google · Dec 2023</div><div className="cred-name">Project Execution: Running the Project</div><div className="cred-skills">Quality Management · Risk Management · Strategic Thinking</div></a>
@@ -321,6 +322,7 @@ export default function Home() {
           <a className="cred" href="https://www.coursera.org/account/accomplishments/verify/D9JFUWTKPPLN" target="_blank" rel="noopener noreferrer"><div className="cred-by">Google · Jun 2023</div><div className="cred-name">Foundations of Project Management</div><div className="cred-skills">Stakeholder Management · Business Writing · Project Charter</div></a>
           <a className="cred" href="https://www.coursera.org/account/accomplishments/verify/L6LX8UD3KXDX" target="_blank" rel="noopener noreferrer"><div className="cred-by">Google · Jan 2024</div><div className="cred-name">Capstone: Applying PM in the Real World</div><div className="cred-skills">Stakeholder Management · Quality Management · Problem Solving · Effective Communication · Project Management</div></a>
         </div>
+        <CredentialsAccordion />
       </div>
 
       {/* CONTACT */}

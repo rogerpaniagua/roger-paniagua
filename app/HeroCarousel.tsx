@@ -11,11 +11,11 @@ const PHRASES = [
 
 // 8 cards using all available images — duplicated inside each row for seamless loop
 const CARDS = [
-  { src: '/elaniin-in-la.png',        alt: 'Elaniin Lands in L.A.' },
+  { src: '/elaniin-in-la.jpg',        alt: 'Elaniin Lands in L.A.' },
   { src: '/blue-engine-banner-01.png', alt: 'Blue Engine' },
   { src: '/elaniin-in-la-hero.png',   alt: 'Elaniin L.A. Hero' },
   { src: '/elaniin-in-la-banner-01.png', alt: 'Elaniin Banner' },
-  { src: '/elaniin-in-la.png',        alt: 'Elaniin Lands in L.A.' },
+  { src: '/elaniin-in-la.jpg',        alt: 'Elaniin Lands in L.A.' },
   { src: '/blue-engine-banner-01.png', alt: 'Blue Engine' },
   { src: '/elaniin-in-la-hero.png',   alt: 'Elaniin L.A. Hero' },
   { src: '/elaniin-in-la-banner-01.png', alt: 'Elaniin Banner' },
