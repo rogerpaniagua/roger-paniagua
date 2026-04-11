@@ -6,11 +6,9 @@
   --bg: #EDEAE3;
   --card: #E3E0D8;
   --black: #1a1915;
-  --deeper: #12110d;
   --text: #1a1915;
   --muted: #6b6860;
   --border: rgba(26, 25, 21, 0.12);
-  --light: #F2EFE8;
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 73px; }
@@ -138,6 +136,8 @@ nav {
 .stat-tag { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(242,239,232,0.3); }
 .stat-index { font-size: 11px; font-weight: 700; color: rgba(242,239,232,0.1); letter-spacing: .04em; }
 .stat-n { font-size: 36px; font-weight: 700; letter-spacing: -.03em; color: #F2EFE8; line-height: 1; }
+.stat-n--text { opacity: 0; transform: translateY(8px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.stat-n--text.visible { opacity: 1; transform: translateY(0); }
 .stat-l { font-size: 12px; color: rgba(242,239,232,0.35); line-height: 1.6; }
 
 /* TRUSTED BY */

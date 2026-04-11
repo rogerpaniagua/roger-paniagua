@@ -158,6 +158,8 @@ export default function Home() {
         0,
         0,
       ])
+      const el = document.querySelector('.stat-n--text')
+      if (el) el.classList.add('visible')
       if (t < 1) requestAnimationFrame(tick)
     }
     requestAnimationFrame(tick)
@@ -224,7 +226,7 @@ export default function Home() {
             <span className="stat-tag">Reach</span>
             <span className="stat-index">03</span>
           </div>
-          <div className="stat-n">SV · US · ES · NL</div>
+          <div className="stat-n stat-n--text">SV · US · ES · NL</div>
           <div className="stat-l">Markets where my work has made an impact.</div>
         </div>
         </div>

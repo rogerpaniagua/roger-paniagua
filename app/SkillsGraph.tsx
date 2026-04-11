@@ -48,6 +48,7 @@ export default function SkillsGraph() {
 
     function resize() {
       const dpr = window.devicePixelRatio || 1
+      if (!right) return
       W = right.offsetWidth || 400
       H = right.offsetHeight || 620
       canvas.width = W * dpr
