@@ -70,7 +70,7 @@ const roles = [
     company: 'Elaniin · El Salvador · Hybrid',
     current: true,
     desc: "Leading creative direction for one of El Salvador's most dynamic tech brands. Managing creative teams, overseeing all visual communication, and building the systems that allow great work to scale without losing quality.",
-    skills: ['Creative Direction', 'Brand Strategy', 'Team Leadership', 'Visual Systems', 'AI Image Direction'],
+    skills: ['Creative Direction', 'Brand Strategy', 'Team Leadership', 'Visual Systems', 'AI Image Direction', 'Photo Direction'],
   },
   {
     id: 1,
@@ -182,10 +182,10 @@ export default function Home() {
             <span className="hero-tag-label">Roger Paniagua — Head of Creative</span>
           </div>
           <h1 className="hero-h">
-            <em className="hero-serif">Sharp ideas.</em>
-            <span className="hero-bold">Sharper<br className="hero-br" /> execution.</span>
+            Great brands don&apos;t happen.<br />
+            <span className="hero-typing">They&apos;re built.</span>
           </h1>
-          <p className="hero-sub">Leading teams, shaping brands, and building creative systems that scale.</p>
+          <p className="hero-sub">Creative direction, visual systems, and team leadership — backed by a decade of craft, sharp strategic thinking, and AI-powered workflows that keep great work moving.</p>
           <a href="#work" className="hero-cta">Read case studies →</a>
           <div className="hero-logos">
             <div className="hero-logos-outer">

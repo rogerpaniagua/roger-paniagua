@@ -3,12 +3,62 @@
 import { useEffect, useRef, useState } from 'react'
 
 const CLUSTERS = [
-  { label: 'Brand Strategy',     angle: -90,  dist: 150, spread: 55, subs: ['Visual Identity', 'Brand Architecture'] },
-  { label: 'Creative Direction', angle: -30,  dist: 150, spread: 30, subs: ['Art Direction', 'Conceptualization', 'Campaign Direction', 'Visual Narrative'] },
-  { label: 'Visual Systems',     angle:  30,  dist: 150, spread: 28, subs: ['Visual Ecosystems', 'Typography', 'Color Systems', 'Graphic Design'] },
-  { label: 'UX / UI',            angle:  90,  dist: 150, spread: 38, subs: ['Interface Design', 'User Flows', 'Figma Sites Dev'] },
-  { label: 'Team Leadership',    angle: 150,  dist: 150, spread: 28, subs: ['Creative Ops', 'Talent Development', 'Cross-functional', 'Mentorship'] },
-  { label: 'AI Direction',       angle: 210,  dist: 150, spread: 38, subs: ['Prompt Engineering', 'Workflow Design', 'Generative Image'] },
+  {
+    label: 'Brand Strategy',
+    angle: -90,
+    dist: 105,
+    spread: 70,
+    subDist: 88,
+    subs: ['Visual Identity', 'Brand Architecture'],
+  },
+  {
+    label: 'Creative Direction',
+    angle: -38,
+    dist: 150,
+    spread: 48,
+    subDist: 95,
+    subs: ['Art Direction', 'Campaign Direction', 'Visual Narrative'],
+  },
+  {
+    label: 'Visual Systems',
+    angle: 20,
+    dist: 170,
+    spread: 46,
+    subDist: 105,
+    subs: ['Visual Ecosystems', 'Graphic Design', 'Branding'],
+  },
+  {
+    label: 'UX/UI & Development',
+    angle: 72,
+    dist: 168,
+    spread: 58,
+    subDist: 100,
+    subs: ['Product Design', 'Figma Sites Development', 'AI-Assisted Development'],
+  },
+  {
+    label: 'Team Leadership',
+    angle: 128,
+    dist: 162,
+    spread: 44,
+    subDist: 100,
+    subs: ['Creative Ops', 'Talent Development', 'Cross-functional'],
+  },
+  {
+    label: 'AI Direction',
+    angle: 176,
+    dist: 148,
+    spread: 46,
+    subDist: 95,
+    subs: ['Prompt Engineering', 'Workflow Design', 'Generative Image'],
+  },
+  {
+    label: 'Photo Direction',
+    angle: 238,
+    dist: 155,
+    spread: 46,
+    subDist: 98,
+    subs: ['Lighting & Composition', 'Product & Lifestyle', 'Post-processing'],
+  },
 ]
 
 const ROGER_PATHS = [
@@ -50,26 +100,26 @@ export default function SkillsGraph() {
       const dpr = window.devicePixelRatio || 1
       if (!right || !canvas) return
       W = right.offsetWidth || 400
-      H = right.offsetHeight || 620
+      H = right.offsetHeight || 600
       canvas.width = W * dpr
       canvas.height = H * dpr
       canvas.style.width = W + 'px'
       canvas.style.height = H + 'px'
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      CX = W / 2; CY = H / 2
-      initNodes()
+      CX = W / 2
+      CY = H / 2
+initNodes()
     }
 
     function initNodes() {
-      const sc = Math.min(W, H) / 680
+      const sc = Math.min(W, H) / 560
       nodesRef.current = CLUSTERS.map(c => {
         const r = toRad(c.angle)
         const cx = CX + Math.cos(r) * c.dist * sc
         const cy = CY + Math.sin(r) * c.dist * sc
-        const subDist = 96 * sc
-        const spread = c.spread
+        const subDist = c.subDist * sc
         const subNodes = c.subs.map((label, i) => {
-          const ba = c.angle + (i - (c.subs.length - 1) / 2) * spread
+          const ba = c.angle + (i - (c.subs.length - 1) / 2) * c.spread
           const sr = toRad(ba)
           return { label, bx: cx + Math.cos(sr) * subDist, by: cy + Math.sin(sr) * subDist, x: 0, y: 0 }
         })
@@ -79,7 +129,7 @@ export default function SkillsGraph() {
     }
 
     function drawLogo() {
-      const logoW = Math.min(96, W * 0.20)
+      const logoW = Math.min(88, W * 0.18)
       const s = logoW / LOGO_VB_W
       const logoH = LOGO_VB_H * s
       ctx.save()
@@ -94,20 +144,19 @@ export default function SkillsGraph() {
       tRef.current += 0.005
       const t = tRef.current
       ctx.clearRect(0, 0, W, H)
-      const sc = Math.min(W, H) / 520
+      const sc = Math.min(W, H) / 560
       const active = canvasHovRef.current || pinnedRef.current
 
       nodesRef.current.forEach((n, i) => {
         const phase = (i / nodesRef.current.length) * Math.PI * 2
         n.x = n.bx + Math.cos(t + phase) * 9 * sc
         n.y = n.by + Math.sin(t * 0.7 + phase) * 7 * sc
-        const spread = n.spread
         n.subNodes.forEach((s: any, j: number) => {
-          const ba = n.angle + (j - (n.subs.length - 1) / 2) * spread
+          const ba = n.angle + (j - (n.subs.length - 1) / 2) * n.spread
           const r = toRad(ba)
           const sp = phase + j * 0.9
-          s.x = n.x + Math.cos(r) * 96 * sc + Math.sin(t + sp) * 5 * sc
-          s.y = n.y + Math.sin(r) * 96 * sc + Math.cos(t * 0.75 + sp) * 4 * sc
+          s.x = n.x + Math.cos(r) * n.subDist * sc + Math.sin(t + sp) * 5 * sc
+          s.y = n.y + Math.sin(r) * n.subDist * sc + Math.cos(t * 0.75 + sp) * 4 * sc
         })
       })
 
@@ -153,7 +202,7 @@ export default function SkillsGraph() {
       const rect = canvas.getBoundingClientRect()
       const mx = e.clientX - rect.left
       const my = e.clientY - rect.top
-      const sc = Math.min(W, H) / 520
+      const sc = Math.min(W, H) / 560
       let found: string | null = null
       nodesRef.current.forEach(n => {
         const dx = mx - n.x, dy = my - n.y
