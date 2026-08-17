@@ -744,10 +744,10 @@ footer { display: block; background: var(--black); margin: 0; margin-top: -1px; 
 @media (max-width: 767px) {
   html { overflow-x: clip; }
   .hero-particles { display: none; }
-  .hero { padding: 0 32px; height: calc(100svh - 72px); overflow: hidden; justify-content: center; margin-top: 72px; }
-  .hero-logos { margin-top: 16px; margin-bottom: 0; }
-  .hero-centered { gap: 16px; padding: 0; }
-  .hero-h { font-size: 72px !important; }
+  .hero { padding: 0 24px; min-height: calc(100svh - 72px); height: auto; overflow: visible; justify-content: center; margin-top: 72px; padding-top: 32px; padding-bottom: 32px; }
+  .hero-logos { margin-top: 12px; margin-bottom: 0; }
+  .hero-centered { gap: 12px; padding: 0; }
+  .hero-h { font-size: clamp(36px, 10.5vw, 56px) !important; }
   .hero-sub { font-size: 14px; max-width: 100%; }
   .hero-br { display: block; }
   .stats { padding: 0; }
@@ -755,6 +755,8 @@ footer { display: block; background: var(--black); margin: 0; margin-top: -1px; 
   .stat { border-right: none; border-bottom: 1px solid rgba(242,239,232,0.08); padding: 28px 24px; }
   .stat:last-child { border-bottom: none; }
   .stat-n { font-size: 28px; }
+  .sec-header { padding: 32px 24px 8px; }
+  .sec-header .heading { margin-bottom: 8px; }
   .creds-accordion { display: block; }
   .creds-grid { display: none; }
   /* Disable all scroll-triggered animations on mobile — no fade, no transform, no transition */
@@ -770,7 +772,7 @@ footer { display: block; background: var(--black); margin: 0; margin-top: -1px; 
   .split { grid-template-columns: 1fr; }
   .split-l { border-right: none; border-bottom: 1px solid var(--border); padding: 56px 24px; }
   .split-r { padding: 56px 24px; }
-  .sec-header { padding: 56px 24px 32px; }
+  .sec-header { padding: 40px 24px 16px; }
   .work-row { padding: 24px; }
   .exp-interactive { grid-template-columns: 1fr; }
   .exp-list-col { border-right: none; border-bottom: 1px solid var(--border); }
