@@ -234,25 +234,22 @@ export default function Home() {
       </div>
 
       {/* PRINCIPLES */}
-      <div className="creds-section" id="principles" data-animate>
+      <div className="principles-section" id="principles" data-animate>
         <div className="sec-header">
           <div className="eyebrow">Principles</div>
         </div>
-        <div className="creds-grid">
-          <div className="cred cred-hover">
-            <div className="cred-by">01 —</div>
-            <div className="cred-name">Define the real problem</div>
-            <div className="cred-skills">Most briefs arrive pre-solved. I push back to the actual question before touching anything. The brief is a starting point, not a contract.</div>
+        <div className="principles-grid">
+          <div className="principle-card">
+            <div className="principle-title">Define the real problem</div>
+            <p className="principle-text">Most briefs arrive pre-solved. I push back to the actual question before touching anything. The brief is a starting point, not a contract.</p>
           </div>
-          <div className="cred cred-hover">
-            <div className="cred-by">02 —</div>
-            <div className="cred-name">Build, don&apos;t just recommend</div>
-            <div className="cred-skills">Strategy has to land. I take work from the first brief to a deployed product, using AI to build without outsourcing the thinking.</div>
+          <div className="principle-card">
+            <div className="principle-title">Build, don&apos;t just recommend</div>
+            <p className="principle-text">Strategy has to land. I take work from the first brief to a deployed product, using AI to build without outsourcing the thinking.</p>
           </div>
-          <div className="cred cred-hover">
-            <div className="cred-by">03 —</div>
-            <div className="cred-name">The standard is always mine</div>
-            <div className="cred-skills">AI is part of the process. What it produces goes through my bar before it exists. I set the brief, I curate the output, I make the call.</div>
+          <div className="principle-card">
+            <div className="principle-title">The standard is always mine</div>
+            <p className="principle-text">AI is part of the process. What it produces goes through my bar before it exists. I set the brief, I curate the output, I make the call.</p>
           </div>
         </div>
       </div>
