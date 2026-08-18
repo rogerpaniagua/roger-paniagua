@@ -9,11 +9,11 @@ const CLUSTERS = [
     dist: 105,
     spread: 70,
     subDist: 88,
-    subs: ['Visual Identity', 'Brand Architecture'],
+    subs: ['Visual Identity', 'Brand Architecture', 'Brand Deployment'],
   },
   {
     label: 'Creative Direction',
-    angle: -38,
+    angle: -30,
     dist: 150,
     spread: 48,
     subDist: 95,
@@ -21,31 +21,23 @@ const CLUSTERS = [
   },
   {
     label: 'Visual Systems',
-    angle: 20,
+    angle: 30,
     dist: 170,
     spread: 46,
     subDist: 105,
-    subs: ['Visual Ecosystems', 'Graphic Design', 'Branding'],
+    subs: ['Visual Ecosystems', 'Design Systems', 'Creative Systems'],
   },
   {
-    label: 'UX/UI & Development',
-    angle: 72,
+    label: 'AI-Driven Development',
+    angle: 90,
     dist: 168,
     spread: 58,
     subDist: 100,
-    subs: ['Product Design', 'Figma Sites Development', 'AI-Assisted Development'],
-  },
-  {
-    label: 'Team Leadership',
-    angle: 128,
-    dist: 162,
-    spread: 44,
-    subDist: 100,
-    subs: ['Creative Ops', 'Talent Development', 'Cross-functional'],
+    subs: ['Product Design', 'Creative Infrastructure', 'Product Development with AI'],
   },
   {
     label: 'AI Direction',
-    angle: 176,
+    angle: 150,
     dist: 148,
     spread: 46,
     subDist: 95,
@@ -53,11 +45,11 @@ const CLUSTERS = [
   },
   {
     label: 'Photo Direction',
-    angle: 238,
+    angle: 210,
     dist: 155,
     spread: 46,
     subDist: 98,
-    subs: ['Lighting & Composition', 'Product & Lifestyle', 'Post-processing'],
+    subs: ['Lighting & Composition'],
   },
 ]
 
@@ -235,8 +227,8 @@ initNodes()
     <div className="skills-section" id="disciplines">
       <div className="skills-left">
         <div className="eyebrow">Disciplines</div>
-        <h2 className="heading">The full<br />creative <em>spectrum.</em></h2>
-        <p className="body-text">Ten years building at the intersection of craft, strategy, and leadership. These are the disciplines I operate with — and the systems I&apos;ve built around them.</p>
+        <h2 className="heading">The full <em>loop.</em></h2>
+        <p className="body-text">A decade at the intersection of brand and technology. These are the disciplines I direct. The constellation shows how they connect.</p>
         <div className="skills-list">
           {CLUSTERS.map(c => (
             <button

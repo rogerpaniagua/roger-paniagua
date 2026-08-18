@@ -179,13 +179,13 @@ export default function Home() {
         <div className="hero-centered">
           <div className="hero-tag">
             <img src="/roger-profile.jpg" alt="Roger Paniagua" className="profile-img" style={{ width: '36px', height: '36px' }} />
-            <span className="hero-tag-label">Roger Paniagua — Head of Creative</span>
+            <span className="hero-tag-label">Roger Paniagua — Creative Strategist · Brand & AI</span>
           </div>
           <h1 className="hero-h">
             Great brands don&apos;t happen.<br />
             <span className="hero-typing">They&apos;re built.</span>
           </h1>
-          <p className="hero-sub">Creative direction, visual systems, and team leadership — backed by a decade of craft, sharp strategic thinking, and AI-powered workflows that keep great work moving.</p>
+          <p className="hero-sub">Brand strategy, creative systems, and AI-driven development. I take brands from the first brief to the deployed product, without dropping the thread.</p>
           <a href="#work" className="hero-cta">Read case studies →</a>
           <div className="hero-logos">
             <div className="hero-logos-outer">
@@ -220,7 +220,7 @@ export default function Home() {
             <span className="stat-index">02</span>
           </div>
           <div className="stat-n">{statValues[1]}+</div>
-          <div className="stat-l">Brands shaped through strategy, design, and creative direction.</div>
+          <div className="stat-l">Brands shaped through strategy, design, and build</div>
         </div>
         <div className="stat">
           <div className="stat-header">
@@ -230,6 +230,30 @@ export default function Home() {
           <div className="stat-n stat-n--text">SV · US · ES · NL</div>
           <div className="stat-l">Markets where my work has made an impact.</div>
         </div>
+        </div>
+      </div>
+
+      {/* PRINCIPLES */}
+      <div className="creds-section" id="principles" data-animate>
+        <div className="sec-header">
+          <div className="eyebrow">Principles</div>
+        </div>
+        <div className="creds-grid">
+          <div className="cred cred-hover">
+            <div className="cred-by">01 —</div>
+            <div className="cred-name">Define the real problem</div>
+            <div className="cred-skills">Most briefs arrive pre-solved. I push back to the actual question before touching anything. The brief is a starting point, not a contract.</div>
+          </div>
+          <div className="cred cred-hover">
+            <div className="cred-by">02 —</div>
+            <div className="cred-name">Build, don&apos;t just recommend</div>
+            <div className="cred-skills">Strategy has to land. I take work from the first brief to a deployed product, using AI to build without outsourcing the thinking.</div>
+          </div>
+          <div className="cred cred-hover">
+            <div className="cred-by">03 —</div>
+            <div className="cred-name">The standard is always mine</div>
+            <div className="cred-skills">AI is part of the process. What it produces goes through my bar before it exists. I set the brief, I curate the output, I make the call.</div>
+          </div>
         </div>
       </div>
 
@@ -328,12 +352,9 @@ export default function Home() {
       {/* CONTACT */}
       <div className="contact-wrap" id="contact">
         <h2 className="contact-h" data-animate>
-          &ldquo;Timeless design<br />
-          is the kind that<br />
-          <u>leaves a mark.</u>&rdquo;
+          define. design.<br />build. live.
         </h2>
         <div data-animate>
-          <p className="contact-attr">— Roger Paniagua</p>
           <p className="contact-sub">
             I&apos;m always interested in conversations with people who believe that great creative
             leadership transforms organizations.
