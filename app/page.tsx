@@ -236,7 +236,8 @@ export default function Home() {
       {/* PRINCIPLES */}
       <div className="principles-section" id="principles" data-animate>
         <div className="sec-header">
-          <div className="eyebrow">Principles</div>
+          <div className="eyebrow">How I work</div>
+          <h2 className="heading">Three principles. <em>Every project.</em></h2>
         </div>
         <div className="principles-grid">
           <div className="principle-card">
