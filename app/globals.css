@@ -489,9 +489,12 @@ nav {
 /* PRINCIPLES */
 .principles-section { background: var(--bg); border-bottom: 1px solid var(--border); }
 .principles-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; padding: 0 56px 56px; }
-.principle-card { background: var(--card); border-radius: 12px; padding: 28px 28px 32px; display: flex; flex-direction: column; }
-.principle-title { font-size: 18px; font-weight: 700; color: var(--text); letter-spacing: -.015em; line-height: 1.2; margin-bottom: 12px; }
-.principle-text { font-size: 14px; color: var(--muted); line-height: 1.75; }
+.principle-card { background: var(--card); border-radius: 12px; padding: 28px 28px 32px; display: flex; flex-direction: column; border: 1px solid var(--black); transition: background 0.2s ease; }
+.principle-card:hover { background: #2a2825; }
+.principle-title { font-size: 18px; font-weight: 700; color: var(--text); letter-spacing: -.015em; line-height: 1.2; margin-bottom: 12px; transition: color 0.2s ease; }
+.principle-text { font-size: 14px; color: var(--muted); line-height: 1.75; transition: color 0.2s ease; }
+.principle-card:hover .principle-title { color: #EDEAE3; }
+.principle-card:hover .principle-text { color: rgba(237,234,227,0.5); }
 
 /* CREDENTIALS */
 .creds-section { border-bottom: 1px solid var(--border); background: var(--light); }
