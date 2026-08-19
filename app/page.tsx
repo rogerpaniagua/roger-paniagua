@@ -180,8 +180,11 @@ export default function Home() {
       <div className="hero">
         <div className="hero-centered">
           <div className="hero-tag">
-            <img src="/roger-profile.jpg" alt="Roger Paniagua" className="profile-img" style={{ width: '36px', height: '36px' }} />
-            <span className="hero-tag-label">Roger Paniagua — Creative Strategist · Brand & AI</span>
+            <img src="/roger-profile.jpg" alt="Roger Paniagua" className="profile-img" style={{ width: '44px', height: '44px' }} />
+            <div className="hero-tag-info">
+              <span className="hero-tag-name">Roger Paniagua</span>
+              <span className="hero-tag-role">Brand &amp; Creative Strategy Lead · AI</span>
+            </div>
           </div>
           <h1 className="hero-h">
             Great brands don&apos;t happen.<br />
