@@ -34,6 +34,10 @@ app/work/blue-engine/page.tsx  — Case study
 - Code/CSS/components: Claude Code (here)
 - Deploy: git add -A && git commit -m "description" && git push
 
+## Deploy rule — IMPORTANT
+Never run `git push` unless Roger explicitly says to deploy / push / publish.
+Commit locally with `git commit` but stop there. Wait for approval before pushing.
+
 ## Adding a logo to journey section
 1. kebab-case filename in /public
 2. Add to journeyLogos array in page.tsx: { src: '/file.svg', alt: 'Name', height: 26 }

@@ -6,6 +6,8 @@ import Footer from './Footer'
 // import HeroParticles from './HeroParticles'
 import SkillsGraph from './SkillsGraph'
 import CredentialsAccordion from './CredentialsAccordion'
+import HeroTyping from './HeroTyping'
+import ProcessOrbit from './ProcessOrbit'
 
 // ─────────────────────────────────────────────────────────────
 // ASSET NAMING CONVENTION — /public/
@@ -183,7 +185,7 @@ export default function Home() {
           </div>
           <h1 className="hero-h">
             Great brands don&apos;t happen.<br />
-            <span className="hero-typing">They&apos;re built.</span>
+            <HeroTyping />
           </h1>
           <p className="hero-sub">Brand strategy, creative systems, and AI-driven development. I take brands from the first brief to the deployed product, without dropping the thread.</p>
           <a href="#work" className="hero-cta">Read case studies →</a>
@@ -233,25 +235,21 @@ export default function Home() {
         </div>
       </div>
 
-      {/* PRINCIPLES */}
-      <div className="principles-section" id="principles" data-animate>
-        <div className="sec-header">
-          <div className="eyebrow">How I work</div>
-          <h2 className="heading">Three principles. <em>Every project.</em></h2>
+      {/* PROCESS */}
+      <div className="process-section" data-animate>
+        <div className="process-diagram">
+          <ProcessOrbit />
         </div>
-        <div className="principles-grid">
-          <div className="principle-card">
-            <div className="principle-title">Define the real problem</div>
-            <p className="principle-text">Most briefs arrive pre-solved. I push back to the actual question before touching anything. The brief is a starting point, not a contract.</p>
-          </div>
-          <div className="principle-card">
-            <div className="principle-title">Build, don&apos;t just recommend</div>
-            <p className="principle-text">Strategy has to land. I take work from the first brief to a deployed product, using AI to build without outsourcing the thinking.</p>
-          </div>
-          <div className="principle-card">
-            <div className="principle-title">The standard is always mine</div>
-            <p className="principle-text">AI is part of the process. What it produces goes through my bar before it exists. I set the brief, I curate the output, I make the call.</p>
-          </div>
+        <div className="process-content">
+          <div className="eyebrow" style={{ color: 'rgba(242,239,232,0.45)' }}>Process</div>
+          <h2 className="heading" style={{ color: '#F2EFE8' }}>Not a checklist. <em>An orbit.</em></h2>
+          <p className="process-intro">Every project moves through four phases. Then it starts again, sharper and more informed than before.</p>
+          <ol className="process-phases">
+            <li><strong>Define.</strong> Brief, research, and clarity. The question before the question.</li>
+            <li><strong>Design.</strong> Visual systems, identity, and the direction that makes people stop.</li>
+            <li><strong>Build.</strong> Code, platforms, and deployed product. No handoff required.</li>
+            <li><strong>Live.</strong> Launch, learn, measure. Then feed it back to the top.</li>
+          </ol>
         </div>
       </div>
 
