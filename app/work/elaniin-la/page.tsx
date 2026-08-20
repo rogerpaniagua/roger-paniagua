@@ -16,7 +16,7 @@ export default function ElaniinLA() {
         <h1 className="cs-title">Elaniin Lands in L.A.</h1>
 
         <div className="cs-tags">
-          {['Creative Direction', 'AI Image Direction', 'Visual Systems', 'Brand Communication', 'Campaign Design', 'Typographic Systems'].map(tag => (
+          {['Creative Direction', 'AI Direction', 'Brand Communication', 'Campaign Design'].map(tag => (
             <span key={tag} className="cs-tag">{tag}</span>
           ))}
         </div>
@@ -27,11 +27,20 @@ export default function ElaniinLA() {
           className="cs-banner-img"
         />
 
+        <h2 className="cs-section-h">The real problem</h2>
         <p className="cs-body">
-          Consolidating operations in Los Angeles isn&apos;t a change of address. It&apos;s a statement. And a statement of that magnitude demands a visual communication that matches it — not just aesthetically, but strategically. Something people feel before they read it.
+          Elaniin had spent twelve years building its reputation in LATAM. The U.S. expansion was not a change of address. It was a statement that the company was ready to compete in a different weight class. Los Angeles was chosen by the sales team as the strategic entry point. The moment demanded communication that could land before a single sales conversation happened.
+        </p>
+
+        <h2 className="cs-section-h">The strategic decision</h2>
+        <p className="cs-body">
+          We wanted visuals that felt like Elaniin had been part of LA&apos;s tech scene for years. The problem: no production team on the ground, no location access, no way to shoot in LA.
         </p>
         <p className="cs-body">
-          I came into the project with one question: what does this need to communicate without saying a single word? From there, we built outward. I defined the full creative direction — the visual narrative, the typographic system, the information hierarchy — and led AI-generated image direction to craft a photographic universe that didn&apos;t exist yet, but needed to for this moment.
+          A few months before the project, I had spent time in LA personally. That trip became the creative foundation. I had real references for the light, the architecture, the cultural codes of that city. What I didn&apos;t have was a camera crew.
+        </p>
+        <p className="cs-body">
+          This became the first time we used AI as a primary production tool at Elaniin, not for exploration but for final execution. I directed the image generation with one criterion: nothing could look generated. Every space, every environment had to feel photographed. The editorial decisions were all mine. The AI produced the raw material. I decided what stayed.
         </p>
 
         {/* INLINE BANNER 01 */}
@@ -41,23 +50,35 @@ export default function ElaniinLA() {
           className="cs-banner-img"
         />
 
+        <h2 className="cs-section-h">The system</h2>
+        <p className="cs-body">
+          The campaign covered three channels: LinkedIn, Instagram, and the CEO manifesto on the company blog. Each piece told the same story from a different angle. The CEO&apos;s statement led with authority and twelve years of context. The social pieces were LA-coded, built to feel native to each platform. The campaign visuals were aspirational, aimed at a market that didn&apos;t know Elaniin yet.
+        </p>
+        <p className="cs-body">
+          Every environment in those visuals was AI-generated. None of those spaces exist. Most people who saw the campaign didn&apos;t know that.
+        </p>
+
         <img
           src="/elaniin-in-la-banner-03.png"
           alt="Hello Los Angeles — Elaniin expansion"
           className="cs-banner-img"
         />
 
+        <h2 className="cs-section-h">The result</h2>
         <p className="cs-body">
-          The result was a complete visual ecosystem: launch materials, social media assets, campaign pieces. Every element designed to tell the same story from different angles, with the coherence and sophistication an international expansion demands.
+          The CMO noted strong reception. Internally, what stood out was the visual coherence: pieces that felt like they belonged to the same world, shot in the same city, by the same team. They weren&apos;t. That was the point.
         </p>
-        <p className="cs-body">
-          We didn&apos;t want it to look like a corporate announcement. We wanted it to feel inevitable — like Elaniin was always meant to arrive there.
-        </p>
+
         <img
           src="/elaniin-in-la-banner-04.png"
           alt="ELANIIN — Engineering Impact from LA"
           className="cs-banner-img"
         />
+
+        <h2 className="cs-section-h">Closing note</h2>
+        <p className="cs-body">
+          The constraint that felt like a limitation became the decision that changed how the team works with AI.
+        </p>
       </article>
 
 
