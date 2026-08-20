@@ -100,12 +100,10 @@ export default function ElaniinLA() {
       {/* CONTACT */}
       <div className="contact-wrap" id="contact">
         <h2 className="contact-h">
-          &ldquo;Timeless design<br />
-          is the kind that<br />
-          <u>leaves a mark.</u>&rdquo;
+          define. design.<br />
+          build. live.
         </h2>
         <div>
-          <p className="contact-attr">— Roger Paniagua</p>
           <p className="contact-sub">
             I&apos;m always interested in conversations with people who believe that great creative
             leadership transforms organizations.

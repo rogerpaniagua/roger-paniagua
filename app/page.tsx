@@ -239,7 +239,7 @@ export default function Home() {
       </div>
 
       {/* PROCESS */}
-      <div className="process-section" data-animate>
+      <div className="process-section" id="process" data-animate>
         <div className="process-diagram">
           <ProcessOrbit />
         </div>
