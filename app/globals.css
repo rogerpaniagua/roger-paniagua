@@ -73,7 +73,7 @@ nav {
   position: fixed; inset: 0; z-index: 200;
   background: #1a1915;
   display: flex; flex-direction: column;
-  padding: 0 24px 40px;
+  padding: 0 var(--side) 40px;
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
@@ -91,7 +91,7 @@ nav {
 .mobile-menu-close {
   display: flex; align-items: center; justify-content: center;
   width: 40px; height: 40px; background: none; border: none; cursor: pointer;
-  color: var(--text); padding: 0;
+  color: rgba(237,234,227,0.7); padding: 0;
 }
 .mobile-nav-links {
   list-style: none; display: flex; flex-direction: column;
