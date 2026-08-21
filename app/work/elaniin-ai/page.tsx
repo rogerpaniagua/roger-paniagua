@@ -1,4 +1,9 @@
+import type { Metadata } from 'next'
 import Navbar from '../../Navbar'
+
+export const metadata: Metadata = {
+  title: 'When a Tech Company Becomes an AI Company — Roger Paniagua',
+}
 
 export default function ElaniinAI() {
   return (
@@ -15,17 +20,10 @@ export default function ElaniinAI() {
         <h1 className="cs-title">When a Tech Company Becomes an AI Company</h1>
 
         <div className="cs-tags">
-          {['Creative Direction', 'Brand Architecture', 'Identity Systems', 'Visual Systems', 'Campaign Design', 'Applications'].map(tag => (
+          {['Creative Direction', 'Brand Architecture', 'Identity Systems', 'Visual Systems', 'Campaign Design'].map(tag => (
             <span key={tag} className="cs-tag">{tag}</span>
           ))}
         </div>
-
-        <p className="cs-body">
-          In 2024, artificial intelligence went from buzzword to business imperative — but mostly in San Francisco, London, and a handful of major markets. In Latin America, the conversation was still early. Most tech companies in the region were watching from the sideline, waiting to see where it landed. Elaniin didn&apos;t wait. They announced a dedicated AI division at a live event — Elaniin AI &apos;24 — and made a public, documented bet that AI wasn&apos;t a trend to monitor. It was a direction to build toward.
-        </p>
-        <p className="cs-body">
-          A move that bold needs a brand that matches it. Not an adjustment to the existing identity — a new visual system, built from scratch, capable of holding something genuinely new. I led the full creative direction for what became a three-level brand architecture: Elaniin AI as the division, Elaniin AI Products as the umbrella for its solutions, and two distinct product identities — SenseFlow and DataSphere — living coherently within that structure.
-        </p>
 
         <img
           src="/elaniin-ai/elaniin-ai-banner-01.png"
@@ -33,8 +31,26 @@ export default function ElaniinAI() {
           className="cs-banner-img"
         />
 
+        <h2 className="cs-section-h">The real problem</h2>
         <p className="cs-body">
-          The conceptual anchor was Boundless Potential — expansion, energy, the sense that something larger is becoming possible. That idea drove every visual decision: a palette built around vitality and conviction, typography that balances clarity with a deliberate nod to the tech world it inhabits, and a graphic system rooted in interconnected nodes — a visual metaphor for data flow, collaboration, and AI intelligence.
+          In 2024, AI moved from buzzword to business imperative, but mostly in San Francisco, London, and a handful of major markets. In Latin America, the conversation was still early. Most tech companies in the region were watching from the sidelines. Elaniin didn&apos;t wait. They announced a dedicated AI division at a live event, Elaniin AI &apos;24, and made a public, documented bet that AI wasn&apos;t a trend to monitor. It was a direction to build toward.
+        </p>
+        <p className="cs-body">
+          A move that bold needed a brand that matched it. Not an adjustment to the existing identity, but a new visual system built from scratch, capable of holding something genuinely new.
+        </p>
+
+        <img
+          src="/elaniin-ai/06-elaniin-ai-24.png"
+          alt="Elaniin AI '24 — full auditorium with USD $1MM investment slide"
+          className="cs-banner-img"
+        />
+
+        <h2 className="cs-section-h">The strategic decision</h2>
+        <p className="cs-body">
+          I led the full creative direction for what became a three-level brand architecture: Elaniin AI as the division, Elaniin AI Products as the umbrella for its solutions, and two distinct product identities, SenseFlow and DataSphere, living coherently within that structure. Naming for the products came from the technical team that built them. My focus was the conceptual and visual system that would hold all three levels together.
+        </p>
+        <p className="cs-body">
+          The conceptual anchor was Boundless Potential: expansion, energy, the sense that something larger is becoming possible. That idea drove every visual decision. A palette built around vitality and conviction. Typography that balances clarity with a deliberate nod to the tech world it inhabits. A graphic system rooted in interconnected nodes, a visual metaphor for data flow, collaboration, and AI intelligence.
         </p>
 
         <img
@@ -44,7 +60,7 @@ export default function ElaniinAI() {
         />
 
         <p className="cs-body">
-          The hardest challenge wasn&apos;t the main brand. It was designing a product family — Elaniin AI Products — that could hold two distinct SaaS identities, each with enough visual independence to live on their own, yet unmistakably part of the same system. That&apos;s not a design problem. That&apos;s a systems problem. And solving it required defining the rules of the architecture before touching a single logo.
+          The hardest challenge wasn&apos;t the main brand. It was designing a product family that could hold two distinct SaaS identities, each with enough visual independence to live on their own, yet unmistakably part of the same system. That&apos;s not a design problem. That&apos;s a systems problem. Solving it meant defining the rules of the architecture before touching a single logo.
         </p>
 
         <video
@@ -81,8 +97,15 @@ export default function ElaniinAI() {
           className="cs-banner-img"
         />
 
+        <img
+          src="/elaniin-ai/03-elaniin-ai-24.png"
+          alt="Elaniin AI brand reveal on stage — Elaniin AI '24 event"
+          className="cs-banner-img"
+        />
+
+        <h2 className="cs-section-h">The system</h2>
         <p className="cs-body">
-          From there, the system extended into every touchpoint: social media templates, out-of-home campaigns, and merchandise. Each application designed to prove that the identity wasn&apos;t just beautiful on a slide — it worked at scale, across formats, across contexts.
+          From the core architecture, the system extended into every touchpoint: social media templates, out-of-home campaigns, and merchandise. Each application was built to prove the identity wasn&apos;t just strong on a slide. It had to work at scale, across formats, across contexts.
         </p>
 
         <img
@@ -114,8 +137,16 @@ export default function ElaniinAI() {
           style={{ borderRadius: '4px' }}
         />
 
+        <div className="cs-photo-grid">
+          <img src="/elaniin-ai/02-elaniin-ai-24.png" alt="Elaniin AI '24 — staff badge" className="cs-photo-grid-img" />
+          <img src="/elaniin-ai/09-elaniin-ai-24.png" alt="Elaniin AI '24 — welcome bag handoff" className="cs-photo-grid-img" />
+          <img src="/elaniin-ai/10-elaniin-ai-24.png" alt="Elaniin AI '24 — check-in moment" className="cs-photo-grid-img" />
+          <img src="/elaniin-ai/11-elaniin-ai-24.png" alt="Elaniin AI '24 — VIP badges" className="cs-photo-grid-img" />
+        </div>
+
+        <h2 className="cs-section-h">Closing note</h2>
         <p className="cs-body">
-          Elaniin AI launched as one of the first dedicated AI divisions announced publicly by a tech company in El Salvador. The brand didn&apos;t just support that launch — it made the ambition legible. Sometimes the most strategic thing a creative system can do is make people take something seriously before they fully understand it.
+          Elaniin AI launched as one of the first dedicated AI divisions announced publicly by a tech company in El Salvador. Sometimes the most strategic thing a creative system can do is make people take something seriously before they fully understand it.
         </p>
       </article>
 
