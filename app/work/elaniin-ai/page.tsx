@@ -25,12 +25,6 @@ export default function ElaniinAI() {
           ))}
         </div>
 
-        <img
-          src="/elaniin-ai/elaniin-ai-banner-01.png"
-          alt="Boundless Potential — Elaniin AI concept"
-          className="cs-banner-img"
-        />
-
         <h2 className="cs-section-h">The real problem</h2>
         <p className="cs-body">
           In 2024, AI moved from buzzword to business imperative, but mostly in San Francisco, London, and a handful of major markets. In Latin America, the conversation was still early. Most tech companies in the region were watching from the sidelines. Elaniin didn&apos;t wait. They announced a dedicated AI division at a live event, Elaniin AI &apos;24, and made a public, documented bet that AI wasn&apos;t a trend to monitor. It was a direction to build toward.
@@ -38,6 +32,12 @@ export default function ElaniinAI() {
         <p className="cs-body">
           A move that bold needed a brand that matched it. Not an adjustment to the existing identity, but a new visual system built from scratch, capable of holding something genuinely new.
         </p>
+
+        <img
+          src="/elaniin-ai/03-elaniin-ai-24.png"
+          alt="Elaniin AI brand reveal on stage — Elaniin AI '24 event"
+          className="cs-banner-img"
+        />
 
         <img
           src="/elaniin-ai/06-elaniin-ai-24.png"
@@ -94,12 +94,6 @@ export default function ElaniinAI() {
         <img
           src="/elaniin-ai/elaniin-ai-banner-06.png"
           alt="DataSphere identity"
-          className="cs-banner-img"
-        />
-
-        <img
-          src="/elaniin-ai/03-elaniin-ai-24.png"
-          alt="Elaniin AI brand reveal on stage — Elaniin AI '24 event"
           className="cs-banner-img"
         />
 
