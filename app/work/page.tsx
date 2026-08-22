@@ -22,7 +22,7 @@ const cases = [
     slug: 'elaniin-ai',
     category: 'Brand Architecture',
     title: 'Elaniin AI Brand System',
-    sub: 'Building the visual language of a new AI division — from identity to product ecosystem.',
+    sub: 'Building the visual language of a new AI division, from identity to product ecosystem.',
     year: '2024',
     image: '/elaniin-ai/elaniin-ai-hero.png',
   },
@@ -67,26 +67,15 @@ export default function Work() {
           </div>
         </div>
 
-        <div className="work-more">
-          <div className="work-more-inner">
-            <span className="work-more-line" />
-            <span className="work-more-dot">✦</span>
-            <p className="work-more-text">More case studies on the way</p>
-            <span className="work-more-dot">✦</span>
-            <span className="work-more-line" />
-          </div>
-        </div>
       </main>
 
       {/* CONTACT */}
       <div className="contact-wrap" id="contact">
         <h2 className="contact-h">
-          &ldquo;Timeless design<br />
-          is the kind that<br />
-          <u>leaves a mark.</u>&rdquo;
+          define. design.<br />
+          build. live.
         </h2>
         <div>
-          <p className="contact-attr">— Roger Paniagua</p>
           <p className="contact-sub">
             I&apos;m always interested in conversations with people who believe that great creative
             leadership transforms organizations.

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Navbar from '../../Navbar'
 
 export const metadata: Metadata = {
-  title: 'When a Tech Company Becomes an AI Company — Roger Paniagua',
+  title: 'When a Tech Company Becomes an AI Company · Roger Paniagua',
 }
 
 export default function ElaniinAI() {
