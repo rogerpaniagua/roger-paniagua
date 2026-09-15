@@ -4,8 +4,8 @@ const IC = '#F2EFE8'
 
 const PHASES = [
   {
-    id: 'define',
-    label: 'Define',
+    id: 'problem',
+    label: 'Problem',
     angle: -90,
     icon: (
       <g strokeLinecap="round" strokeWidth="2" fill="none">
@@ -15,8 +15,8 @@ const PHASES = [
     ),
   },
   {
-    id: 'design',
-    label: 'Design',
+    id: 'research',
+    label: 'Research',
     angle: 0,
     icon: (
       <g strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" fill="none">
@@ -26,8 +26,8 @@ const PHASES = [
     ),
   },
   {
-    id: 'build',
-    label: 'Build',
+    id: 'architect',
+    label: 'Architect',
     angle: 90,
     icon: (
       <g strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" fill="none">
@@ -41,8 +41,8 @@ const PHASES = [
     ),
   },
   {
-    id: 'live',
-    label: 'Live',
+    id: 'loop',
+    label: 'Loop',
     angle: 180,
     icon: (
       <polygon points="3,-10 -4.5,1 3.5,1 -3,10" fill={IC} />
@@ -78,7 +78,7 @@ export default function ProcessOrbit() {
     <svg
       viewBox={`0 0 ${W} ${H}`}
       className="process-orbit-svg"
-      aria-label="Proceso iterativo: Define, Design, Build, Live"
+      aria-label="Proceso iterativo: Problem, Research, Architect, Loop"
     >
       {/* Outer dashed ring — slow clockwise spin */}
       <circle

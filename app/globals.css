@@ -546,7 +546,7 @@ nav {
 }
 .process-phases li strong { color: #F2EFE8; font-weight: 600; }
 .process-diagram { padding: 100px 48px 100px var(--side); display: flex; align-items: center; justify-content: center; }
-.process-orbit-svg { width: 100%; max-width: 480px; height: auto; display: block; }
+.process-orbit-svg { width: 100%; max-width: 480px; height: auto; display: block; overflow: visible; }
 
 /* Orbit ring animations */
 @keyframes orbit-cw { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -859,8 +859,8 @@ footer { display: block; background: var(--black); margin: 0; margin-top: -1px; 
   .sec-header { padding: 32px var(--side) 8px; }
   .principles-grid { grid-template-columns: 1fr; padding: 0 var(--side) 40px; gap: 12px; }
   .process-section { grid-template-columns: 1fr; }
-  .process-content { padding: 32px var(--side) 56px; max-width: 100%; }
-  .process-diagram { padding: 48px var(--side) 0; }
+  .process-content { padding: 32px var(--side) 56px; max-width: 100%; order: 1; }
+  .process-diagram { padding: 48px var(--side) 0; order: 2; }
   .process-orbit-svg { max-width: 300px; }
   .sec-header .heading { margin-bottom: 8px; }
   .creds-accordion { display: block; }

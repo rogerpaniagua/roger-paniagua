@@ -249,7 +249,7 @@ export default function Home() {
       </div>
 
       {/* PROCESS */}
-      <div className="process-section" id="process" data-animate>
+      <div className="process-section" id="process">
         <div className="process-diagram">
           <ProcessOrbit />
         </div>
@@ -258,10 +258,10 @@ export default function Home() {
           <h2 className="heading" style={{ color: '#F2EFE8' }}>Not a checklist. <em>An orbit.</em></h2>
           <p className="process-intro">Every project moves through four phases. Then it starts again, sharper and more informed than before.</p>
           <ol className="process-phases">
-            <li><strong>Define.</strong> Brief, research, and clarity. The question before the question.</li>
-            <li><strong>Design.</strong> Visual systems, identity, and the direction that makes people stop.</li>
-            <li><strong>Build.</strong> Code, platforms, and deployed product. No handoff required.</li>
-            <li><strong>Live.</strong> Launch, learn, measure. Then feed it back to the top.</li>
+            <li><strong>Problem.</strong> The real issue behind the brief. Not what&apos;s asked, what&apos;s actually broken.</li>
+            <li><strong>Research.</strong> Market context, cultural signals, and the questions worth asking before designing anything.</li>
+            <li><strong>Architect.</strong> Design systems and AI criteria. The structure that lets a team ship with consistency.</li>
+            <li><strong>Loop.</strong> Launch, learn, measure. Then feed it back to the top.</li>
           </ol>
         </div>
       </div>
@@ -361,7 +361,7 @@ export default function Home() {
       {/* CONTACT */}
       <div className="contact-wrap" id="contact">
         <h2 className="contact-h" data-animate>
-          define. design.<br />build. live.
+          Problem. Research.<br />Architect. Loop.
         </h2>
         <div data-animate>
           <p className="contact-sub">
