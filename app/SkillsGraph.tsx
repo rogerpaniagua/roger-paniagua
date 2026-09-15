@@ -2,56 +2,48 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-const CLUSTERS = [
+type NodeSpec = { label: string; subs?: string[] }
+type BranchSpec = { label: string; nodes: NodeSpec[] }
+
+const BRANCHES: BranchSpec[] = [
   {
     label: 'Brand Strategy',
-    angle: -90,
-    dist: 105,
-    spread: 70,
-    subDist: 88,
-    subs: ['Visual Identity', 'Brand Architecture', 'Brand Deployment'],
-  },
-  {
-    label: 'Creative Direction',
-    angle: -30,
-    dist: 150,
-    spread: 48,
-    subDist: 95,
-    subs: ['Art Direction', 'Campaign Direction', 'Visual Narrative'],
-  },
-  {
-    label: 'Visual Systems',
-    angle: 30,
-    dist: 170,
-    spread: 46,
-    subDist: 105,
-    subs: ['Visual Ecosystems', 'Design Systems', 'Creative Systems'],
+    nodes: [
+      { label: 'Brand Architecture' },
+      { label: 'Visual Identity' },
+      { label: 'Brand Deployment' },
+      { label: 'Creative Direction', subs: ['Art Direction', 'Campaign Direction', 'Visual Narrative'] },
+      { label: 'Research', subs: ['Market Context', 'Cultural Signals', 'Audience Insight'] },
+    ],
   },
   {
     label: 'AI-Driven Development',
-    angle: 90,
-    dist: 168,
-    spread: 58,
-    subDist: 100,
-    subs: ['Product Design', 'Creative Infrastructure', 'Product Development with AI'],
+    nodes: [
+      { label: 'Generative Image' },
+      { label: 'Workflow Design' },
+      { label: 'Prompt Engineering' },
+      { label: 'Creative Systems' },
+      { label: 'Product Development with AI' },
+      { label: 'Creative Infrastructure' },
+      { label: 'AI Direction' },
+    ],
   },
   {
-    label: 'AI Direction',
-    angle: 150,
-    dist: 148,
-    spread: 46,
-    subDist: 95,
-    subs: ['Prompt Engineering', 'Workflow Design', 'Generative Image'],
-  },
-  {
-    label: 'Photo Direction',
-    angle: 210,
-    dist: 155,
-    spread: 46,
-    subDist: 98,
-    subs: ['Lighting & Composition'],
+    label: 'UX/UI & Design Systems',
+    nodes: [
+      { label: 'Design Tokens' },
+      { label: 'Product Design' },
+      { label: 'Visual Systems', subs: ['Design Systems', 'Visual Ecosystems'] },
+      { label: 'Component Libraries' },
+      { label: 'Interaction Design' },
+      { label: 'User Flows' },
+      { label: 'Design Governance' },
+    ],
   },
 ]
+
+const SWITCH_OPTIONS = ['Brand Strategy', 'AI-Driven Development', 'UX/UI & Design Systems', 'The Full Loop']
+const BRANCH_ANGLES = [-90, 30, 150]
 
 const ROGER_PATHS = [
   'M0,81.7V1.2h44.5c19.8,0,31.1,8.8,31.1,24.2s-7.6,20.9-22.7,22.4v1c7.2,1.9,10,5.8,13,11.4l11.7,21.6h-20.9l-11.1-20.9c-3.2-6.2-6.2-8.3-15.6-8.3h-11.9v29.2H0ZM18,38.9h26.3c8.5,0,12.4-2.4,12.4-10.8s-3.8-10.7-12.4-10.7h-26.3v21.5Z',
@@ -64,64 +56,135 @@ const ROGER_PATHS = [
 const LOGO_VB_W = 420
 const LOGO_VB_H = 82.9
 const toRad = (d: number) => d * Math.PI / 180
+const lerp = (a: number, b: number, t: number) => a + (b - a) * t
+function lerpAngle(a: number, b: number, t: number) {
+  const twoPi = Math.PI * 2
+  let diff = ((b - a + Math.PI) % twoPi + twoPi) % twoPi - Math.PI
+  return a + diff * t
+}
+
+type Satellite = { label: string; angleFull: number; angleFocused: number; dist: number; x: number; y: number; alpha: number }
+type Discipline = {
+  label: string
+  branchLabel: string
+  phase: number
+  bxFull: number; byFull: number
+  bxFocused: number; byFocused: number
+  bx: number; by: number
+  x: number; y: number
+  focusT: number
+  opacityMult: number
+  subs: Satellite[]
+  alpha: number
+}
+type Branch = {
+  label: string
+  bx: number; by: number
+  x: number; y: number
+  opacityMult: number
+  alpha: number
+}
 
 export default function SkillsGraph() {
-  const rightRef = useRef<HTMLDivElement>(null)
+  const wrapRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [pinned, setPinned] = useState('Brand Strategy')
-  const [canvasHov, setCanvasHov] = useState<string | null>(null)
-  const activeLabel = canvasHov || pinned
-
-  const nodesRef = useRef<any[]>([])
-  const tRef = useRef(0)
-  const rafRef = useRef<number>()
+  const [pinned, setPinned] = useState('The Full Loop')
   const pinnedRef = useRef(pinned)
-  const canvasHovRef = useRef<string | null>(null)
-
   useEffect(() => { pinnedRef.current = pinned }, [pinned])
-  useEffect(() => { canvasHovRef.current = canvasHov }, [canvasHov])
 
   useEffect(() => {
-    const right = rightRef.current
+    const wrap = wrapRef.current
     const canvas = canvasRef.current
-    if (!right || !canvas) return
+    if (!wrap || !canvas) return
     const ctx = canvas.getContext('2d')!
     let W = 0, H = 0, CX = 0, CY = 0
+    let branches: Branch[] = []
+    let disciplines: Discipline[] = []
+    let hoverLabel: string | null = null
 
     function resize() {
       const dpr = window.devicePixelRatio || 1
-      if (!right || !canvas) return
-      W = right.offsetWidth || 400
-      H = right.offsetHeight || 600
-      canvas.width = W * dpr
-      canvas.height = H * dpr
-      canvas.style.width = W + 'px'
-      canvas.style.height = H + 'px'
+      W = wrap!.offsetWidth || 1000
+      H = wrap!.offsetHeight || 700
+      canvas!.width = W * dpr
+      canvas!.height = H * dpr
+      canvas!.style.width = W + 'px'
+      canvas!.style.height = H + 'px'
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
       CX = W / 2
-      CY = H / 2
-initNodes()
+      CY = H * (W < 700 ? 0.62 : 0.56)
+      initNodes()
     }
 
     function initNodes() {
-      const sc = Math.min(W, H) / 560
-      nodesRef.current = CLUSTERS.map(c => {
-        const r = toRad(c.angle)
-        const cx = CX + Math.cos(r) * c.dist * sc
-        const cy = CY + Math.sin(r) * c.dist * sc
-        const subDist = c.subDist * sc
-        const subNodes = c.subs.map((label, i) => {
-          const ba = c.angle + (i - (c.subs.length - 1) / 2) * c.spread
-          const sr = toRad(ba)
-          return { label, bx: cx + Math.cos(sr) * subDist, by: cy + Math.sin(sr) * subDist, x: 0, y: 0 }
+      const scX = W / 980
+      const scY = H / 780
+      const scB = Math.min(scX, scY)
+      const branchDist = W < 700 ? 232 : 128
+      const discDist = 145
+      const focusedDist = 205
+      const satDist = 82
+
+      branches = []
+      disciplines = []
+      let flatIndex = 0
+      const totalDisciplines = BRANCHES.reduce((sum, b) => sum + b.nodes.length, 0)
+
+      BRANCHES.forEach((b, bi) => {
+        const angle = BRANCH_ANGLES[bi]
+        const bx = CX + Math.cos(toRad(angle)) * branchDist * scB
+        const by = CY + Math.sin(toRad(angle)) * branchDist * scB
+        branches.push({ label: b.label, bx, by, x: bx, y: by, opacityMult: 1, alpha: 1 })
+
+        const n = b.nodes.length
+        const discSpread = Math.min(86, 50 + n * 6)
+        const innerIdx = b.nodes.map((_, k) => k).filter(k => k % 2 === 0)
+        const outerIdx = b.nodes.map((_, k) => k).filter(k => k % 2 === 1)
+        const innerStep = innerIdx.length > 1 ? discSpread / (innerIdx.length - 1) : 0
+        const outerSpread = Math.max(0, discSpread - innerStep)
+
+        b.nodes.forEach((node, i) => {
+          const isOuter = i % 2 === 1
+          const group = isOuter ? outerIdx : innerIdx
+          const rank = group.indexOf(i)
+          const m = group.length
+          const groupSpread = isOuter ? outerSpread : discSpread
+          const fa = angle + (m > 1 ? (rank - (m - 1) / 2) * (groupSpread / (m - 1)) : 0)
+          const faRad = toRad(fa)
+          const rJitter = discDist + (isOuter ? 72 : 0)
+          const bxFull = bx + Math.cos(faRad) * rJitter * scX
+          const byFull = by + Math.sin(faRad) * rJitter * scY
+
+          const focAngleDeg = -90 + i * (360 / n)
+          const focRad = toRad(focAngleDeg)
+          const bxFocused = CX + Math.cos(focRad) * focusedDist * scX
+          const byFocused = CY + Math.sin(focRad) * focusedDist * scY
+
+          const subs: Satellite[] = (node.subs || []).map((label, j) => {
+            const sn = node.subs!.length
+            const subSpread = sn <= 1 ? 0 : sn === 2 ? 96 : sn === 3 ? 80 : 104
+            const saFull = fa + (sn > 1 ? (j - (sn - 1) / 2) * (subSpread / (sn - 1)) : 0)
+            const saFoc = focAngleDeg + (sn > 1 ? (j - (sn - 1) / 2) * (subSpread / (sn - 1)) : 0)
+            const jDist = satDist + (j % 2 === 0 ? -18 : 28)
+            return { label, angleFull: toRad(saFull), angleFocused: toRad(saFoc), dist: jDist, x: 0, y: 0, alpha: 1 }
+          })
+
+          disciplines.push({
+            label: node.label,
+            branchLabel: b.label,
+            phase: (flatIndex / totalDisciplines) * Math.PI * 2,
+            bxFull, byFull, bxFocused, byFocused,
+            bx: bxFull, by: byFull, x: bxFull, y: byFull,
+            focusT: 0, opacityMult: 1, alpha: 1,
+            subs,
+          })
+          flatIndex++
         })
-        subNodes.forEach(s => { s.x = s.bx; s.y = s.by })
-        return { ...c, x: cx, y: cy, bx: cx, by: cy, subNodes }
       })
     }
 
     function drawLogo() {
-      const logoW = Math.min(88, W * 0.18)
+      const logoW = Math.min(88, W * 0.14)
       const s = logoW / LOGO_VB_W
       const logoH = LOGO_VB_H * s
       ctx.save()
@@ -132,119 +195,192 @@ initNodes()
       ctx.restore()
     }
 
-    function draw() {
-      tRef.current += 0.005
-      const t = tRef.current
-      ctx.clearRect(0, 0, W, H)
-      const sc = Math.min(W, H) / 560
-      const active = canvasHovRef.current || pinnedRef.current
+    let tRef = 0
+    let rafId: number
 
-      nodesRef.current.forEach((n, i) => {
-        const phase = (i / nodesRef.current.length) * Math.PI * 2
-        n.x = n.bx + Math.cos(t + phase) * 9 * sc
-        n.y = n.by + Math.sin(t * 0.7 + phase) * 7 * sc
-        n.subNodes.forEach((s: any, j: number) => {
-          const ba = n.angle + (j - (n.subs.length - 1) / 2) * n.spread
-          const r = toRad(ba)
-          const sp = phase + j * 0.9
-          s.x = n.x + Math.cos(r) * n.subDist * sc + Math.sin(t + sp) * 5 * sc
-          s.y = n.y + Math.sin(r) * n.subDist * sc + Math.cos(t * 0.75 + sp) * 4 * sc
+    function draw() {
+      tRef += 0.005
+      const t = tRef
+      ctx.clearRect(0, 0, W, H)
+      const scX = W / 980
+      const scY = H / 780
+      const scF = Math.min(scX, scY)
+      const isFocused = pinnedRef.current !== 'The Full Loop'
+      const hov = hoverLabel
+
+      // ease branches
+      branches.forEach((br, i) => {
+        const target = isFocused ? 0 : 1
+        br.opacityMult += (target - br.opacityMult) * 0.07
+        const phase = (i / branches.length) * Math.PI * 2
+        br.x = br.bx + Math.cos(t + phase) * 8 * scF
+        br.y = br.by + Math.sin(t * 0.7 + phase) * 6 * scF
+        br.alpha = br.opacityMult
+      })
+
+      // ease disciplines + satellites
+      disciplines.forEach(d => {
+        const isMine = pinnedRef.current === d.branchLabel
+        const targetFocus = isMine ? 1 : 0
+        d.focusT += (targetFocus - d.focusT) * 0.065
+        const targetOpacity = (!isFocused || isMine) ? 1 : 0
+        d.opacityMult += (targetOpacity - d.opacityMult) * 0.07
+
+        d.bx = lerp(d.bxFull, d.bxFocused, d.focusT)
+        d.by = lerp(d.byFull, d.byFocused, d.focusT)
+        d.x = d.bx + Math.cos(t + d.phase) * 7 * scF
+        d.y = d.by + Math.sin(t * 0.7 + d.phase) * 5 * scF
+        d.alpha = d.opacityMult
+
+        d.subs.forEach((s, j) => {
+          const sp = d.phase + j * 0.9
+          const ang = lerpAngle(s.angleFull, s.angleFocused, d.focusT)
+          s.x = d.x + Math.cos(ang) * s.dist * scF + Math.sin(t + sp) * 4 * scF
+          s.y = d.y + Math.sin(ang) * s.dist * scF + Math.cos(t * 0.75 + sp) * 3 * scF
+          s.alpha = d.alpha
         })
       })
 
-      nodesRef.current.forEach(n => {
-        const isActive = n.label === active
+      // connecting lines: ROGER -> branch (fades with branch)
+      branches.forEach(br => {
         ctx.lineWidth = 0.8
-        ctx.beginPath(); ctx.moveTo(CX, CY); ctx.lineTo(n.x, n.y)
-        ctx.strokeStyle = isActive ? 'rgba(242,239,232,0.22)' : 'rgba(242,239,232,0.05)'
+        ctx.beginPath(); ctx.moveTo(CX, CY); ctx.lineTo(br.x, br.y)
+        const on = hov === br.label
+        ctx.strokeStyle = `rgba(242,239,232,${(on ? 0.30 : 0.14) * br.alpha})`
         ctx.stroke()
-        n.subNodes.forEach((s: any) => {
+      })
+
+      // connecting lines: parent(branch|ROGER) -> discipline, lerped
+      disciplines.forEach(d => {
+        const branch = branches.find(b => b.label === d.branchLabel)!
+        const parentX = lerp(branch.x, CX, d.focusT)
+        const parentY = lerp(branch.y, CY, d.focusT)
+        ctx.lineWidth = 0.8
+        ctx.beginPath(); ctx.moveTo(parentX, parentY); ctx.lineTo(d.x, d.y)
+        const on = hov === d.label
+        ctx.strokeStyle = `rgba(242,239,232,${(on ? 0.32 : 0.16) * d.alpha})`
+        ctx.stroke()
+
+        d.subs.forEach(s => {
           ctx.lineWidth = 0.5
-          ctx.beginPath(); ctx.moveTo(n.x, n.y); ctx.lineTo(s.x, s.y)
-          ctx.strokeStyle = isActive ? 'rgba(242,239,232,0.14)' : 'rgba(242,239,232,0.03)'
+          ctx.beginPath(); ctx.moveTo(d.x, d.y); ctx.lineTo(s.x, s.y)
+          const subOn = hov === s.label
+          ctx.strokeStyle = `rgba(242,239,232,${(subOn ? 0.22 : 0.09) * s.alpha})`
           ctx.stroke()
         })
       })
 
-      nodesRef.current.forEach(n => {
-        const isActive = n.label === active
-        const fSize = Math.max(9, Math.round(10 * sc))
-        ctx.font = `400 ${fSize}px "Instrument Sans", sans-serif`
-        ctx.textAlign = 'center'
-        n.subNodes.forEach((s: any) => {
-          ctx.fillStyle = isActive ? 'rgba(242,239,232,0.55)' : 'rgba(242,239,232,0.12)'
+      // satellite labels
+      disciplines.forEach(d => {
+        d.subs.forEach(s => {
+          if (s.alpha < 0.02) return
+          const on = hov === s.label
+          const baseA = lerp(0.14, 0.42, d.focusT)
+          const fSize = Math.max(8, Math.round((on ? 10.5 : 8.5) * scF))
+          ctx.font = `${on ? 600 : 400} ${fSize}px "Instrument Sans", sans-serif`
+          ctx.textAlign = 'center'
+          ctx.fillStyle = `rgba(242,239,232,${(on ? 0.85 : baseA) * s.alpha})`
           ctx.fillText(s.label, s.x, s.y)
         })
       })
 
-      nodesRef.current.forEach(n => {
-        const isActive = n.label === active
-        const fSize = Math.max(11, Math.round(12.5 * sc))
-        ctx.font = `${isActive ? 700 : 400} ${fSize}px "Instrument Sans", sans-serif`
-        ctx.fillStyle = isActive ? '#F2EFE8' : 'rgba(242,239,232,0.32)'
+      // discipline labels
+      disciplines.forEach(d => {
+        if (d.alpha < 0.02) return
+        const on = hov === d.label
+        const baseA = lerp(0.42, 0.68, d.focusT)
+        const fSize = Math.max(8.5, Math.round(lerp(9, 14, d.focusT) * scF))
+        ctx.font = `${on ? 700 : 600} ${fSize}px "Instrument Sans", sans-serif`
         ctx.textAlign = 'center'
-        ctx.fillText(n.label, n.x, n.y)
+        ctx.fillStyle = on ? `rgba(242,239,232,${d.alpha})` : `rgba(242,239,232,${baseA * d.alpha})`
+        ctx.fillText(d.label, d.x, d.y)
+      })
+
+      // branch labels
+      branches.forEach(br => {
+        if (br.alpha < 0.02) return
+        const on = hov === br.label
+        const fSize = Math.max(W < 700 ? 10 : 12, Math.round(13.5 * scF))
+        ctx.font = `700 ${fSize}px "Instrument Sans", sans-serif`
+        ctx.textAlign = 'center'
+        ctx.fillStyle = on ? `rgba(242,239,232,${br.alpha})` : `rgba(242,239,232,${0.7 * br.alpha})`
+        ctx.fillText(br.label, br.x, br.y)
       })
 
       drawLogo()
-      rafRef.current = requestAnimationFrame(draw)
+      rafId = requestAnimationFrame(draw)
+    }
+
+    function hitTest(mx: number, my: number): string | null {
+      const scX = W / 980
+      const scY = H / 780
+      const scF = Math.min(scX, scY)
+      const hitR = 42 * scF
+      let found: string | null = null
+      let bestD = Infinity
+      branches.forEach(br => {
+        if (br.alpha < 0.4) return
+        const dx = mx - br.x, dy = my - br.y
+        const dist = Math.sqrt(dx * dx + dy * dy)
+        if (dist < hitR && dist < bestD) { found = br.label; bestD = dist }
+      })
+      disciplines.forEach(d => {
+        if (d.alpha < 0.4) return
+        const dx = mx - d.x, dy = my - d.y
+        const dist = Math.sqrt(dx * dx + dy * dy)
+        if (dist < hitR && dist < bestD) { found = d.label; bestD = dist }
+        d.subs.forEach(s => {
+          if (s.alpha < 0.4) return
+          const sdx = mx - s.x, sdy = my - s.y
+          const sdist = Math.sqrt(sdx * sdx + sdy * sdy)
+          if (sdist < hitR * 0.85 && sdist < bestD) { found = s.label; bestD = sdist }
+        })
+      })
+      return found
     }
 
     const onMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect()
-      const mx = e.clientX - rect.left
-      const my = e.clientY - rect.top
-      const sc = Math.min(W, H) / 560
-      let found: string | null = null
-      nodesRef.current.forEach(n => {
-        const dx = mx - n.x, dy = my - n.y
-        if (Math.sqrt(dx * dx + dy * dy) < 44 * sc) found = n.label
-      })
-      setCanvasHov(found)
+      hoverLabel = hitTest(e.clientX - rect.left, e.clientY - rect.top)
+      canvas.style.cursor = hoverLabel ? 'pointer' : 'default'
     }
-    const onMouseLeave = () => setCanvasHov(null)
-    const onClick = () => { if (canvasHovRef.current) setPinned(canvasHovRef.current) }
+    const onMouseLeave = () => { hoverLabel = null }
 
     canvas.addEventListener('mousemove', onMouseMove)
     canvas.addEventListener('mouseleave', onMouseLeave)
-    canvas.addEventListener('click', onClick)
 
     const ro = new ResizeObserver(resize)
-    ro.observe(right)
+    ro.observe(wrap)
     resize()
     draw()
 
     return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      cancelAnimationFrame(rafId)
       ro.disconnect()
       canvas.removeEventListener('mousemove', onMouseMove)
       canvas.removeEventListener('mouseleave', onMouseLeave)
-      canvas.removeEventListener('click', onClick)
     }
   }, [])
 
   return (
     <div className="skills-section" id="disciplines">
-      <div className="skills-left">
+      <div className="skills-intro">
         <div className="eyebrow">Disciplines</div>
         <h2 className="heading">The full <em>loop.</em></h2>
-        <p className="body-text">A decade at the intersection of brand and technology. These are the disciplines I direct. The constellation shows how they connect.</p>
-        <div className="skills-list">
-          {CLUSTERS.map(c => (
+        <p className="body-text">A decade at the intersection of brand and technology. These are the disciplines I direct, grouped by how they connect.</p>
+        <div className="skills-switch">
+          {SWITCH_OPTIONS.map(opt => (
             <button
-              key={c.label}
-              className={`skills-item${activeLabel === c.label ? ' skills-item--active' : ''}`}
-              onClick={() => setPinned(c.label)}
-              onMouseEnter={() => setPinned(c.label)}
-              onMouseLeave={() => {}}
+              key={opt}
+              className={`skills-switch-item${pinned === opt ? ' skills-switch-item--active' : ''}`}
+              onClick={() => setPinned(opt)}
             >
-              <span className="skills-item-dot" />
-              {c.label}
+              {opt}
             </button>
           ))}
         </div>
       </div>
-      <div className="skills-right" ref={rightRef}>
+      <div className="skills-canvas-wrap" ref={wrapRef}>
         <canvas ref={canvasRef} />
       </div>
     </div>
