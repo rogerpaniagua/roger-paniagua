@@ -65,12 +65,22 @@ const journeyLogos = [
 
 const roles = [
   {
+    id: -1,
+    period: 'Sep 2026 – Present',
+    duration: 'Full-time',
+    role: 'Creative Strategy Lead',
+    company: 'Elaniin · El Salvador · Hybrid',
+    current: true,
+    desc: "The bridge between business strategy, the commercial team, and creative execution. I translate objectives into the design systems and AI criteria that let the team ship consistent, high-quality work at scale.",
+    skills: ['Creative Strategy', 'Design Systems', 'UX/UI', 'AI Direction', 'Brand Strategy', 'Team Leadership'],
+  },
+  {
     id: 0,
-    period: 'Apr 2022 – Present',
+    period: 'Apr 2022 – Sep 2026',
     duration: '4+ years · Full-time',
     role: 'Lead Graphic Designer',
     company: 'Elaniin · El Salvador · Hybrid',
-    current: true,
+    current: false,
     desc: "Leading creative direction for one of El Salvador's most dynamic tech brands. Managing creative teams, overseeing all visual communication, and building the systems that allow great work to scale without losing quality.",
     skills: ['Creative Direction', 'Brand Strategy', 'Team Leadership', 'Visual Systems', 'AI Image Direction', 'Photo Direction'],
   },
@@ -117,7 +127,7 @@ const roles = [
 ]
 
 export default function Home() {
-  const [activeRole, setActiveRole] = useState(0)
+  const [activeRole, setActiveRole] = useState(-1)
   const [statValues, setStatValues] = useState([0, 0, 0, 0])
   const [statsStarted, setStatsStarted] = useState(false)
   const statsRef = useRef<HTMLDivElement>(null)
@@ -168,7 +178,7 @@ export default function Home() {
     requestAnimationFrame(tick)
   }, [statsStarted])
 
-  const selected = roles[activeRole]
+  const selected = roles.find(r => r.id === activeRole) ?? roles[0]
 
   return (
     <>
@@ -183,14 +193,14 @@ export default function Home() {
             <img src="/roger-profile.jpg" alt="Roger Paniagua" className="profile-img" style={{ width: '44px', height: '44px' }} />
             <div className="hero-tag-info">
               <span className="hero-tag-name">Roger Paniagua</span>
-              <span className="hero-tag-role">Brand &amp; Creative Strategy Lead · AI</span>
+              <span className="hero-tag-role">Creative Strategy Lead</span>
             </div>
           </div>
           <h1 className="hero-h">
             Great brands don&apos;t happen.<br />
             <HeroTyping />
           </h1>
-          <p className="hero-sub">Brand strategy, creative systems, and AI-driven development. I take brands from the first brief to the deployed product, without dropping the thread.</p>
+          <p className="hero-sub">Brand strategy, design systems, and AI-driven development. I build the systems and set the criteria that let teams ship with consistency.</p>
           <a href="#work" className="hero-cta">Read case studies →</a>
           <div className="hero-logos">
             <div className="hero-logos-outer">
