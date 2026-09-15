@@ -101,6 +101,7 @@ export default function SkillsGraph() {
     let branches: Branch[] = []
     let disciplines: Discipline[] = []
     let hoverLabel: string | null = null
+    const clampX = (x: number, margin: number) => Math.min(W - margin, Math.max(margin, x))
 
     function resize() {
       const dpr = window.devicePixelRatio || 1
@@ -111,19 +112,21 @@ export default function SkillsGraph() {
       canvas!.style.width = W + 'px'
       canvas!.style.height = H + 'px'
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+      const isMobile = W < 700
       CX = W / 2
-      CY = H * (W < 700 ? 0.62 : 0.56)
+      CY = H * (isMobile ? 0.5 : 0.56)
       initNodes()
     }
 
     function initNodes() {
+      const isMobile = W < 700
       const scX = W / 980
       const scY = H / 780
       const scB = Math.min(scX, scY)
-      const branchDist = W < 700 ? 232 : 128
-      const discDist = 145
-      const focusedDist = 205
-      const satDist = 82
+      const branchDist = isMobile ? 232 : 128
+      const discDist = isMobile ? 126 : 145
+      const focusedDist = isMobile ? 168 : 205
+      const satDist = isMobile ? 148 : 82
 
       branches = []
       disciplines = []
@@ -137,7 +140,7 @@ export default function SkillsGraph() {
         branches.push({ label: b.label, bx, by, x: bx, y: by, opacityMult: 1, alpha: 1 })
 
         const n = b.nodes.length
-        const discSpread = Math.min(86, 50 + n * 6)
+        const discSpread = Math.min(86, 50 + n * 6) * (isMobile ? 1.6 : 1)
         const innerIdx = b.nodes.map((_, k) => k).filter(k => k % 2 === 0)
         const outerIdx = b.nodes.map((_, k) => k).filter(k => k % 2 === 1)
         const innerStep = innerIdx.length > 1 ? discSpread / (innerIdx.length - 1) : 0
@@ -151,21 +154,24 @@ export default function SkillsGraph() {
           const groupSpread = isOuter ? outerSpread : discSpread
           const fa = angle + (m > 1 ? (rank - (m - 1) / 2) * (groupSpread / (m - 1)) : 0)
           const faRad = toRad(fa)
-          const rJitter = discDist + (isOuter ? 72 : 0)
-          const bxFull = bx + Math.cos(faRad) * rJitter * scX
+          const denseFactor = isMobile && n >= 7 ? 1.13 : 1
+          const outerAdd = isMobile ? (n >= 7 ? 96 : 108) : 72
+          const rJitter = discDist * denseFactor + (isOuter ? outerAdd : 0)
+          const edgeMargin = Math.min(W * 0.15, 58)
+          const bxFull = clampX(bx + Math.cos(faRad) * rJitter * scX, edgeMargin)
           const byFull = by + Math.sin(faRad) * rJitter * scY
 
           const focAngleDeg = -90 + i * (360 / n)
           const focRad = toRad(focAngleDeg)
-          const bxFocused = CX + Math.cos(focRad) * focusedDist * scX
+          const bxFocused = clampX(CX + Math.cos(focRad) * focusedDist * scX, edgeMargin)
           const byFocused = CY + Math.sin(focRad) * focusedDist * scY
 
           const subs: Satellite[] = (node.subs || []).map((label, j) => {
             const sn = node.subs!.length
-            const subSpread = sn <= 1 ? 0 : sn === 2 ? 96 : sn === 3 ? 80 : 104
+            const subSpread = (sn <= 1 ? 0 : sn === 2 ? 96 : sn === 3 ? 80 : 104) * (isMobile ? 1.55 : 1)
             const saFull = fa + (sn > 1 ? (j - (sn - 1) / 2) * (subSpread / (sn - 1)) : 0)
             const saFoc = focAngleDeg + (sn > 1 ? (j - (sn - 1) / 2) * (subSpread / (sn - 1)) : 0)
-            const jDist = satDist + (j % 2 === 0 ? -18 : 28)
+            const jDist = satDist + (j % 2 === 0 ? (isMobile ? 4 : -18) : (isMobile ? 40 : 28))
             return { label, angleFull: toRad(saFull), angleFocused: toRad(saFoc), dist: jDist, x: 0, y: 0, alpha: 1 }
           })
 
@@ -232,10 +238,11 @@ export default function SkillsGraph() {
         d.y = d.by + Math.sin(t * 0.7 + d.phase) * 5 * scF
         d.alpha = d.opacityMult
 
+        const satEdgeMargin = Math.min(W * 0.15, 58)
         d.subs.forEach((s, j) => {
           const sp = d.phase + j * 0.9
           const ang = lerpAngle(s.angleFull, s.angleFocused, d.focusT)
-          s.x = d.x + Math.cos(ang) * s.dist * scF + Math.sin(t + sp) * 4 * scF
+          s.x = clampX(d.x + Math.cos(ang) * s.dist * scF + Math.sin(t + sp) * 4 * scF, satEdgeMargin)
           s.y = d.y + Math.sin(ang) * s.dist * scF + Math.cos(t * 0.75 + sp) * 3 * scF
           s.alpha = d.alpha
         })
