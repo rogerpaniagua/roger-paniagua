@@ -54,7 +54,7 @@ Commit locally with `git commit` but stop there. Wait for approval before pushin
 8. Back to work link always points to /work, never /#work
 
 ### Current cyclic order
-bitlab → Blue Engine → Elaniin Lands in L.A. → Elaniin AI Brand System → Vertikal, a System Built to Grow → bitlab
+bitlab → Vertikal, a System Built to Grow → Elaniin AI Brand System → Elaniin Lands in L.A. → Blue Engine Launch Campaign → Elaniin, an Identity Built to Last → bitlab
 
 ## Pending
 - Mobile accessibility 96/100 (contrast in case study cards + experience badges)

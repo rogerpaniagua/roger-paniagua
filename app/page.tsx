@@ -277,16 +277,16 @@ export default function Home() {
           <h2 className="heading">Work that tells a <em>story.</em></h2>
         </div>
         <div className="work-featured-grid">
-          <a href="/work/elaniin-la" className="work-featured-card work-featured-card--main">
-            <div className="work-featured-card-image" style={{ backgroundImage: 'url(/elaniin-in-la-hero.png)' }} />
+          <a href="/work/redesign-uxui-elaniin" className="work-featured-card work-featured-card--main">
+            <div className="work-featured-card-image" style={{ backgroundImage: 'url(/elaniin-website/01-elaniin-website.jpg)' }} />
             <div className="work-featured-card-content">
               <div className="work-featured-meta">
                 <span className="work-featured-new">NEW</span>
-                <span className="work-featured-cat">Brand Communication</span>
+                <span className="work-featured-cat">UX/UI Design</span>
                 <span className="work-featured-year">2026</span>
               </div>
-              <h3 className="work-featured-title">Elaniin Lands in L.A.</h3>
-              <p className="work-featured-sub">Directing the visual ecosystem behind Elaniin&apos;s expansion into the U.S. market.</p>
+              <h3 className="work-featured-title">Elaniin, an Identity Built to Last</h3>
+              <p className="work-featured-sub">A ground-up redesign of Elaniin&apos;s website, rebuilt with a lighter visual system and AI-directed photography and animation.</p>
               <span className="work-featured-cta-primary">View case study →</span>
             </div>
           </a>

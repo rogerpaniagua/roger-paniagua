@@ -48,9 +48,9 @@ export default function BlueEngine() {
       {/* NEXT PROJECT */}
       <div className="cs-footer-nav">
         <div className="cs-footer-nav-inner">
-          <a href="/work/elaniin-la" style={{ textDecoration: 'none' }}>
+          <a href="/work/redesign-uxui-elaniin" style={{ textDecoration: 'none' }}>
             <div className="cs-footer-eyebrow">Next project</div>
-            <div className="cs-footer-title">Elaniin Lands in L.A.</div>
+            <div className="cs-footer-title">Elaniin, an Identity Built to Last</div>
           </a>
           <a href="/work" className="cs-footer-back">
             <div className="cs-footer-back-eyebrow-right">Case studies</div>

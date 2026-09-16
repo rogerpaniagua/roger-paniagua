@@ -72,7 +72,7 @@ export default function RedesignUxUiVertikal() {
 
         <h2 className="cs-section-h">The result</h2>
         <p className="cs-body">
-          There are no metrics for this project, but the feedback was direct: CEO Pablo Donan confirmed the brand and the site finally reflected the scale the company had already reached.
+          The feedback was direct: CEO Pablo Donan confirmed the brand and the site finally reflected the scale the company had already reached.
         </p>
 
         <img
@@ -90,9 +90,9 @@ export default function RedesignUxUiVertikal() {
       {/* NEXT PROJECT */}
       <div className="cs-footer-nav">
         <div className="cs-footer-nav-inner">
-          <a href="/work/bitlab" style={{ textDecoration: 'none' }}>
+          <a href="/work/elaniin-ai" style={{ textDecoration: 'none' }}>
             <div className="cs-footer-eyebrow">Next project</div>
-            <div className="cs-footer-title">bit/ab — Redefining a Tech Academy</div>
+            <div className="cs-footer-title">Elaniin AI Brand System</div>
           </a>
           <a href="/work" className="cs-footer-back">
             <div className="cs-footer-back-eyebrow-right">Case studies</div>

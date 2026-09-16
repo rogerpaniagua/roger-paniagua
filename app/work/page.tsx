@@ -3,6 +3,14 @@ import Footer from '../Footer'
 
 const cases = [
   {
+    slug: 'redesign-uxui-elaniin',
+    category: 'UX/UI Design',
+    title: 'Elaniin, an Identity Built to Last',
+    sub: 'A ground-up redesign of Elaniin\'s website, rebuilt with a lighter visual system and AI-directed photography and animation.',
+    year: '2026',
+    image: '/elaniin-website/01-elaniin-website.jpg',
+  },
+  {
     slug: 'elaniin-la',
     category: 'Brand Communication',
     title: 'Elaniin Lands in L.A.',

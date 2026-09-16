@@ -55,9 +55,9 @@ export default function Bitlab() {
 
       <div className="cs-footer-nav">
         <div className="cs-footer-nav-inner">
-          <a href="/work/blue-engine" style={{ textDecoration: 'none' }}>
+          <a href="/work/redesign-uxui-vertikal" style={{ textDecoration: 'none' }}>
             <div className="cs-footer-eyebrow">Next project</div>
-            <div className="cs-footer-title">Blue Engine Launch Campaign</div>
+            <div className="cs-footer-title">Vertikal, a System Built to Grow</div>
           </a>
           <a href="/work" className="cs-footer-back">
             <div className="cs-footer-back-eyebrow-right">Case studies</div>

@@ -147,9 +147,9 @@ export default function ElaniinAI() {
       {/* NEXT PROJECT */}
       <div className="cs-footer-nav">
         <div className="cs-footer-nav-inner">
-          <a href="/work/redesign-uxui-vertikal" style={{ textDecoration: 'none' }}>
+          <a href="/work/elaniin-la" style={{ textDecoration: 'none' }}>
             <div className="cs-footer-eyebrow">Next project</div>
-            <div className="cs-footer-title">Vertikal, a System Built to Grow</div>
+            <div className="cs-footer-title">Elaniin Lands in L.A.</div>
           </a>
           <a href="/work" className="cs-footer-back">
             <div className="cs-footer-back-eyebrow-right">Case studies</div>
