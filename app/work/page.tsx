@@ -34,6 +34,14 @@ const cases = [
     year: '2023',
     image: '/bitlab/01-bitlab.png',
   },
+  {
+    slug: 'redesign-uxui-vertikal',
+    category: 'UX/UI Design',
+    title: 'Vertikal, a System Built to Grow',
+    sub: 'Full UX/UI redesign and design system for a software company scaling across three countries.',
+    year: '2023',
+    image: '/vertikal-website/01-vetikal-website.jpg',
+  },
 ]
 
 export default function Work() {
