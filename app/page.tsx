@@ -190,7 +190,7 @@ export default function Home() {
       <div className="hero">
         <div className="hero-centered">
           <div className="hero-tag">
-            <img src="/roger-profile.jpg" alt="Roger Paniagua" className="profile-img" style={{ width: '44px', height: '44px' }} />
+            <img src="/roger-profile-v2.jpg" alt="Roger Paniagua" className="profile-img" style={{ width: '44px', height: '44px' }} />
             <div className="hero-tag-info">
               <span className="hero-tag-name">Roger Paniagua</span>
               <span className="hero-tag-role">Creative Strategy Lead</span>
