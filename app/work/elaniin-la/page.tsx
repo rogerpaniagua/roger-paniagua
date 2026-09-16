@@ -100,8 +100,8 @@ export default function ElaniinLA() {
       {/* CONTACT */}
       <div className="contact-wrap" id="contact">
         <h2 className="contact-h">
-          define. design.<br />
-          build. live.
+          Problem. Research.<br />
+          Architect. Loop.
         </h2>
         <div>
           <p className="contact-sub">
