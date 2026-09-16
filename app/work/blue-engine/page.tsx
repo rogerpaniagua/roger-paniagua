@@ -35,7 +35,6 @@ export default function BlueEngine() {
           muted
           loop
           playsInline
-          controls
           className="cs-banner-img"
           style={{ borderRadius: '4px' }}
         />

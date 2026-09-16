@@ -23,7 +23,6 @@ export default function Bitlab() {
           muted
           loop
           playsInline
-          controls
           className="cs-banner-img"
           style={{ borderRadius: '4px' }}
         />

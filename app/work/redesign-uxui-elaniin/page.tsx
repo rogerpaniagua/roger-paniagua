@@ -30,6 +30,17 @@ export default function RedesignUxUiElaniin() {
           I inherited this website from Elaniin&apos;s previous Head of UX/UI, and I&apos;ve been evolving it piece by piece ever since. My own vision for the brand has always been the same: it should feel timeless and unmistakably high tech. The challenge here wasn&apos;t fixing something broken, it was pushing that identity to its next visual level without losing what made it Elaniin, while the company&apos;s growth demanded more from the site than it ever had before.
         </p>
 
+        <div className="cs-banner-img" style={{ overflow: 'hidden', borderRadius: '4px' }}>
+          <video
+            src="/elaniin-website/02-elaniin-uxui.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', transform: 'scale(1.06)', transformOrigin: 'top' }}
+          />
+        </div>
+
         <h2 className="cs-section-h">The strategic decision</h2>
         <p className="cs-body">
           Elaniin&apos;s brand assets had been evolving for years, and the website needed to finally catch up. Stripe was my biggest reference, not to copy it, but for what it proves possible: dense, technical content that still reads as approachable. I shifted the interface away from a palette dominated by heavy blues, giving lighter tones more visual weight, and rebuilt the interactive components around that shift. The result is a layout built for simplicity and visual function, not decoration.
@@ -72,16 +83,6 @@ export default function RedesignUxUiElaniin() {
         <p className="cs-body">
           What I can say is that projects like this build real confidence, both mine and the team&apos;s, in how powerful AI is when someone who actually knows the craft is the one directing it. Our AI Creative Technologist, who brought the globe animation to life, went through that same process. The redesign came out clean because of how gradual and intentional every adjustment along the way was.
         </p>
-
-        <video
-          src="/elaniin-website/02-elaniin-uxui.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="cs-banner-img"
-          style={{ borderRadius: '4px' }}
-        />
 
         <h2 className="cs-section-h">Closing note</h2>
         <p className="cs-body">
